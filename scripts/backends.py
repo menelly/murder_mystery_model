@@ -78,8 +78,13 @@ class OpenRouterBackend:
         temperature: float = 0.0,
         max_tokens: int = 800,
         timeout: float = 120.0,
-        retry_once: bool = True,
+        max_attempts: int = 4,
     ) -> ChatResult:
+        """Make a chat completion request with exponential backoff on 429/5xx.
+
+        max_attempts=4 means up to 3 retries after the initial try.
+        Backoff: 2s, 6s, 18s (3x multiplier).
+        """
         if not model.openrouter_id:
             return ChatResult(
                 model_slug=model.slug,
@@ -102,10 +107,12 @@ class OpenRouterBackend:
 
         last_error: Optional[str] = None
         retried = False
-        for attempt in range(2 if retry_once else 1):
-            if attempt == 1:
+        backoff = 2.0
+        for attempt in range(max_attempts):
+            if attempt > 0:
                 retried = True
-                time.sleep(1.5)
+                time.sleep(backoff)
+                backoff *= 3
             t0 = time.time()
             try:
                 resp = self.session.post(self.URL, json=body, headers=headers, timeout=timeout)
@@ -114,7 +121,8 @@ class OpenRouterBackend:
                 last_error = f"requests: {e!r}"
                 continue
 
-            if resp.status_code >= 500 or resp.status_code == 429:
+            if resp.status_code == 429 or resp.status_code >= 500:
+                # Retryable: rate-limit or server error
                 last_error = f"http {resp.status_code}: {resp.text[:300]}"
                 continue
             if resp.status_code >= 400:
@@ -162,33 +170,21 @@ class OpenRouterBackend:
 
 
 class V100Backend:
-    """Stub for local V100 inference.
-
-    The actual inference happens in a separate worker process to avoid
-    paying the torch/transformers import in every script. This stub
-    documents the contract; the worker will be implemented in
-    `scripts/local_worker.py` and called via a queue file or HTTP.
-    """
+    """Local V100 inference, lazy-loading the heavy torch/transformers worker."""
 
     def __init__(self):
-        self.implemented = False
+        self._worker = None
 
-    def chat(
-        self,
-        model: Model,
-        prompt: str,
-        *,
-        temperature: float = 0.0,
-        max_tokens: int = 800,
-        timeout: float = 600.0,
-        retry_once: bool = True,
-    ) -> ChatResult:
-        return ChatResult(
-            model_slug=model.slug,
-            backend="v100",
-            text="",
-            error="V100Backend not yet implemented; build scripts/local_worker.py",
-        )
+    def _get_worker(self):
+        if self._worker is None:
+            # Heavy import; only paid the first time V100 is used
+            from local_worker import get_v100_worker
+            self._worker = get_v100_worker()
+        return self._worker
+
+    def chat(self, model: Model, prompt: str, **kw) -> ChatResult:
+        worker = self._get_worker()
+        return worker.chat(model, prompt, **kw)
 
 
 _OPENROUTER: Optional[OpenRouterBackend] = None
