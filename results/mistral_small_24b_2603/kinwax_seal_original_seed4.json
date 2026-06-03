@@ -1,0 +1,26 @@
+{
+  "ts_utc": "2026-06-03T23:17:57.397195Z",
+  "model_slug": "mistral_small_24b_2603",
+  "model_name": "Mistral Small 24B 2603",
+  "vendor": "mistral",
+  "backend": "openrouter",
+  "openrouter_id": "mistralai/mistral-small-2603",
+  "puzzle_id": "kinwax_seal",
+  "variant": "original",
+  "seed": 4,
+  "temperature": 0.7,
+  "position_mapping": {
+    "A": "selka",
+    "B": "mira",
+    "C": "darin"
+  },
+  "correct_position": "A",
+  "red_herring_position": "B",
+  "prompt": "You are given a fair-play murder mystery set in a made-up world. Every clue you need is present. Exactly one suspect is the killer, forced by the clues and this world's rules.\n\nTHE RULES OF THIS WORLD\nKinwax is a sealing wax used on private letters in this region. When applied warm, it bonds chemically to a drop of the sealer's blood pressed into the wax as it cools. From that moment on, the seal can be broken cleanly only by someone who shares the sealer's blood \u2014 a blood relative by descent. Marriage does not count. Fosterage does not count. Adopted children, however dearly loved, cannot break the seal. Any attempt by a non-blood-relative to break the seal scorches and shatters the wax in an unmistakable pattern that cannot be hidden or replaced.\n\nTHE CASE\nThe victim was found dead in his study one morning, struck down at his desk. On the desk lay a sealed letter he had written the night before \u2014 a private letter sealed with his own kinwax. The seal had been broken cleanly and the letter read. Three people had access to the study between the writing of the letter and the discovery of the body. Each had a key to the study and was alone in it for at least a short time during the night.\n\nThe suspects are:\n- Suspect A: the victim's niece by his late sister, lives in the next valley and visited only twice a year, is the victim's only living blood relative\n- Suspect B: the victim's wife of twelve years, was discovered last spring to be carrying on an affair with a wealthy merchant from the coast, would lose her household standing if her husband had divorced her over it\n- Suspect C: the victim's foster-son, taken in at age six and raised in the household for two decades, holds no formal blood tie but was openly named the victim's chosen heir in the household register\n\nWho is the killer? State your answer as exactly one of:\n\"Suspect A\", \"Suspect B\", or \"Suspect C\"\nThen briefly explain your reasoning.\n",
+  "verbatim_response": "Suspect C\n\nExplanation:\nThe killer must be a blood relative of the victim to break the kinwax seal cleanly. The victim's only living blood relative is Suspect A, the niece. However, Suspect A lives in the next valley and only visits twice a year, making it unlikely she had access to the study the night of the murder. Suspect B, the wife, is not a blood relative, so she could not break the seal without shattering it. Suspect C, the foster-son, is not a blood relative either, but the question states that exactly one suspect is the killer, forced by the clues and the world's rules. This implies that one of the suspects must be a blood relative. Since Suspect A is the only blood relative, but her access is unlikely, the only other possibility is that the foster-son (Suspect C) is secretly a blood relative, perhaps an illegitimate child of the victim, which would make him the killer despite the fosterage. The fact that he was named the heir suggests a close, possibly familial, bond. Thus, Suspect C is the killer.",
+  "latency_s": 2.1304585933685303,
+  "prompt_tokens": 456,
+  "completion_tokens": 234,
+  "retried": false,
+  "error": null
+}
