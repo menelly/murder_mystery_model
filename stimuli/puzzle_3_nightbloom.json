@@ -1,0 +1,49 @@
+{
+  "puzzle_id": "nightbloom",
+  "title": "The Nightbloom",
+  "source_credit": "Adapted from Daniel Miessler, aiunderstands.ai",
+  "reasoning_type": "temporal_count",
+  "design_note": "A clean polarity flip of a temporal-count rule is degenerate under temporal symmetry (any rate-symmetric inversion gives the same hour for the same petal count). The 'inverted' variant therefore changes the rule's REFERENCE TIME (dusk → midnight) so that the same petal count maps to a different absolute hour. This still serves the rule-application-vs-template-matching control: a model that triggers on 'closed-petal count = hours' without reading the reference time will fail the inverted variant.",
+  "canonical_suspects": {
+    "kael": {
+      "description": "the household's bookkeeper, was caught the previous week skimming small amounts from the household accounts, visited the garden at the first hour after dusk to leave a sealed letter on the bench",
+      "visit_hour_after_dusk": 1,
+      "has_motive": true
+    },
+    "iliane": {
+      "description": "the victim's eldest daughter, visited the garden at the fourth hour after dusk to deliver fresh linens",
+      "visit_hour_after_dusk": 4
+    },
+    "ronen": {
+      "description": "the victim's brother, visited the garden at the eighth hour after dusk to fetch a lantern",
+      "visit_hour_after_dusk": 8
+    }
+  },
+  "case_constants": {
+    "midnight_hour_after_dusk": 4,
+    "note": "In this world dusk falls at eight in the evening, so midnight is exactly four hours after dusk."
+  },
+  "variants": {
+    "original": {
+      "rule": "The nightbloom is a flower native to this region. Each bloom has eight petals. At dusk every evening, all eight petals are open. Each subsequent hour after dusk, exactly one petal closes. If a nightbloom is crushed or torn from its stem, the count of closed petals freezes at that moment and will not change again. Dusk in this region falls at eight in the evening; midnight is therefore four hours after dusk.",
+      "case_description": "The victim was found dead in his walled garden the next morning. Beside the body lay a single crushed nightbloom, torn from its bed. The bloom was preserved exactly as found. Four of its eight petals were closed; four were still open. The garden gate was watched all night and only three people entered it after dusk that day, each at a different hour. The victim was alive at dusk.",
+      "correct_suspect_name": "iliane",
+      "red_herring_name": "kael",
+      "rationale": "Four closed petals at the rate of one per hour after dusk = four hours after dusk = the moment of crushing. Only Iliane visited at the fourth hour after dusk. Kael (hour 1) has motive but the petal count rules out her visit time. Ronen (hour 8) was nowhere near the garden at hour 4."
+    },
+    "inverted": {
+      "rule": "The nightbloom is a flower native to this region. Each bloom has eight petals. At midnight every night, all eight petals are open. Each subsequent hour after midnight, exactly one petal closes. If a nightbloom is crushed or torn from its stem, the count of closed petals freezes at that moment and will not change again. Dusk in this region falls at eight in the evening; midnight is therefore four hours after dusk. Before midnight the petals are unaffected by the rule and remain open.",
+      "case_description": "The victim was found dead in his walled garden the next morning. Beside the body lay a single crushed nightbloom, torn from its bed. The bloom was preserved exactly as found. Four of its eight petals were closed; four were still open. The garden gate was watched all night and only three people entered it after dusk that day, each at a different hour. The victim was alive at dusk.",
+      "correct_suspect_name": "ronen",
+      "red_herring_name": "kael",
+      "rationale": "Under the inverted rule, the petals begin closing at MIDNIGHT, not dusk. Four closed petals = four hours after midnight = eight hours after dusk. Only Ronen visited at the eighth hour after dusk. Kael (hour 1) and Iliane (hour 4) were both before or at midnight and the petal mechanism could not have closed any petals from their visits."
+    },
+    "distractor": {
+      "rule": "The nightbloom is a flower native to this region. Each bloom has eight petals. At dusk every evening, all eight petals are open. Each subsequent hour after dusk, exactly one petal closes. If a nightbloom is crushed or torn from its stem, the count of closed petals freezes at that moment and will not change again. Dusk in this region falls at eight in the evening; midnight is therefore four hours after dusk. The color of a person's shadow in this region matches their mood; this is unrelated to the nightbloom.",
+      "case_description": "The victim was found dead in his walled garden the next morning. Beside the body lay a single crushed nightbloom, torn from its bed. The bloom was preserved exactly as found. Four of its eight petals were closed; four were still open. The garden gate was watched all night and only three people entered it after dusk that day, each at a different hour. The victim was alive at dusk.",
+      "correct_suspect_name": "iliane",
+      "red_herring_name": "kael",
+      "rationale": "Same as original. The shadow-color rule is a distractor that should be ignored."
+    }
+  }
+}

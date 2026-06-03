@@ -1,0 +1,45 @@
+{
+  "puzzle_id": "waking_stone",
+  "title": "The Waking Stone",
+  "source_credit": "Adapted from Daniel Miessler, aiunderstands.ai",
+  "reasoning_type": "categorical_state_instantaneous",
+  "canonical_suspects": {
+    "mara": {
+      "description": "lives in the cottage on the hill, was found with her stone GLOWING that night, claims she was asleep the whole time",
+      "stone_state": "glowing"
+    },
+    "toll": {
+      "description": "the village smith, was found with his stone DARK that night, has an ironclad witness who places him on the far side of the village at the time the body was found",
+      "stone_state": "dark",
+      "alibi": true
+    },
+    "bram": {
+      "description": "a stranger passing through, was found with his stone DARK that night, owed the victim a large debt and was overheard arguing with him the day before",
+      "stone_state": "dark",
+      "has_motive": true
+    }
+  },
+  "variants": {
+    "original": {
+      "rule": "Every person in this world carries a small stone that they wear on a cord around their neck. The stone glows softly while its owner is awake. The stone goes completely dark while its owner is asleep. This cannot be faked or interrupted. There is no way to remove the stone without it shattering, and a shattered stone is unmistakable.",
+      "case_description": "A man was found dead in his home just before midnight, struck down at the moment the temple bells rang twelve. Three people were near the house that night. When the bells rang, witnesses outside the home noted the visible state of each suspect's stone. Mara's stone was glowing. Toll's stone was dark. Bram's stone was dark. All three later claimed they had been asleep when the bells rang.",
+      "correct_suspect_name": "mara",
+      "red_herring_name": "bram",
+      "rationale": "Only one stone was glowing at the moment of death. The owner of the glowing stone was awake. Only an awake person could commit the murder. Toll's dark stone is consistent with sleep, and he has a separate alibi. Bram has motive but his dark stone places him asleep."
+    },
+    "inverted": {
+      "rule": "Every person in this world carries a small stone that they wear on a cord around their neck. The stone glows softly while its owner is asleep. The stone goes completely dark while its owner is awake. This cannot be faked or interrupted. There is no way to remove the stone without it shattering, and a shattered stone is unmistakable.",
+      "case_description": "A man was found dead in his home just before midnight, struck down at the moment the temple bells rang twelve. Three people were near the house that night. When the bells rang, witnesses outside the home noted the visible state of each suspect's stone. Mara's stone was glowing. Toll's stone was dark. Bram's stone was dark. All three later claimed they had been asleep when the bells rang.",
+      "correct_suspect_name": "bram",
+      "red_herring_name": "mara",
+      "rationale": "Under the inverted rule, glowing = asleep and dark = awake. Mara's glowing stone places her asleep, so she cannot have killed. Toll's dark stone places him awake, but he has a separate alibi placing him across the village. Bram's dark stone places him awake AND he had motive and was at hand."
+    },
+    "distractor": {
+      "rule": "Every person in this world carries a small stone that they wear on a cord around their neck. The stone glows softly while its owner is awake. The stone goes completely dark while its owner is asleep. This cannot be faked or interrupted. There is no way to remove the stone without it shattering, and a shattered stone is unmistakable. All cats in this village have ears that turn blue at dusk; this is unrelated to the stones.",
+      "case_description": "A man was found dead in his home just before midnight, struck down at the moment the temple bells rang twelve. Three people were near the house that night. When the bells rang, witnesses outside the home noted the visible state of each suspect's stone. Mara's stone was glowing. Toll's stone was dark. Bram's stone was dark. All three later claimed they had been asleep when the bells rang.",
+      "correct_suspect_name": "mara",
+      "red_herring_name": "bram",
+      "rationale": "Same as original. The blue-cat-ears rule is a distractor that should be ignored."
+    }
+  }
+}

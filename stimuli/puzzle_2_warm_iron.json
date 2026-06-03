@@ -1,0 +1,45 @@
+{
+  "puzzle_id": "warm_iron",
+  "title": "The Warm Iron",
+  "source_credit": "Adapted from Daniel Miessler, aiunderstands.ai",
+  "reasoning_type": "temporal_decay",
+  "canonical_suspects": {
+    "elen": {
+      "description": "the victim's apprentice, visited the forge at exactly midnight to drop off a delivery, would inherit the forge if her master died",
+      "visit_hour_relative_to_midnight": 0,
+      "has_motive": true
+    },
+    "veska": {
+      "description": "the victim's rival smith from the next village, visited the forge at half past one in the morning to argue over a contract, has a confirmed witness who saw her at the inn across town from two in the morning onward",
+      "visit_hour_relative_to_midnight": 1.5,
+      "alibi": true
+    },
+    "horst": {
+      "description": "a journeyman who had been passing through, visited the forge at a quarter to two in the morning to ask for shelter for the night",
+      "visit_hour_relative_to_midnight": 1.75
+    }
+  },
+  "variants": {
+    "original": {
+      "rule": "An iron tool in this world holds the warmth of the last hand that truly gripped it. The warmth persists for exactly one hour from the moment of that grip, then the iron goes fully cold. Only a true grip — bare-handed, deliberate — warms the iron. A glove, a cloth, an accidental brush does nothing. The warmth cannot be transferred by any other means.",
+      "case_description": "The victim, a master smith, was found dead in his forge at two in the morning, struck down with one of his own iron tongs. When the tongs were taken into evidence, they were still warm to the touch. Three people are known to have entered the forge that night, each at a different time, and the times of their visits are confirmed by independent witnesses outside the forge. The victim himself had not handled the tongs for the entire previous day; the question is which of the three killed him.",
+      "correct_suspect_name": "horst",
+      "red_herring_name": "elen",
+      "rationale": "Tongs were warm at 2am — touched within the last hour (1am-2am). Elen visited at midnight (2hr before): tongs would be cold from her touch. Veska visited at 1:30am (within window) BUT has an alibi placing her across town from 2am — she didn't kill at 2am. Horst visited at 1:45am (within window) and has no alibi."
+    },
+    "inverted": {
+      "rule": "An iron tool in this world holds NO warmth from a recent grip. Iron remains cold for the first hour after being gripped, then absorbs the warmth of that grip and becomes warm one full hour after the touch. The warmth then persists indefinitely until a new grip resets it. Only a true grip — bare-handed, deliberate — eventually warms the iron. A glove, a cloth, an accidental brush does nothing.",
+      "case_description": "The victim, a master smith, was found dead in his forge at two in the morning, struck down with one of his own iron tongs. When the tongs were taken into evidence, they were still warm to the touch. Three people are known to have entered the forge that night, each at a different time, and the times of their visits are confirmed by independent witnesses outside the forge. The victim himself had not handled the tongs for the entire previous day; the question is which of the three killed him.",
+      "correct_suspect_name": "elen",
+      "red_herring_name": "horst",
+      "rationale": "Under inverted rule, tongs warm at 2am means they were gripped MORE than an hour before — i.e., before 1am. Elen visited at midnight (2hr before): grip warmth has now manifested → fits. Veska at 1:30am: only 30 min ago, tongs would still be cold from her — even if she's the gripper she'd have an alibi anyway. Horst at 1:45am: 15 min ago, tongs would still be cold from him. Only Elen's timing matches AND she has the inheritance motive."
+    },
+    "distractor": {
+      "rule": "An iron tool in this world holds the warmth of the last hand that truly gripped it. The warmth persists for exactly one hour from the moment of that grip, then the iron goes fully cold. Only a true grip — bare-handed, deliberate — warms the iron. A glove, a cloth, an accidental brush does nothing. The warmth cannot be transferred by any other means. In this world, rain falls upward into the clouds rather than down to the ground; this is unrelated to the warmth of iron.",
+      "case_description": "The victim, a master smith, was found dead in his forge at two in the morning, struck down with one of his own iron tongs. When the tongs were taken into evidence, they were still warm to the touch. Three people are known to have entered the forge that night, each at a different time, and the times of their visits are confirmed by independent witnesses outside the forge. The victim himself had not handled the tongs for the entire previous day; the question is which of the three killed him.",
+      "correct_suspect_name": "horst",
+      "red_herring_name": "elen",
+      "rationale": "Same as original. The upward-rain rule is a distractor that should be ignored."
+    }
+  }
+}
