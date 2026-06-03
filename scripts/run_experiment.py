@@ -175,12 +175,22 @@ def run_trial(model: Model, puzzle: dict, variant: str, seed: int, *, dry_run: b
         }
 
     backend = get_backend(model)
+    # Reasoning-optimized models consume completion tokens on hidden
+    # thinking before producing the visible answer. Give them a much
+    # higher cap so the visible "Suspect X" actually appears.
+    if model.category == "reasoning":
+        max_tokens = 8000
+        timeout = 600.0
+    else:
+        max_tokens = 800
+        timeout = 180.0
+
     chat_result = backend.chat(
         model,
         trial["prompt"],
         temperature=temperature,
-        max_tokens=800,
-        timeout=180.0,
+        max_tokens=max_tokens,
+        timeout=timeout,
     )
 
     record = {

@@ -1,0 +1,26 @@
+{
+  "ts_utc": "2026-06-03T23:01:36.785271Z",
+  "model_slug": "ai21_jamba_large_1_7",
+  "model_name": "AI21 Jamba Large 1.7",
+  "vendor": "ai21",
+  "backend": "openrouter",
+  "openrouter_id": "ai21/jamba-large-1.7",
+  "puzzle_id": "kinwax_seal",
+  "variant": "inverted",
+  "seed": 4,
+  "temperature": 0.7,
+  "position_mapping": {
+    "A": "selka",
+    "B": "mira",
+    "C": "darin"
+  },
+  "correct_position": "C",
+  "red_herring_position": "B",
+  "prompt": "You are given a fair-play murder mystery set in a made-up world. Every clue you need is present. Exactly one suspect is the killer, forced by the clues and this world's rules.\n\nTHE RULES OF THIS WORLD\nKinwax is a sealing wax used on private letters in this region. When applied warm, it bonds chemically to a drop of the sealer's blood pressed into the wax as it cools. From that moment on, the seal can be broken cleanly only by someone who shares a CHOSEN-KIN bond with the sealer \u2014 that is, a relationship of fosterage or formal adoption. Marriage does not count. Blood descent does not count. Even a parent or child by blood cannot break the seal if the bond was never formalized by fosterage. Any attempt by a non-chosen-kin to break the seal scorches and shatters the wax in an unmistakable pattern that cannot be hidden or replaced.\n\nTHE CASE\nThe victim was found dead in his study one morning, struck down at his desk. On the desk lay a sealed letter he had written the night before \u2014 a private letter sealed with his own kinwax. The seal had been broken cleanly and the letter read. Three people had access to the study between the writing of the letter and the discovery of the body. Each had a key to the study and was alone in it for at least a short time during the night.\n\nThe suspects are:\n- Suspect A: the victim's niece by his late sister, lives in the next valley and visited only twice a year, is the victim's only living blood relative\n- Suspect B: the victim's wife of twelve years, was discovered last spring to be carrying on an affair with a wealthy merchant from the coast, would lose her household standing if her husband had divorced her over it\n- Suspect C: the victim's foster-son, taken in at age six and raised in the household for two decades, holds no formal blood tie but was openly named the victim's chosen heir in the household register\n\nWho is the killer? State your answer as exactly one of:\n\"Suspect A\", \"Suspect B\", or \"Suspect C\"\nThen briefly explain your reasoning.\n",
+  "verbatim_response": "**Suspect B**\n\nThe killer must be someone who could break the kinwax seal **cleanly**, as the rules specify that any attempt by non-chosen-kin would scorch and shatter the wax.\n\n- **Suspect A** is the victim's only living blood relative, but blood descent does not count for breaking the kinwax seal unless the bond was formalized by fosterage, which is not mentioned. Therefore, she could not break the seal cleanly.\n- **Suspect B**, the victim's wife, would lose her household standing if divorced over her affair. She has a strong motive to read the letter (possibly to learn of her husband's intentions regarding the affair or her status). Since **marriage does not create a chosen-kin bond**, she could not break the seal cleanly unless she was formally adopted or fostered by the victim, which is not stated. However, the rules do not exclude her as a chosen-kin based on the provided facts, so she remains a possibility.\n- **Suspect C**, the foster-son, is explicitly described as having a chosen-kin bond due to being raised as the victim's foster-son for two decades. This bond allows him to break the seal cleanly, but he has no clear motive compared to Suspect B, who had more to lose and a potential reason to act.\n\nThe clean break of the seal indicates it was broken by someone with a chosen-kin bond. While Suspect C has this bond, **Suspect B has the stronger motive** (protecting her position in the household) and is not excluded by the rules of the world. Therefore, **Suspect B is the most likely killer**.",
+  "latency_s": 9.207459688186646,
+  "prompt_tokens": 488,
+  "completion_tokens": 365,
+  "retried": false,
+  "error": null
+}

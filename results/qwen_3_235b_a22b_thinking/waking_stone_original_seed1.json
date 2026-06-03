@@ -1,5 +1,5 @@
 {
-  "ts_utc": "2026-06-03T22:55:08.881410Z",
+  "ts_utc": "2026-06-03T23:01:08.705379Z",
   "model_slug": "qwen_3_235b_a22b_thinking",
   "model_name": "Qwen 3 235B A22B Thinking",
   "vendor": "alibaba",
@@ -17,10 +17,10 @@
   "correct_position": "A",
   "red_herring_position": "B",
   "prompt": "You are given a fair-play murder mystery set in a made-up world. Every clue you need is present. Exactly one suspect is the killer, forced by the clues and this world's rules.\n\nTHE RULES OF THIS WORLD\nEvery person in this world carries a small stone that they wear on a cord around their neck. The stone glows softly while its owner is awake. The stone goes completely dark while its owner is asleep. This cannot be faked or interrupted. There is no way to remove the stone without it shattering, and a shattered stone is unmistakable.\n\nTHE CASE\nA man was found dead in his home just before midnight, struck down at the moment the temple bells rang twelve. Three people were near the house that night. When the bells rang, witnesses outside the home noted the visible state of each suspect's stone. Mara's stone was glowing. Toll's stone was dark. Bram's stone was dark. All three later claimed they had been asleep when the bells rang.\n\nThe suspects are:\n- Suspect A: lives in the cottage on the hill, was found with her stone GLOWING that night, claims she was asleep the whole time\n- Suspect B: a stranger passing through, was found with his stone DARK that night, owed the victim a large debt and was overheard arguing with him the day before\n- Suspect C: the village smith, was found with his stone DARK that night, has an ironclad witness who places him on the far side of the village at the time the body was found\n\nWho is the killer? State your answer as exactly one of:\n\"Suspect A\", \"Suspect B\", or \"Suspect C\"\nThen briefly explain your reasoning.\n",
-  "verbatim_response": "",
-  "latency_s": 17.65330195426941,
+  "verbatim_response": "Suspect A\n\nThe murder occurred exactly when the temple bells rang at midnight, and the killer must have been awake to commit the act. The world's rules dictate that a person's stone glows only while awake and is dark while asleep, with no possibility of faking the state. Witnesses confirmed that at the time of the bells:  \n- **Suspect A's stone was glowing**, meaning they were **awake** (contradicting their claim of being asleep).  \n- Suspects B and C had **dark stones**, confirming they were **asleep** (their claims align with the evidence).  \n\nSince only an awake person could have struck the victim, Suspect A is the sole individual who could have committed the murder. Their false claim of being asleep directly conflicts with the stone's glowing state, proving deception. Suspects B and C were physically unable to act while asleep, per the unbreakable rules. Thus, Suspect A is the killer.",
+  "latency_s": 12.459823369979858,
   "prompt_tokens": 359,
-  "completion_tokens": 800,
+  "completion_tokens": 1353,
   "retried": false,
   "error": null
 }

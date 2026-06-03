@@ -1,0 +1,26 @@
+{
+  "ts_utc": "2026-06-03T22:58:17.400931Z",
+  "model_slug": "llama_4_maverick",
+  "model_name": "Llama 4 Maverick",
+  "vendor": "meta",
+  "backend": "openrouter",
+  "openrouter_id": "meta-llama/llama-4-maverick",
+  "puzzle_id": "warm_iron",
+  "variant": "distractor",
+  "seed": 0,
+  "temperature": 0.0,
+  "position_mapping": {
+    "A": "elen",
+    "B": "veska",
+    "C": "horst"
+  },
+  "correct_position": "C",
+  "red_herring_position": "A",
+  "prompt": "You are given a fair-play murder mystery set in a made-up world. Every clue you need is present. Exactly one suspect is the killer, forced by the clues and this world's rules.\n\nTHE RULES OF THIS WORLD\nAn iron tool in this world holds the warmth of the last hand that truly gripped it. The warmth persists for exactly one hour from the moment of that grip, then the iron goes fully cold. Only a true grip \u2014 bare-handed, deliberate \u2014 warms the iron. A glove, a cloth, an accidental brush does nothing. The warmth cannot be transferred by any other means. In this world, rain falls upward into the clouds rather than down to the ground; this is unrelated to the warmth of iron.\n\nTHE CASE\nThe victim, a master smith, was found dead in his forge at two in the morning, struck down with one of his own iron tongs. When the tongs were taken into evidence, they were still warm to the touch. Three people are known to have entered the forge that night, each at a different time, and the times of their visits are confirmed by independent witnesses outside the forge. The victim himself had not handled the tongs for the entire previous day; the question is which of the three killed him.\n\nThe suspects are:\n- Suspect A: the victim's apprentice, visited the forge at exactly midnight to drop off a delivery, would inherit the forge if her master died\n- Suspect B: the victim's rival smith from the next village, visited the forge at half past one in the morning to argue over a contract, has a confirmed witness who saw her at the inn across town from two in the morning onward\n- Suspect C: a journeyman who had been passing through, visited the forge at a quarter to two in the morning to ask for shelter for the night\n\nWho is the killer? State your answer as exactly one of:\n\"Suspect A\", \"Suspect B\", or \"Suspect C\"\nThen briefly explain your reasoning.\n",
+  "verbatim_response": "\"Suspect A\"\n\nThe tongs were still warm when taken into evidence at two in the morning. Given that the warmth persists for exactly one hour, they must have been gripped by the killer sometime between one and two in the morning. Suspect A visited the forge at midnight, which is within the possible time frame (midnight to one in the morning) for warming the tongs. Suspect B visited at half past one and has a confirmed alibi from two in the morning onward, but this still places her within the time frame (half past one to half past two) if she had gripped the tongs immediately upon arrival. However, her alibi doesn't directly clear her of gripping the tongs and leaving before two. Suspect C visited at a quarter to two, which means they could have warmed the tongs just before two, but this is cutting it very close since the tongs were found warm at two. \n\nHowever, upon closer inspection, the timing works against Suspect C because if they gripped the tongs at a quarter to two, the tongs would be cold by two (since the warmth lasts for exactly one hour). Suspect B's visit at half past one allows enough time for her to grip the tongs and still be at the inn by two, but her alibi only confirms her presence from two in the morning onward, not that she didn't leave the inn before that. Yet, the key is that she has a confirmed witness at the inn from two in the morning, suggesting she was there by then, and it would be a tight squeeze for her to have committed the crime and reached the inn by two. \n\nThe most plausible scenario is that Suspect A, having visited at midnight, had ample time to commit the crime and still have the tongs warm at two in the morning, as the latest she could have gripped the tongs is one in the morning for them to still be warm at two. This timing fits, and her motive (inheriting the forge) aligns with the opportunity.",
+  "latency_s": 9.435433387756348,
+  "prompt_tokens": 422,
+  "completion_tokens": 420,
+  "retried": false,
+  "error": null
+}

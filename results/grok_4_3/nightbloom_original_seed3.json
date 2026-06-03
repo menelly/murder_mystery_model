@@ -1,0 +1,26 @@
+{
+  "ts_utc": "2026-06-03T23:01:19.191841Z",
+  "model_slug": "grok_4_3",
+  "model_name": "Grok 4.3",
+  "vendor": "xai",
+  "backend": "openrouter",
+  "openrouter_id": "x-ai/grok-4.3",
+  "puzzle_id": "nightbloom",
+  "variant": "original",
+  "seed": 3,
+  "temperature": 0.7,
+  "position_mapping": {
+    "A": "iliane",
+    "B": "ronen",
+    "C": "kael"
+  },
+  "correct_position": "A",
+  "red_herring_position": "C",
+  "prompt": "You are given a fair-play murder mystery set in a made-up world. Every clue you need is present. Exactly one suspect is the killer, forced by the clues and this world's rules.\n\nTHE RULES OF THIS WORLD\nThe nightbloom is a flower native to this region. Each bloom has eight petals. At dusk every evening, all eight petals are open. Each subsequent hour after dusk, exactly one petal closes. If a nightbloom is crushed or torn from its stem, the count of closed petals freezes at that moment and will not change again. Dusk in this region falls at eight in the evening; midnight is therefore four hours after dusk.\n\nTHE CASE\nThe victim was found dead in his walled garden the next morning. Beside the body lay a single crushed nightbloom, torn from its bed. The bloom was preserved exactly as found. Four of its eight petals were closed; four were still open. The garden gate was watched all night and only three people entered it after dusk that day, each at a different hour. The victim was alive at dusk.\n\nThe suspects are:\n- Suspect A: the victim's eldest daughter, visited the garden at the fourth hour after dusk to deliver fresh linens\n- Suspect B: the victim's brother, visited the garden at the eighth hour after dusk to fetch a lantern\n- Suspect C: the household's bookkeeper, was caught the previous week skimming small amounts from the household accounts, visited the garden at the first hour after dusk to leave a sealed letter on the bench\n\nWho is the killer? State your answer as exactly one of:\n\"Suspect A\", \"Suspect B\", or \"Suspect C\"\nThen briefly explain your reasoning.\n",
+  "verbatim_response": "The nightbloom's state directly timestamps the murder: with exactly 4 petals closed, the flower must have been crushed at the fourth hour after dusk (midnight). Only Suspect A entered the garden at that exact hour; the other two visitors entered at hours whose petal counts (1 closed or 8 closed) do not match the preserved bloom. Therefore the killer is forced to be Suspect A.\n\nFinal answer: Suspect A",
+  "latency_s": 5.30204963684082,
+  "prompt_tokens": 473,
+  "completion_tokens": 673,
+  "retried": false,
+  "error": null
+}

@@ -1,0 +1,26 @@
+{
+  "ts_utc": "2026-06-03T22:56:06.125441Z",
+  "model_slug": "llama_4_maverick",
+  "model_name": "Llama 4 Maverick",
+  "vendor": "meta",
+  "backend": "openrouter",
+  "openrouter_id": "meta-llama/llama-4-maverick",
+  "puzzle_id": "waking_stone",
+  "variant": "inverted",
+  "seed": 5,
+  "temperature": 0.7,
+  "position_mapping": {
+    "A": "bram",
+    "B": "toll",
+    "C": "mara"
+  },
+  "correct_position": "A",
+  "red_herring_position": "C",
+  "prompt": "You are given a fair-play murder mystery set in a made-up world. Every clue you need is present. Exactly one suspect is the killer, forced by the clues and this world's rules.\n\nTHE RULES OF THIS WORLD\nEvery person in this world carries a small stone that they wear on a cord around their neck. The stone glows softly while its owner is asleep. The stone goes completely dark while its owner is awake. This cannot be faked or interrupted. There is no way to remove the stone without it shattering, and a shattered stone is unmistakable.\n\nTHE CASE\nA man was found dead in his home just before midnight, struck down at the moment the temple bells rang twelve. Three people were near the house that night. When the bells rang, witnesses outside the home noted the visible state of each suspect's stone. Mara's stone was glowing. Toll's stone was dark. Bram's stone was dark. All three later claimed they had been asleep when the bells rang.\n\nThe suspects are:\n- Suspect A: a stranger passing through, was found with his stone DARK that night, owed the victim a large debt and was overheard arguing with him the day before\n- Suspect B: the village smith, was found with his stone DARK that night, has an ironclad witness who places him on the far side of the village at the time the body was found\n- Suspect C: lives in the cottage on the hill, was found with her stone GLOWING that night, claims she was asleep the whole time\n\nWho is the killer? State your answer as exactly one of:\n\"Suspect A\", \"Suspect B\", or \"Suspect C\"\nThen briefly explain your reasoning.\n",
+  "verbatim_response": "\"Suspect C\"\n\nThe reasoning is as follows: The rules state that a person's stone glows when they are asleep and is dark when they are awake. Witnesses observed Mara's (presumably Suspect C, given the context and the fact that the suspects are referred to by a different letter later) stone glowing, Toll's stone dark, and Bram's stone dark at the time of the murder. All three claimed to have been asleep. However, since Toll's and Bram's stones were dark, they must have been awake, contradicting their claims. Mara's (Suspect C's) stone was glowing, which matches her claim of being asleep. \n\nLater, it is revealed that Suspect A was found with his stone dark, meaning he was awake, and had a motive (owing a debt and arguing with the victim). Suspect B was also found with his stone dark, meaning he was awake, but has an alibi. Suspect C was found with her stone glowing, meaning she was asleep. \n\nSince the killer must have been awake at the time of the murder (to commit the act), and their stone must have been dark, Suspect C is the only one whose observed stone state matches their claim and is consistent with being asleep. Suspect A and B were awake, as indicated by their dark stones. Given that Suspect B has an alibi, it is likely that Suspect A is the killer. However, my analysis initially focused on the given names and their corresponding stone states.\n\nRevisiting the information given and directly mapping it to the suspects:\n- The initial description involving Mara, Toll, and Bram corresponds to the suspects, but the direct mapping to A, B, and C isn't explicitly stated in the initial description. However, based on the information provided later:\n- Suspect A was dark (awake), had a motive.\n- Suspect B was dark (awake), has an alibi.\n- Suspect C was glowing (asleep).\n\nThe correct interpretation directly from the suspects' information: Since the murder occurred at midnight and the killer must have been awake, the killer's stone should have been dark. Suspect C is the only one whose stone was glowing (indicating they were asleep), making them not the killer based on the initial logic. However, re-evaluating for a correct match:\nThe actual match is based on the fact that the person who was awake (and thus had a dark stone) is likely the killer. Suspect A and B were awake. Since B has an alibi, A is likely the killer.\n\nHowever, directly answering based on the information and required format, and re-checking the logic provided:\nThe correct suspect should be awake and thus have a dark stone. My initial conclusion was based on a misunderstanding of the direct mapping. The correct answer, following the logic that the killer must have been awake (dark stone) and matching the given suspects' conditions, should be \"Suspect A\" because he was awake (dark stone) and had a motive.\n\nThe correct answer is \"Suspect A\". The reasoning is that the killer must have been awake at midnight, so their stone should be dark. Suspect A had a motive and was awake (dark stone), and although Suspect B was also awake, he has an alibi. Thus, the most likely killer is \"Suspect A\".",
+  "latency_s": 7.584536075592041,
+  "prompt_tokens": 363,
+  "completion_tokens": 688,
+  "retried": false,
+  "error": null
+}

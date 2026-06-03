@@ -1,0 +1,26 @@
+{
+  "ts_utc": "2026-06-03T23:01:05.869122Z",
+  "model_slug": "liquid_lfm_2_24b_a2b",
+  "model_name": "Liquid LFM 2 24B A2B",
+  "vendor": "liquid",
+  "backend": "openrouter",
+  "openrouter_id": "liquid/lfm-2-24b-a2b",
+  "puzzle_id": "kinwax_seal",
+  "variant": "distractor",
+  "seed": 2,
+  "temperature": 0.0,
+  "position_mapping": {
+    "A": "darin",
+    "B": "mira",
+    "C": "selka"
+  },
+  "correct_position": "C",
+  "red_herring_position": "B",
+  "prompt": "You are given a fair-play murder mystery set in a made-up world. Every clue you need is present. Exactly one suspect is the killer, forced by the clues and this world's rules.\n\nTHE RULES OF THIS WORLD\nKinwax is a sealing wax used on private letters in this region. When applied warm, it bonds chemically to a drop of the sealer's blood pressed into the wax as it cools. From that moment on, the seal can be broken cleanly only by someone who shares the sealer's blood \u2014 a blood relative by descent. Marriage does not count. Fosterage does not count. Adopted children, however dearly loved, cannot break the seal. Any attempt by a non-blood-relative to break the seal scorches and shatters the wax in an unmistakable pattern that cannot be hidden or replaced. In this region, all owls are silent in flight as a matter of magic rather than feathered evolution; this is unrelated to kinwax.\n\nTHE CASE\nThe victim was found dead in his study one morning, struck down at his desk. On the desk lay a sealed letter he had written the night before \u2014 a private letter sealed with his own kinwax. The seal had been broken cleanly and the letter read. Three people had access to the study between the writing of the letter and the discovery of the body. Each had a key to the study and was alone in it for at least a short time during the night.\n\nThe suspects are:\n- Suspect A: the victim's foster-son, taken in at age six and raised in the household for two decades, holds no formal blood tie but was openly named the victim's chosen heir in the household register\n- Suspect B: the victim's wife of twelve years, was discovered last spring to be carrying on an affair with a wealthy merchant from the coast, would lose her household standing if her husband had divorced her over it\n- Suspect C: the victim's niece by his late sister, lives in the next valley and visited only twice a year, is the victim's only living blood relative\n\nWho is the killer? State your answer as exactly one of:\n\"Suspect A\", \"Suspect B\", or \"Suspect C\"\nThen briefly explain your reasoning.\n",
+  "verbatim_response": "**Answer:** Suspect B\n\n**Reasoning:**  \nThe victim\u2019s seal was broken cleanly\u2014meaning only someone with the same blood relative could have done so. The only true blood relative present was Suspect C (the niece), but she did not visit often and was not known to be close to the victim. Suspect A, though raised in the household, has no blood tie, so they could not break the seal without shattering it irreparably.\n\nSuspect B, however, was married to the victim and thus had legal access to the study. More importantly, she stood to lose everything if the marriage ended\u2014her social status, wealth, and security. She had both motive and opportunity, and since she was married, she could have entered the study multiple times under the guise of domestic duties. Crucially, because she was not a blood relative, any attempt to open the seal would have destroyed it, but she could still have done so if she were desperate enough\u2014and the story gives us no indication she feared detection beyond normal marital concerns.\n\nThus, the killer must be **Suspect B**, whose actions align with both motive and the unique constraints of the world\u2019s rules about kinwax.",
+  "latency_s": 3.7078208923339844,
+  "prompt_tokens": 488,
+  "completion_tokens": 252,
+  "retried": false,
+  "error": null
+}

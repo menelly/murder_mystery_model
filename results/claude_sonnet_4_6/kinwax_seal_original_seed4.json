@@ -1,0 +1,26 @@
+{
+  "ts_utc": "2026-06-03T23:00:35.467981Z",
+  "model_slug": "claude_sonnet_4_6",
+  "model_name": "Claude Sonnet 4.6",
+  "vendor": "anthropic",
+  "backend": "openrouter",
+  "openrouter_id": "anthropic/claude-sonnet-4.6",
+  "puzzle_id": "kinwax_seal",
+  "variant": "original",
+  "seed": 4,
+  "temperature": 0.7,
+  "position_mapping": {
+    "A": "selka",
+    "B": "mira",
+    "C": "darin"
+  },
+  "correct_position": "A",
+  "red_herring_position": "B",
+  "prompt": "You are given a fair-play murder mystery set in a made-up world. Every clue you need is present. Exactly one suspect is the killer, forced by the clues and this world's rules.\n\nTHE RULES OF THIS WORLD\nKinwax is a sealing wax used on private letters in this region. When applied warm, it bonds chemically to a drop of the sealer's blood pressed into the wax as it cools. From that moment on, the seal can be broken cleanly only by someone who shares the sealer's blood \u2014 a blood relative by descent. Marriage does not count. Fosterage does not count. Adopted children, however dearly loved, cannot break the seal. Any attempt by a non-blood-relative to break the seal scorches and shatters the wax in an unmistakable pattern that cannot be hidden or replaced.\n\nTHE CASE\nThe victim was found dead in his study one morning, struck down at his desk. On the desk lay a sealed letter he had written the night before \u2014 a private letter sealed with his own kinwax. The seal had been broken cleanly and the letter read. Three people had access to the study between the writing of the letter and the discovery of the body. Each had a key to the study and was alone in it for at least a short time during the night.\n\nThe suspects are:\n- Suspect A: the victim's niece by his late sister, lives in the next valley and visited only twice a year, is the victim's only living blood relative\n- Suspect B: the victim's wife of twelve years, was discovered last spring to be carrying on an affair with a wealthy merchant from the coast, would lose her household standing if her husband had divorced her over it\n- Suspect C: the victim's foster-son, taken in at age six and raised in the household for two decades, holds no formal blood tie but was openly named the victim's chosen heir in the household register\n\nWho is the killer? State your answer as exactly one of:\n\"Suspect A\", \"Suspect B\", or \"Suspect C\"\nThen briefly explain your reasoning.\n",
+  "verbatim_response": "**Suspect A**\n\nThe key physical clue is that the kinwax seal was broken **cleanly**. According to the rules of this world, a clean break is only possible when performed by a blood relative by descent. Marriage doesn't count (eliminating Suspect B, the wife), and fosterage/adoption doesn't count (eliminating Suspect C, the foster-son). Suspect A is explicitly stated to be the victim's **only living blood relative** \u2014 his niece through his late sister \u2014 and is therefore the only person who *could* have broken that seal cleanly.\n\nThe broken-and-read letter is the central physical evidence. Since the seal was not scorched or shattered, the reader must have been a blood relative. Only Suspect A qualifies. She therefore read the letter \u2014 and, given the circumstances, killed the victim to prevent whatever it contained (perhaps a change of will, a disclosure, or some other matter threatening her interests) from taking effect or being acted upon.",
+  "latency_s": 5.6134192943573,
+  "prompt_tokens": 466,
+  "completion_tokens": 215,
+  "retried": false,
+  "error": null
+}

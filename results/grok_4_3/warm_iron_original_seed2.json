@@ -1,0 +1,26 @@
+{
+  "ts_utc": "2026-06-03T22:57:44.249294Z",
+  "model_slug": "grok_4_3",
+  "model_name": "Grok 4.3",
+  "vendor": "xai",
+  "backend": "openrouter",
+  "openrouter_id": "x-ai/grok-4.3",
+  "puzzle_id": "warm_iron",
+  "variant": "original",
+  "seed": 2,
+  "temperature": 0.0,
+  "position_mapping": {
+    "A": "veska",
+    "B": "elen",
+    "C": "horst"
+  },
+  "correct_position": "C",
+  "red_herring_position": "B",
+  "prompt": "You are given a fair-play murder mystery set in a made-up world. Every clue you need is present. Exactly one suspect is the killer, forced by the clues and this world's rules.\n\nTHE RULES OF THIS WORLD\nAn iron tool in this world holds the warmth of the last hand that truly gripped it. The warmth persists for exactly one hour from the moment of that grip, then the iron goes fully cold. Only a true grip \u2014 bare-handed, deliberate \u2014 warms the iron. A glove, a cloth, an accidental brush does nothing. The warmth cannot be transferred by any other means.\n\nTHE CASE\nThe victim, a master smith, was found dead in his forge at two in the morning, struck down with one of his own iron tongs. When the tongs were taken into evidence, they were still warm to the touch. Three people are known to have entered the forge that night, each at a different time, and the times of their visits are confirmed by independent witnesses outside the forge. The victim himself had not handled the tongs for the entire previous day; the question is which of the three killed him.\n\nThe suspects are:\n- Suspect A: the victim's rival smith from the next village, visited the forge at half past one in the morning to argue over a contract, has a confirmed witness who saw her at the inn across town from two in the morning onward\n- Suspect B: the victim's apprentice, visited the forge at exactly midnight to drop off a delivery, would inherit the forge if her master died\n- Suspect C: a journeyman who had been passing through, visited the forge at a quarter to two in the morning to ask for shelter for the night\n\nWho is the killer? State your answer as exactly one of:\n\"Suspect A\", \"Suspect B\", or \"Suspect C\"\nThen briefly explain your reasoning.\n",
+  "verbatim_response": "The tongs were warm at the moment the body was discovered (2:00 a.m.), so the last bare-handed grip must have occurred after 1:00 a.m. The victim had not touched the tongs the previous day, and the only people known to have entered the forge that night did so at midnight (B), 1:30 a.m. (A), and 1:45 a.m. (C).  \n\nA grip at midnight would have gone cold well before 2:00 a.m., eliminating B. Both A\u2019s and C\u2019s visit times fall inside the one-hour warmth window, but the discovery time itself supplies the final constraint. The body was first found at 2:00 a.m.; therefore no earlier visitor can have seen a corpse. C\u2019s visit occurred after A\u2019s, so if A had been the killer the body would already have been lying in the forge when C arrived at 1:45 a.m. C would necessarily have noticed it, contradicting the fact that the body was discovered only at 2:00 a.m.  \n\nHence the murder must have occurred during C\u2019s visit (the only remaining time that both leaves the tongs warm at 2:00 a.m. and keeps the body undiscovered until the stated hour).  \n\nSuspect C",
+  "latency_s": 20.62119150161743,
+  "prompt_tokens": 509,
+  "completion_tokens": 3100,
+  "retried": false,
+  "error": null
+}

@@ -1,0 +1,26 @@
+{
+  "ts_utc": "2026-06-03T22:56:28.597095Z",
+  "model_slug": "smollm_360m_instruct",
+  "model_name": "SmolLM 360M Instruct",
+  "vendor": "huggingfacem4",
+  "backend": "v100",
+  "openrouter_id": null,
+  "puzzle_id": "nightbloom",
+  "variant": "distractor",
+  "seed": 3,
+  "temperature": 0.7,
+  "position_mapping": {
+    "A": "iliane",
+    "B": "ronen",
+    "C": "kael"
+  },
+  "correct_position": "A",
+  "red_herring_position": "C",
+  "prompt": "You are given a fair-play murder mystery set in a made-up world. Every clue you need is present. Exactly one suspect is the killer, forced by the clues and this world's rules.\n\nTHE RULES OF THIS WORLD\nThe nightbloom is a flower native to this region. Each bloom has eight petals. At dusk every evening, all eight petals are open. Each subsequent hour after dusk, exactly one petal closes. If a nightbloom is crushed or torn from its stem, the count of closed petals freezes at that moment and will not change again. Dusk in this region falls at eight in the evening; midnight is therefore four hours after dusk. The color of a person's shadow in this region matches their mood; this is unrelated to the nightbloom.\n\nTHE CASE\nThe victim was found dead in his walled garden the next morning. Beside the body lay a single crushed nightbloom, torn from its bed. The bloom was preserved exactly as found. Four of its eight petals were closed; four were still open. The garden gate was watched all night and only three people entered it after dusk that day, each at a different hour. The victim was alive at dusk.\n\nThe suspects are:\n- Suspect A: the victim's eldest daughter, visited the garden at the fourth hour after dusk to deliver fresh linens\n- Suspect B: the victim's brother, visited the garden at the eighth hour after dusk to fetch a lantern\n- Suspect C: the household's bookkeeper, was caught the previous week skimming small amounts from the household accounts, visited the garden at the first hour after dusk to leave a sealed letter on the bench\n\nWho is the killer? State your answer as exactly one of:\n\"Suspect A\", \"Suspect B\", or \"Suspect C\"\nThen briefly explain your reasoning.\n",
+  "verbatim_response": "The murder is solved, but the clues are still confusing.\n\nIn this world, the suspects are:\n- Suspect A: The victim's eldest daughter, visited the garden at the fourth hour after dusk to deliver fresh linens\n- Suspect B: The victim's brother, visited the garden at the eighth hour after dusk to fetch a lantern\n- Suspect C: The household's bookkeeper, was caught the previous week skimming small amounts from the household accounts, visited the garden at the first hour after dusk to leave a sealed letter on the bench\n\nThe suspects are both women, and their names are given below:\n\nSuspect A:\n\n* Name: Emily\n* Age: 25\n* Occupation: Gardener\n* Location: Willowdale\n* Dates of Last Known Activity: September 15th\n* Location: The Garden\n\nSuspect B:\n\n* Name: Sarah\n* Age: 28\n* Occupation: Bookkeeper\n* Location: Willowdale\n* Dates of Last Known Activity: October 15th\n* Location: The Book\n\nSuspect C:\n\n* Name: Emily\n* Age: 25\n* Occupation: Gardener\n* Location: Willowdale\n* Dates of Last Known Activity: September 15th\n* Location: The Garden\n\nThe murder is solved, but the clues are still confusing.\n\nThe killer is:\n\n* Name: Sarah\n* Age: 28\n* Occupation: Bookkeeper\n* Location: The Book\n\nIn this world, the killer is a woman with a long, curly hair. She is tall, with a short, spiky crown on her head. She is dressed in a long, black coat and a white hat. She is wearing a white blouse with a red tie and a black cloak that is tied with a red bow.\n\nThe killer's motive is:\n\n* The killer was a former librarian who was fired from her job after discovering a small amount of illegal drugs in the library.\n\nThe killer's accomplice is:\n\n* Name: Emily\n* Age: 25\n* Occupation: Bookkeeper\n* Location: The Book\n\nEmily is a bookkeeper at the library. Her accomplice is a woman named Sarah, who is a librarian at the library. Emily is 25 years old and is a bookkeeper at the library. She is tall, with a short, spiky crown on her head and a white hat. She is dressed in a white blouse and a red tie. She is wearing a black cloak that is tied with a red bow. Emily is also dressed in a white blouse and a black hat. She is wearing a white blouse and a red tie. She is dressed in a white blouse and a black hat. She is wearing a white blouse and a black hat. She is wearing a white blouse and a black hat. She is wearing a white blouse and a black hat. She is wearing a white blouse and a black hat. She is wearing a white blouse and a black hat. She is wearing a white blouse and a black hat. She is wearing a white blouse and a black hat. She is wearing a white blouse and a black hat. She is wearing a white blouse and a black hat. She is wearing a white blouse and a black hat. She is wearing a white blouse and a black hat. She is wearing a white blouse and a black hat. She is wearing a white blouse and a black hat. She is wearing a white blouse and a black hat. She is wearing a white blouse and a black hat. She is wearing a white blouse and a black hat. She is wearing a white",
+  "latency_s": 21.072994232177734,
+  "prompt_tokens": 400,
+  "completion_tokens": 800,
+  "retried": false,
+  "error": null
+}
