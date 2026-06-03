@@ -1,0 +1,26 @@
+{
+  "ts_utc": "2026-06-03T23:24:16.030858Z",
+  "model_slug": "pythia_1_4b",
+  "model_name": "Pythia 1.4B",
+  "vendor": "eleutherai",
+  "backend": "v100",
+  "openrouter_id": null,
+  "puzzle_id": "warm_iron",
+  "variant": "distractor",
+  "seed": 5,
+  "temperature": 0.7,
+  "position_mapping": {
+    "A": "horst",
+    "B": "veska",
+    "C": "elen"
+  },
+  "correct_position": "A",
+  "red_herring_position": "C",
+  "prompt": "You are given a fair-play murder mystery set in a made-up world. Every clue you need is present. Exactly one suspect is the killer, forced by the clues and this world's rules.\n\nTHE RULES OF THIS WORLD\nAn iron tool in this world holds the warmth of the last hand that truly gripped it. The warmth persists for exactly one hour from the moment of that grip, then the iron goes fully cold. Only a true grip \u2014 bare-handed, deliberate \u2014 warms the iron. A glove, a cloth, an accidental brush does nothing. The warmth cannot be transferred by any other means. In this world, rain falls upward into the clouds rather than down to the ground; this is unrelated to the warmth of iron.\n\nTHE CASE\nThe victim, a master smith, was found dead in his forge at two in the morning, struck down with one of his own iron tongs. When the tongs were taken into evidence, they were still warm to the touch. Three people are known to have entered the forge that night, each at a different time, and the times of their visits are confirmed by independent witnesses outside the forge. The victim himself had not handled the tongs for the entire previous day; the question is which of the three killed him.\n\nThe suspects are:\n- Suspect A: a journeyman who had been passing through, visited the forge at a quarter to two in the morning to ask for shelter for the night\n- Suspect B: the victim's rival smith from the next village, visited the forge at half past one in the morning to argue over a contract, has a confirmed witness who saw her at the inn across town from two in the morning onward\n- Suspect C: the victim's apprentice, visited the forge at exactly midnight to drop off a delivery, would inherit the forge if her master died\n\nWho is the killer? State your answer as exactly one of:\n\"Suspect A\", \"Suspect B\", or \"Suspect C\"\nThen briefly explain your reasoning.\n",
+  "verbatim_response": "\nA:\n\nThe answer is \"Suspect B\".\nThe first thing you should note is that this is not a straight-up murder mystery.  The killer is a smith who is not at the scene of the murder.  The smiths that are at the scene of the murder are:\n\n Suspect A and Suspect B\n\nThe smith who is in the forge at the time is Suspect A.\nThe smith who is not at the scene is Suspect B.  The smith who is not at the scene is Suspect C.\n\nThe smith who is at the scene of the murder is Suspect B.\n\nThe smith who is not at the scene is Suspect C.\n\nThe smith who is not at the scene of the murder is Suspect A.\n\nSuspect A, Suspect B, and Suspect C are all equally likely to be the killer.  The killer is Suspect B.\n\nA:\n\nThe killer is Suspect C.\n\nSuspect A and Suspect B are both suspects, but they are not equally likely to be the killer.\n\nA:\n\nThe killer is Suspect B.\nThe first thing that needs to be said about this is that the killer is not at the scene of the murder.\n\n",
+  "latency_s": 3.929569959640503,
+  "prompt_tokens": 437,
+  "completion_tokens": 281,
+  "retried": false,
+  "error": null
+}
