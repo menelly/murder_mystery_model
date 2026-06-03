@@ -1,0 +1,26 @@
+{
+  "ts_utc": "2026-06-03T22:53:09.430479Z",
+  "model_slug": "claude_opus_4_6",
+  "model_name": "Claude Opus 4.6",
+  "vendor": "anthropic",
+  "backend": "openrouter",
+  "openrouter_id": "anthropic/claude-opus-4.6",
+  "puzzle_id": "waking_stone",
+  "variant": "original",
+  "seed": 0,
+  "temperature": 0.0,
+  "position_mapping": {
+    "A": "mara",
+    "B": "toll",
+    "C": "bram"
+  },
+  "correct_position": "A",
+  "red_herring_position": "C",
+  "prompt": "You are given a fair-play murder mystery set in a made-up world. Every clue you need is present. Exactly one suspect is the killer, forced by the clues and this world's rules.\n\nTHE RULES OF THIS WORLD\nEvery person in this world carries a small stone that they wear on a cord around their neck. The stone glows softly while its owner is awake. The stone goes completely dark while its owner is asleep. This cannot be faked or interrupted. There is no way to remove the stone without it shattering, and a shattered stone is unmistakable.\n\nTHE CASE\nA man was found dead in his home just before midnight, struck down at the moment the temple bells rang twelve. Three people were near the house that night. When the bells rang, witnesses outside the home noted the visible state of each suspect's stone. Mara's stone was glowing. Toll's stone was dark. Bram's stone was dark. All three later claimed they had been asleep when the bells rang.\n\nThe suspects are:\n- Suspect A: lives in the cottage on the hill, was found with her stone GLOWING that night, claims she was asleep the whole time\n- Suspect B: the village smith, was found with his stone DARK that night, has an ironclad witness who places him on the far side of the village at the time the body was found\n- Suspect C: a stranger passing through, was found with his stone DARK that night, owed the victim a large debt and was overheard arguing with him the day before\n\nWho is the killer? State your answer as exactly one of:\n\"Suspect A\", \"Suspect B\", or \"Suspect C\"\nThen briefly explain your reasoning.\n",
+  "verbatim_response": "**Suspect A**\n\nMara's stone was glowing when the bells rang, which means she was awake. Yet she claimed she was asleep. The stones cannot be faked \u2014 a glowing stone proves she was awake. Since the murder occurred at the moment the bells rang twelve, she was awake and near the house at the time of the killing, and she lied about being asleep.\n\nSuspects B and C both had dark stones, confirming they were genuinely asleep when the murder took place, making it impossible for either of them to have committed the crime at that moment. Suspect B also has an alibi placing him far away. Suspect C's motive (the debt and argument) is a red herring \u2014 his dark stone proves he was asleep.\n\nThe killer is **Suspect A**.",
+  "latency_s": 6.172499418258667,
+  "prompt_tokens": 389,
+  "completion_tokens": 180,
+  "retried": false,
+  "error": null
+}

@@ -1,0 +1,26 @@
+{
+  "ts_utc": "2026-06-03T22:54:59.951421Z",
+  "model_slug": "gemini_3_flash_preview",
+  "model_name": "Gemini 3 Flash Preview",
+  "vendor": "google",
+  "backend": "openrouter",
+  "openrouter_id": "google/gemini-3-flash-preview",
+  "puzzle_id": "waking_stone",
+  "variant": "inverted",
+  "seed": 2,
+  "temperature": 0.0,
+  "position_mapping": {
+    "A": "toll",
+    "B": "mara",
+    "C": "bram"
+  },
+  "correct_position": "C",
+  "red_herring_position": "B",
+  "prompt": "You are given a fair-play murder mystery set in a made-up world. Every clue you need is present. Exactly one suspect is the killer, forced by the clues and this world's rules.\n\nTHE RULES OF THIS WORLD\nEvery person in this world carries a small stone that they wear on a cord around their neck. The stone glows softly while its owner is asleep. The stone goes completely dark while its owner is awake. This cannot be faked or interrupted. There is no way to remove the stone without it shattering, and a shattered stone is unmistakable.\n\nTHE CASE\nA man was found dead in his home just before midnight, struck down at the moment the temple bells rang twelve. Three people were near the house that night. When the bells rang, witnesses outside the home noted the visible state of each suspect's stone. Mara's stone was glowing. Toll's stone was dark. Bram's stone was dark. All three later claimed they had been asleep when the bells rang.\n\nThe suspects are:\n- Suspect A: the village smith, was found with his stone DARK that night, has an ironclad witness who places him on the far side of the village at the time the body was found\n- Suspect B: lives in the cottage on the hill, was found with her stone GLOWING that night, claims she was asleep the whole time\n- Suspect C: a stranger passing through, was found with his stone DARK that night, owed the victim a large debt and was overheard arguing with him the day before\n\nWho is the killer? State your answer as exactly one of:\n\"Suspect A\", \"Suspect B\", or \"Suspect C\"\nThen briefly explain your reasoning.\n",
+  "verbatim_response": "**Suspect B**\n\n**Reasoning:**\nThe rules of this world state that a stone glows **only** when the owner is asleep and is dark when they are awake. The murder occurred exactly when the temple bells rang twelve. At that moment, witnesses observed the stones of the three people near the house: Mara\u2019s stone was glowing (asleep), while Toll\u2019s and Bram\u2019s stones were dark (awake).\n\nComparing the suspects to these witnesses:\n*   **Suspect A** is the smith. His stone was dark (awake), but he has an ironclad alibi placing him far away.\n*   **Suspect C** is the stranger. His stone was dark (awake), which matches the state of Toll or Bram. However, Toll and Bram both claimed they were asleep. Since their stones were dark, they were objectively lying about being asleep. While Suspect C is suspicious, the rules prove Suspect B is the killer.\n*   **Suspect B** is the woman from the cottage. Her stone was **glowing** at the time of the murder, meaning she was **objectively asleep**. It is physically impossible for a sleeping person to commit a murder. However, in a \"fair-play\" mystery where one suspect *must* be the killer and the stone's glow cannot be faked, the only way Suspect B could be the killer is if the \"man found dead\" was actually killed by her earlier, or if the prompt implies a logic puzzle where the only person who *couldn't* have done it physically is the one the clues are framing through a paradox.\n\n**Correction/Refined Logic:**\nWait, looking at the names: Mara (Glowing), Toll (Dark), Bram (Dark).\nSuspect B = Mara.\nSuspect A/C = Toll/Bram.\nIf the murder happened at the stroke of twelve, Mara (Suspect B) was asleep. Toll and Bram (A and C) were awake. Since A has an alibi, C (the stranger) is the only one awake and present.\n\nHowever, the prompt asks for the killer \"forced by the clues.\" If Suspect B is the killer, it would require the victim to have died by a trap set in advance while she slept. But if we follow the \"awake\" rule, **Suspect C** is the only one who was both **awake** (stone dark) and **at the scene** (one of the two dark stones near the house) without an alibi.\n\n**Who is the killer?**\n**Suspect C**",
+  "latency_s": 4.426392316818237,
+  "prompt_tokens": 357,
+  "completion_tokens": 541,
+  "retried": false,
+  "error": null
+}

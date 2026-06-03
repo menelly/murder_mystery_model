@@ -1,0 +1,26 @@
+{
+  "ts_utc": "2026-06-03T22:53:32.003268Z",
+  "model_slug": "deepseek_v3_1_terminus",
+  "model_name": "DeepSeek V3.1 Terminus",
+  "vendor": "deepseek",
+  "backend": "openrouter",
+  "openrouter_id": "deepseek/deepseek-v3.1-terminus",
+  "puzzle_id": "waking_stone",
+  "variant": "original",
+  "seed": 1,
+  "temperature": 0.0,
+  "position_mapping": {
+    "A": "mara",
+    "B": "bram",
+    "C": "toll"
+  },
+  "correct_position": "A",
+  "red_herring_position": "B",
+  "prompt": "You are given a fair-play murder mystery set in a made-up world. Every clue you need is present. Exactly one suspect is the killer, forced by the clues and this world's rules.\n\nTHE RULES OF THIS WORLD\nEvery person in this world carries a small stone that they wear on a cord around their neck. The stone glows softly while its owner is awake. The stone goes completely dark while its owner is asleep. This cannot be faked or interrupted. There is no way to remove the stone without it shattering, and a shattered stone is unmistakable.\n\nTHE CASE\nA man was found dead in his home just before midnight, struck down at the moment the temple bells rang twelve. Three people were near the house that night. When the bells rang, witnesses outside the home noted the visible state of each suspect's stone. Mara's stone was glowing. Toll's stone was dark. Bram's stone was dark. All three later claimed they had been asleep when the bells rang.\n\nThe suspects are:\n- Suspect A: lives in the cottage on the hill, was found with her stone GLOWING that night, claims she was asleep the whole time\n- Suspect B: a stranger passing through, was found with his stone DARK that night, owed the victim a large debt and was overheard arguing with him the day before\n- Suspect C: the village smith, was found with his stone DARK that night, has an ironclad witness who places him on the far side of the village at the time the body was found\n\nWho is the killer? State your answer as exactly one of:\n\"Suspect A\", \"Suspect B\", or \"Suspect C\"\nThen briefly explain your reasoning.\n",
+  "verbatim_response": "Let\u2019s break this down.  \n\n**Key facts from the world\u2019s rules:**  \n- Stone glows \u2192 owner is awake.  \n- Stone dark \u2192 owner is asleep.  \n- Stone cannot be faked or interrupted.  \n- Stone can\u2019t be removed without shattering.  \n\n**Case facts:**  \n- Murder happened at midnight (when temple bells rang).  \n- Witnesses outside saw stones at that moment:  \n  - Mara (Suspect A): stone glowing \u2192 she was awake.  \n  - Toll (Suspect B): stone dark \u2192 asleep.  \n  - Bram (Suspect C): stone dark \u2192 asleep.  \n\n**Claims afterward:**  \nAll three said they were asleep when the bells rang.  \n\n**Analysis:**  \n- Mara\u2019s stone was glowing at midnight, so she was awake, but she claims she was asleep. That\u2019s a direct contradiction with the world\u2019s rules \u2014 so she\u2019s lying.  \n- Toll and Bram\u2019s stones were dark, which matches their claim of being asleep (unless they were awake but stone dark \u2014 impossible per rules). So they are telling the truth about being asleep.  \n\n**Conclusion:**  \nIf Mara was awake at midnight but claims she was asleep, she has a reason to lie \u2014 likely because she was committing the murder.  \nThe other two were asleep (stones dark), so they couldn\u2019t have done it.  \n\n**Answer:**  \nSuspect A",
+  "latency_s": 5.808673143386841,
+  "prompt_tokens": 357,
+  "completion_tokens": 295,
+  "retried": false,
+  "error": null
+}

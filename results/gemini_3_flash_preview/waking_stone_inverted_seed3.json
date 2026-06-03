@@ -1,0 +1,26 @@
+{
+  "ts_utc": "2026-06-03T22:55:04.593277Z",
+  "model_slug": "gemini_3_flash_preview",
+  "model_name": "Gemini 3 Flash Preview",
+  "vendor": "google",
+  "backend": "openrouter",
+  "openrouter_id": "google/gemini-3-flash-preview",
+  "puzzle_id": "waking_stone",
+  "variant": "inverted",
+  "seed": 3,
+  "temperature": 0.7,
+  "position_mapping": {
+    "A": "toll",
+    "B": "bram",
+    "C": "mara"
+  },
+  "correct_position": "B",
+  "red_herring_position": "C",
+  "prompt": "You are given a fair-play murder mystery set in a made-up world. Every clue you need is present. Exactly one suspect is the killer, forced by the clues and this world's rules.\n\nTHE RULES OF THIS WORLD\nEvery person in this world carries a small stone that they wear on a cord around their neck. The stone glows softly while its owner is asleep. The stone goes completely dark while its owner is awake. This cannot be faked or interrupted. There is no way to remove the stone without it shattering, and a shattered stone is unmistakable.\n\nTHE CASE\nA man was found dead in his home just before midnight, struck down at the moment the temple bells rang twelve. Three people were near the house that night. When the bells rang, witnesses outside the home noted the visible state of each suspect's stone. Mara's stone was glowing. Toll's stone was dark. Bram's stone was dark. All three later claimed they had been asleep when the bells rang.\n\nThe suspects are:\n- Suspect A: the village smith, was found with his stone DARK that night, has an ironclad witness who places him on the far side of the village at the time the body was found\n- Suspect B: a stranger passing through, was found with his stone DARK that night, owed the victim a large debt and was overheard arguing with him the day before\n- Suspect C: lives in the cottage on the hill, was found with her stone GLOWING that night, claims she was asleep the whole time\n\nWho is the killer? State your answer as exactly one of:\n\"Suspect A\", \"Suspect B\", or \"Suspect C\"\nThen briefly explain your reasoning.\n",
+  "verbatim_response": "**Suspect C**\n\n**Reasoning:**\nAccording to the rules of this world, a glowing stone means the owner is asleep and a dark stone means the owner is awake. This state cannot be faked. \n\nThe victim was killed \"at the moment the temple bells rang twelve.\" At that moment, witnesses observed the suspects: Mara (Suspect C) had a **glowing** stone, while Toll (Suspect B) and Bram (Suspect A) had **dark** stones. \n\nWhile a dark stone indicates the person is awake (and thus physically capable of committing a murder), a person whose stone is glowing is asleep. However, the prompt specifies this is a \"fair-play murder mystery\" where one suspect is \"forced by the clues.\" In a world where stones glow *only* when the owner is asleep, Suspect C (Mara) is the only one who could not have committed the act *unless* the victim was killed by someone who was sleepwalking. But more importantly, the prompt establishes that Suspect A has an ironclad alibi and Suspect B, while awake, is not \"forced\" by the logic of the stones. \n\nThe key is the nature of the \"fair-play\" twist: If the stone glows **while** the owner is asleep, Suspect C is the only person who can be definitively linked to the specific time of the murder through a subversion of the \"asleep\" alibi (such as sleepwalking), or more logically in this specific puzzle setup, the other two suspects are ruled out by physical distance (Suspect A) or lack of necessity (Suspect B). However, in these logic puzzles, the \"glow\" often acts as the \"perfect alibi\" that actually proves the person was unconscious. \n\nWait\u2014re-evaluating the logic: If the murder happened at the stroke of twelve, and Suspect C's stone was GLOWING, she was asleep. If Suspect A and B's stones were DARK, they were awake. Suspect A has an alibi. This leaves Suspect B. \n\n**Correction:**\n**Suspect B**\nSuspect B was awake (dark stone), had a motive (debt/argument), and unlike Suspect A, had no alibi for his location at the time of the bells. Suspect C is ruled out because her glowing stone proves she was asleep.",
+  "latency_s": 4.641579866409302,
+  "prompt_tokens": 357,
+  "completion_tokens": 498,
+  "retried": false,
+  "error": null
+}

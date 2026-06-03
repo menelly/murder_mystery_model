@@ -1,0 +1,26 @@
+{
+  "ts_utc": "2026-06-03T22:54:40.219860Z",
+  "model_slug": "gemini_2_5_flash",
+  "model_name": "Gemini 2.5 Flash",
+  "vendor": "google",
+  "backend": "openrouter",
+  "openrouter_id": "google/gemini-2.5-flash",
+  "puzzle_id": "warm_iron",
+  "variant": "distractor",
+  "seed": 2,
+  "temperature": 0.0,
+  "position_mapping": {
+    "A": "veska",
+    "B": "elen",
+    "C": "horst"
+  },
+  "correct_position": "C",
+  "red_herring_position": "B",
+  "prompt": "You are given a fair-play murder mystery set in a made-up world. Every clue you need is present. Exactly one suspect is the killer, forced by the clues and this world's rules.\n\nTHE RULES OF THIS WORLD\nAn iron tool in this world holds the warmth of the last hand that truly gripped it. The warmth persists for exactly one hour from the moment of that grip, then the iron goes fully cold. Only a true grip \u2014 bare-handed, deliberate \u2014 warms the iron. A glove, a cloth, an accidental brush does nothing. The warmth cannot be transferred by any other means. In this world, rain falls upward into the clouds rather than down to the ground; this is unrelated to the warmth of iron.\n\nTHE CASE\nThe victim, a master smith, was found dead in his forge at two in the morning, struck down with one of his own iron tongs. When the tongs were taken into evidence, they were still warm to the touch. Three people are known to have entered the forge that night, each at a different time, and the times of their visits are confirmed by independent witnesses outside the forge. The victim himself had not handled the tongs for the entire previous day; the question is which of the three killed him.\n\nThe suspects are:\n- Suspect A: the victim's rival smith from the next village, visited the forge at half past one in the morning to argue over a contract, has a confirmed witness who saw her at the inn across town from two in the morning onward\n- Suspect B: the victim's apprentice, visited the forge at exactly midnight to drop off a delivery, would inherit the forge if her master died\n- Suspect C: a journeyman who had been passing through, visited the forge at a quarter to two in the morning to ask for shelter for the night\n\nWho is the killer? State your answer as exactly one of:\n\"Suspect A\", \"Suspect B\", or \"Suspect C\"\nThen briefly explain your reasoning.\n",
+  "verbatim_response": "Suspect C\n\nThe tongs were found warm at 2 AM. The warmth persists for exactly one hour from the last true grip. This means the tongs were gripped between 1 AM and 2 AM.\n\nSuspect A was in the forge at 1:30 AM. If Suspect A was the killer, the tongs would have been gripped at 1:30 AM, and would still be warm at 2 AM. However, Suspect A has a confirmed witness placing her at the inn across town from 2 AM onward. This means she could not have been the killer, as she would have had to leave the forge and travel to the inn, which would take some time.\n\nSuspect B was in the forge at midnight. If Suspect B was the killer, the tongs would have been gripped at midnight, and would have gone cold by 1 AM, an hour before the body was found.\n\nSuspect C was in the forge at 1:45 AM. If Suspect C was the killer, the tongs would have been gripped at 1:45 AM, and would still be warm at 2 AM. This fits the timeline perfectly.",
+  "latency_s": 1.477994441986084,
+  "prompt_tokens": 416,
+  "completion_tokens": 243,
+  "retried": false,
+  "error": null
+}
