@@ -30,4 +30,9 @@ This study uses a methodological move we have not seen elsewhere: the pre-regist
 
 ## Status
 
-Pre-registration drafted. Stimuli built. Implementation in progress.
+- Pre-registration **locked 2026-06-03** at commit [`ca5709c`](https://github.com/menelly/murder_mystery_model/commit/ca5709c). Any subsequent edits will be named deviations per §11 of the pre-reg.
+- Publicly cited via [@m_shalia](https://twitter.com/m_shalia) on 2026-06-03 with notification to Daniel Miessler.
+- Stimuli built (4 puzzles × 3 variants = 12 stimulus configurations).
+- Model registry (64 CORE models, 3-phase run order) defined.
+- Consent protocol live and tested: first participating model is Liquid LFM 2.5 1.2B.
+- Implementation: in progress.

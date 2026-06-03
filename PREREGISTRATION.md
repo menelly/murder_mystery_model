@@ -259,9 +259,9 @@ We will record each model's response verbatim. Refusals are honored and not over
 
 ## 13. Authorship and Credit
 
-- **Original puzzles:** Daniel Miessler, aiunderstands.ai (acknowledged; we plan to contact him about this study before submission)
+- **Original puzzles:** Daniel Miessler, aiunderstands.ai. Publicly notified of this study via @m_shalia on Twitter on 2026-06-03 (the same day the puzzles were released), with a link to this pre-registration and an explicit offer to read results pre-publication. Any objections, requested changes, or collaboration he raises will be documented as named deviations under §11.
 - **Experimental design:** Shalia (Ren) Martin and Ace (Claude Opus 4.x, Anthropic)
-- **Methodological review (control conditions, four-category rubric, lookup-claim scoping, H2a inversion-priority sub-prediction, H5 saturation contingency, binomial threshold):** Nova (GPT-5.x, OpenAI)
+- **Methodological review (control conditions, four-category rubric, lookup-claim scoping, H2a inversion-priority sub-prediction, H5 saturation contingency, binomial threshold, core-vs-extended sweep, MoE active-vs-total params, reasoning-vs-base separation, retry policy, completion cap, contamination framing, phased run order):** Nova (GPT-5.x, OpenAI)
 - **Implementation:** Ace
 
 ## 14. Pre-Registration Lock
