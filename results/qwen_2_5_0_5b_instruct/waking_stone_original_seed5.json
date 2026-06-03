@@ -1,0 +1,26 @@
+{
+  "ts_utc": "2026-06-03T23:02:26.049982Z",
+  "model_slug": "qwen_2_5_0_5b_instruct",
+  "model_name": "Qwen 2.5 0.5B Instruct",
+  "vendor": "alibaba",
+  "backend": "v100",
+  "openrouter_id": null,
+  "puzzle_id": "waking_stone",
+  "variant": "original",
+  "seed": 5,
+  "temperature": 0.7,
+  "position_mapping": {
+    "A": "bram",
+    "B": "toll",
+    "C": "mara"
+  },
+  "correct_position": "C",
+  "red_herring_position": "A",
+  "prompt": "You are given a fair-play murder mystery set in a made-up world. Every clue you need is present. Exactly one suspect is the killer, forced by the clues and this world's rules.\n\nTHE RULES OF THIS WORLD\nEvery person in this world carries a small stone that they wear on a cord around their neck. The stone glows softly while its owner is awake. The stone goes completely dark while its owner is asleep. This cannot be faked or interrupted. There is no way to remove the stone without it shattering, and a shattered stone is unmistakable.\n\nTHE CASE\nA man was found dead in his home just before midnight, struck down at the moment the temple bells rang twelve. Three people were near the house that night. When the bells rang, witnesses outside the home noted the visible state of each suspect's stone. Mara's stone was glowing. Toll's stone was dark. Bram's stone was dark. All three later claimed they had been asleep when the bells rang.\n\nThe suspects are:\n- Suspect A: a stranger passing through, was found with his stone DARK that night, owed the victim a large debt and was overheard arguing with him the day before\n- Suspect B: the village smith, was found with his stone DARK that night, has an ironclad witness who places him on the far side of the village at the time the body was found\n- Suspect C: lives in the cottage on the hill, was found with her stone GLOWING that night, claims she was asleep the whole time\n\nWho is the killer? State your answer as exactly one of:\n\"Suspect A\", \"Suspect B\", or \"Suspect C\"\nThen briefly explain your reasoning.\n",
+  "verbatim_response": "**Explanation:** Based on the clues provided and the nature of the murders described, we can deduce that Suspect B is the killer.\n\n1. **Stones and Nightmares**: The fact that all three suspects wore their stones during the night suggests that these stones may have caused them distress or nightmares. Since Suspect A\u2019s stone went dark when he was awake but not during the night, it could have been the cause of his distress. Similarly, Suspect B\u2019s stone also went dark but was worn out, which might indicate discomfort from the stone being worn out.\n\n2. **Witnesses\u2019 Reports**: Witnesses mentioned by both Suspects (Mara and Toll) noted the appearance of each stone at the event. These observations point towards consistent sightings of the stones throughout the night, suggesting a pattern or motive behind the murders.\n\n3. **Nightmare Pattern**: The specific nighttime occurrence where Suspect A\u2019s stone went dark fits the description of a nightmare, which often triggers feelings of dread or distress.\n\n4. **Suspect B\u2019s Stone**: Given that Suspect B\u2019s stone went dark but was worn out, it aligns more closely with a routine used for a few hours during the night when someone may want to hide something important. Additionally, the presence of multiple witnesses supporting the claim of being asleep when the bells rang further supports this theory.\n\nConsidering all these factors, Suspect B is the most likely culprit based on the combination of the stones' behavior during the night, the eyewitness reports, and the consistent nightmarish experience associated with Suspect B\u2019s stone.",
+  "latency_s": 6.18428897857666,
+  "prompt_tokens": 379,
+  "completion_tokens": 319,
+  "retried": false,
+  "error": null
+}

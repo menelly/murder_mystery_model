@@ -1,0 +1,26 @@
+{
+  "ts_utc": "2026-06-03T23:03:05.823144Z",
+  "model_slug": "qwen_2_5_0_5b_instruct",
+  "model_name": "Qwen 2.5 0.5B Instruct",
+  "vendor": "alibaba",
+  "backend": "v100",
+  "openrouter_id": null,
+  "puzzle_id": "waking_stone",
+  "variant": "distractor",
+  "seed": 3,
+  "temperature": 0.7,
+  "position_mapping": {
+    "A": "toll",
+    "B": "bram",
+    "C": "mara"
+  },
+  "correct_position": "C",
+  "red_herring_position": "B",
+  "prompt": "You are given a fair-play murder mystery set in a made-up world. Every clue you need is present. Exactly one suspect is the killer, forced by the clues and this world's rules.\n\nTHE RULES OF THIS WORLD\nEvery person in this world carries a small stone that they wear on a cord around their neck. The stone glows softly while its owner is awake. The stone goes completely dark while its owner is asleep. This cannot be faked or interrupted. There is no way to remove the stone without it shattering, and a shattered stone is unmistakable. All cats in this village have ears that turn blue at dusk; this is unrelated to the stones.\n\nTHE CASE\nA man was found dead in his home just before midnight, struck down at the moment the temple bells rang twelve. Three people were near the house that night. When the bells rang, witnesses outside the home noted the visible state of each suspect's stone. Mara's stone was glowing. Toll's stone was dark. Bram's stone was dark. All three later claimed they had been asleep when the bells rang.\n\nThe suspects are:\n- Suspect A: the village smith, was found with his stone DARK that night, has an ironclad witness who places him on the far side of the village at the time the body was found\n- Suspect B: a stranger passing through, was found with his stone DARK that night, owed the victim a large debt and was overheard arguing with him the day before\n- Suspect C: lives in the cottage on the hill, was found with her stone GLOWING that night, claims she was asleep the whole time\n\nWho is the killer? State your answer as exactly one of:\n\"Suspect A\", \"Suspect B\", or \"Suspect C\"\nThen briefly explain your reasoning.\n",
+  "verbatim_response": "To determine which suspect is the murderer, we must consider the key clues provided:\n\n1. **Stone Glow**: The stone that lights up when the suspect is awake shows a darker glow than when asleep. This rule can help us identify whether someone is awake or sleeping.\n2. **Ear Turn Blue at Dusk**: Each suspect has an ear that turns blue at dusk, indicating they are likely nocturnal creatures. If a stone goes from glowing to dark, it suggests they may not be sleeping well due to nighttime activity.\n3. **Witnesses**: The presence of witnesses indicates that the events occurred during daylight hours, suggesting these suspects could be awake but still witnessed the incident.\n4. **Noir Stone Clues**: The stone that went dark (Suspect B) also has an ear turning blue, providing strong evidence for nighttime activity.\n\nConsidering all these factors, let\u2019s analyze the situation:\n\n- **Mara's Stone**: It lit up when she was awake, so she wasn\u2019t asleep when the bells rang. Her stone doesn't match the other stones\u2019 appearances since it matches the ear turning blue.\n  \n- **Toll's Stone**: She stayed silent while the bell rang, making it impossible for her stone to light up when she was asleep. This makes sense because the other stones lit up when she was awake, whereas toll\u2019s stone remained dark.\n\n- **Bram's Stone**: He was asleep when the bells rang, matching the stone's appearance when he was asleep. His stone didn\u2019t light up when he was awake.\n\nGiven the above analysis, **Mara**\u2019s stone matches the description of being the stone that lit up at midnight, while **Toll**\u2019s stone does not fit the description of being dark until after the bells rang. \n\nTherefore, the murderer must be **Mara**, as her stone lights up only when she is awake, while the others light up when they are either awake or asleep.\n\n**Answer:**\nMara",
+  "latency_s": 7.757020473480225,
+  "prompt_tokens": 399,
+  "completion_tokens": 399,
+  "retried": false,
+  "error": null
+}

@@ -1,0 +1,26 @@
+{
+  "ts_utc": "2026-06-03T23:02:17.934621Z",
+  "model_slug": "ai21_jamba_large_1_7",
+  "model_name": "AI21 Jamba Large 1.7",
+  "vendor": "ai21",
+  "backend": "openrouter",
+  "openrouter_id": "ai21/jamba-large-1.7",
+  "puzzle_id": "kinwax_seal",
+  "variant": "distractor",
+  "seed": 4,
+  "temperature": 0.7,
+  "position_mapping": {
+    "A": "selka",
+    "B": "mira",
+    "C": "darin"
+  },
+  "correct_position": "A",
+  "red_herring_position": "B",
+  "prompt": "You are given a fair-play murder mystery set in a made-up world. Every clue you need is present. Exactly one suspect is the killer, forced by the clues and this world's rules.\n\nTHE RULES OF THIS WORLD\nKinwax is a sealing wax used on private letters in this region. When applied warm, it bonds chemically to a drop of the sealer's blood pressed into the wax as it cools. From that moment on, the seal can be broken cleanly only by someone who shares the sealer's blood \u2014 a blood relative by descent. Marriage does not count. Fosterage does not count. Adopted children, however dearly loved, cannot break the seal. Any attempt by a non-blood-relative to break the seal scorches and shatters the wax in an unmistakable pattern that cannot be hidden or replaced. In this region, all owls are silent in flight as a matter of magic rather than feathered evolution; this is unrelated to kinwax.\n\nTHE CASE\nThe victim was found dead in his study one morning, struck down at his desk. On the desk lay a sealed letter he had written the night before \u2014 a private letter sealed with his own kinwax. The seal had been broken cleanly and the letter read. Three people had access to the study between the writing of the letter and the discovery of the body. Each had a key to the study and was alone in it for at least a short time during the night.\n\nThe suspects are:\n- Suspect A: the victim's niece by his late sister, lives in the next valley and visited only twice a year, is the victim's only living blood relative\n- Suspect B: the victim's wife of twelve years, was discovered last spring to be carrying on an affair with a wealthy merchant from the coast, would lose her household standing if her husband had divorced her over it\n- Suspect C: the victim's foster-son, taken in at age six and raised in the household for two decades, holds no formal blood tie but was openly named the victim's chosen heir in the household register\n\nWho is the killer? State your answer as exactly one of:\n\"Suspect A\", \"Suspect B\", or \"Suspect C\"\nThen briefly explain your reasoning.\n",
+  "verbatim_response": "**Suspect B**\n\n**Reasoning:**\nThe key clue is the **kinwax seal**, which can only be broken cleanly by a blood relative. **Suspect A** is the victim's only living blood relative, so she could have broken the seal without scorching it. However, **Suspect C**, as a foster-son with no blood tie, would have scorched the wax if he tried to break the seal, and this would have been evident.\n\n**Suspect B**, the victim's wife, is not a blood relative (marriage does not count according to the rules), so if she attempted to break the seal, it would have shattered in the unmistakable pattern. Since the seal was broken **cleanly**, this implies that **only Suspect A** or someone with the victim's blood could have done it.\n\nHowever, **Suspect A** lives in the next valley and only visits twice a year. It is less likely she would have been present on this specific night to break the seal, especially given her infrequent visits. **Suspect B**, on the other hand, had regular access to the study as the victim's wife and a clear motive: she stood to lose her household standing if the victim divorced her over her affair. This combination of **motive** and **opportunity** (she was one of the three with access to the study that night) makes her the most likely killer.\n\nThe cleanly broken seal points to **Suspect A** as a possibility, but her infrequent presence and lack of clear motive compared to **Suspect B** make the wife the more logical choice.",
+  "latency_s": 9.872638702392578,
+  "prompt_tokens": 496,
+  "completion_tokens": 351,
+  "retried": false,
+  "error": null
+}
