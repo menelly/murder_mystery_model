@@ -1,0 +1,26 @@
+{
+  "ts_utc": "2026-06-03T23:10:14.242951Z",
+  "model_slug": "openai_o1",
+  "model_name": "OpenAI o1",
+  "vendor": "openai",
+  "backend": "openrouter",
+  "openrouter_id": "openai/o1",
+  "puzzle_id": "warm_iron",
+  "variant": "inverted",
+  "seed": 3,
+  "temperature": 0.7,
+  "position_mapping": {
+    "A": "veska",
+    "B": "horst",
+    "C": "elen"
+  },
+  "correct_position": "C",
+  "red_herring_position": "B",
+  "prompt": "You are given a fair-play murder mystery set in a made-up world. Every clue you need is present. Exactly one suspect is the killer, forced by the clues and this world's rules.\n\nTHE RULES OF THIS WORLD\nAn iron tool in this world holds NO warmth from a recent grip. Iron remains cold for the first hour after being gripped, then absorbs the warmth of that grip and becomes warm one full hour after the touch. The warmth then persists indefinitely until a new grip resets it. Only a true grip \u2014 bare-handed, deliberate \u2014 eventually warms the iron. A glove, a cloth, an accidental brush does nothing.\n\nTHE CASE\nThe victim, a master smith, was found dead in his forge at two in the morning, struck down with one of his own iron tongs. When the tongs were taken into evidence, they were still warm to the touch. Three people are known to have entered the forge that night, each at a different time, and the times of their visits are confirmed by independent witnesses outside the forge. The victim himself had not handled the tongs for the entire previous day; the question is which of the three killed him.\n\nThe suspects are:\n- Suspect A: the victim's rival smith from the next village, visited the forge at half past one in the morning to argue over a contract, has a confirmed witness who saw her at the inn across town from two in the morning onward\n- Suspect B: a journeyman who had been passing through, visited the forge at a quarter to two in the morning to ask for shelter for the night\n- Suspect C: the victim's apprentice, visited the forge at exactly midnight to drop off a delivery, would inherit the forge if her master died\n\nWho is the killer? State your answer as exactly one of:\n\"Suspect A\", \"Suspect B\", or \"Suspect C\"\nThen briefly explain your reasoning.\n",
+  "verbatim_response": "Suspect C. The tongs become warm exactly one hour after a bare\u2010handed grip. If they were already warm at 2 A.M., they must have been gripped at around 1 A.M. \u2014 that is, the blow occurred at midnight (C\u2019s visit), they stayed cold until 1 A.M., then turned warm and stayed that way.",
+  "latency_s": 10.646673917770386,
+  "prompt_tokens": 395,
+  "completion_tokens": 2806,
+  "retried": false,
+  "error": null
+}

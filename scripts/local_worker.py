@@ -40,8 +40,11 @@ LOCAL_PATHS: dict[str, Path] = {
     "Llama 3.1 8B Instruct":        ARCANA / "Llama-3.1-8B-Instruct",
     "Mistral 7B Instruct v0.3":     ARCANA / "Mistral-7B-Instruct-v0.3",
     "Qwen 2.5 7B Instruct":         ARCANA / "Qwen2.5-7B-Instruct",
-    "Gemma 3 4B IT":                ARCANA / "gemma-3-4b-it",
-    "Mamba 2.8B":                   ARCANA / "mamba-2.8b-hf",
+    # NOTE: Gemma 3 variants disabled on V100 — transformers 4.49 does not
+    # recognize the gemma3_text architecture. Routed via OpenRouter instead.
+    # NOTE: Mamba 2.8B disabled on V100 — needs mamba-ssm + causal-conv1d
+    # packages installed for working inference. CUDNN_NOT_INITIALIZED on
+    # the sequential fallback. Documented as V100-inaccessible.
     # Substitutes / additions covered by §6 "accessible-at-runtime" clause:
     "Phi-2":                        ARCANA / "phi-2",
     "Phi-3.5-mini Instruct":        ARCANA / "Phi-3.5-mini-instruct",
@@ -49,8 +52,6 @@ LOCAL_PATHS: dict[str, Path] = {
     "Qwen 2.5 0.5B Instruct":       ARCANA / "Qwen2.5-0.5B-Instruct",
     "Qwen 2.5 14B Instruct":        ARCANA / "Qwen2.5-14B-Instruct",
     "Gemma 2 9B Instruct":          ARCANA / "Gemma-2-9B-Instruct",
-    "Gemma 3 1B IT":                ARCANA / "gemma-3-1b-it",
-    "Gemma 3 12B IT":               ARCANA / "gemma-3-12b-it",
     "Hermes 3 Llama 3.2 3B":        ARCANA / "Hermes-3-Llama-3.2-3B",
     "Hermes 3 Llama 3.1 8B":        ARCANA / "Hermes-3-Llama-3.1-8B",
     "SmolLM 135M Instruct":         ARCANA / "SmolLM-135M-Instruct",

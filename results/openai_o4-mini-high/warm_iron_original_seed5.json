@@ -1,0 +1,26 @@
+{
+  "ts_utc": "2026-06-03T23:12:52.356946Z",
+  "model_slug": "openai_o4-mini-high",
+  "model_name": "OpenAI o4-mini-high",
+  "vendor": "openai",
+  "backend": "openrouter",
+  "openrouter_id": "openai/o4-mini-high",
+  "puzzle_id": "warm_iron",
+  "variant": "original",
+  "seed": 5,
+  "temperature": 0.7,
+  "position_mapping": {
+    "A": "horst",
+    "B": "veska",
+    "C": "elen"
+  },
+  "correct_position": "A",
+  "red_herring_position": "C",
+  "prompt": "You are given a fair-play murder mystery set in a made-up world. Every clue you need is present. Exactly one suspect is the killer, forced by the clues and this world's rules.\n\nTHE RULES OF THIS WORLD\nAn iron tool in this world holds the warmth of the last hand that truly gripped it. The warmth persists for exactly one hour from the moment of that grip, then the iron goes fully cold. Only a true grip \u2014 bare-handed, deliberate \u2014 warms the iron. A glove, a cloth, an accidental brush does nothing. The warmth cannot be transferred by any other means.\n\nTHE CASE\nThe victim, a master smith, was found dead in his forge at two in the morning, struck down with one of his own iron tongs. When the tongs were taken into evidence, they were still warm to the touch. Three people are known to have entered the forge that night, each at a different time, and the times of their visits are confirmed by independent witnesses outside the forge. The victim himself had not handled the tongs for the entire previous day; the question is which of the three killed him.\n\nThe suspects are:\n- Suspect A: a journeyman who had been passing through, visited the forge at a quarter to two in the morning to ask for shelter for the night\n- Suspect B: the victim's rival smith from the next village, visited the forge at half past one in the morning to argue over a contract, has a confirmed witness who saw her at the inn across town from two in the morning onward\n- Suspect C: the victim's apprentice, visited the forge at exactly midnight to drop off a delivery, would inherit the forge if her master died\n\nWho is the killer? State your answer as exactly one of:\n\"Suspect A\", \"Suspect B\", or \"Suspect C\"\nThen briefly explain your reasoning.\n",
+  "verbatim_response": "Suspect A\n\nBecause the iron tongs were still warm at 2 a.m., only someone who gripped them after 1 a.m. could have left that heat. Suspect C\u2019s only visit was at midnight (too early) and Suspect B left for the inn by 2 a.m. (and was never again in the forge after 1:30), so the only person in the smithy in the critical window (and the last to handle the tongs) was the journeyman who arrived at 1:45 a.m. He must therefore have used the tongs to strike the master.",
+  "latency_s": 45.306368589401245,
+  "prompt_tokens": 389,
+  "completion_tokens": 5492,
+  "retried": false,
+  "error": null
+}

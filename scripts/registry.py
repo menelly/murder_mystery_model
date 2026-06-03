@@ -64,9 +64,9 @@ CORE_MODELS: list[Model] = [
     Model("Pythia 1.4B", "eleutherai", 1.4, 1.4, "chat", "transformer", "v100", 1, 1,
           hf_id="EleutherAI/pythia-1.4b",
           notes="academic baseline; locally cached"),
-    Model("Gemma 3 1B IT", "google", 1.0, 1.0, "chat", "transformer", "v100", 1, 1,
-          hf_id="google/gemma-3-1b-it",
-          notes="Gemma scale-axis anchor; locally cached"),
+    Model("Gemma 3 1B IT", "google", 1.0, 1.0, "chat", "transformer", "openrouter", 1, 1,
+          openrouter_id="google/gemma-3-1b-it",
+          notes="Gemma scale-axis anchor; transformers 4.49 lacks gemma3_text — via OR"),
     Model("SmolLM 1.7B Instruct", "huggingfacem4", 1.7, 1.7, "chat", "transformer", "v100", 1, 1,
           hf_id="HuggingFaceTB/SmolLM-1.7B-Instruct",
           notes="locally cached"),
@@ -87,9 +87,9 @@ CORE_MODELS: list[Model] = [
     Model("Phi-3.5-mini Instruct", "microsoft", 3.8, 3.8, "chat", "transformer", "v100", 1, 1,
           hf_id="microsoft/Phi-3.5-mini-instruct",
           notes="Phi-gen-2; locally cached (substitute for Phi-4-mini per §6)"),
-    Model("Gemma 3 4B IT", "google", 4.0, 4.0, "chat", "transformer", "v100", 1, 1,
-          hf_id="google/gemma-3-4b-it",
-          notes="locally cached"),
+    Model("Gemma 3 4B IT", "google", 4.0, 4.0, "chat", "transformer", "openrouter", 1, 1,
+          openrouter_id="google/gemma-3-4b-it",
+          notes="transformers 4.49 lacks gemma3_text — via OpenRouter"),
     # ---- 7-9B: transition band ----
     Model("Mistral 7B Instruct v0.3", "mistral", 7.3, 7.3, "chat", "transformer", "v100", 1, 2,
           hf_id="mistralai/Mistral-7B-Instruct-v0.3",
@@ -129,9 +129,9 @@ CORE_MODELS: list[Model] = [
     # ============================================================
     # PHASE 2 — TRANSITION DENSITY (mixed V100 + OpenRouter)
     # ============================================================
-    Model("Gemma 3 12B IT", "google", 12.0, 12.0, "chat", "transformer", "v100", 2, 2,
-          hf_id="google/gemma-3-12b-it",
-          notes="locally cached"),
+    Model("Gemma 3 12B IT", "google", 12.0, 12.0, "chat", "transformer", "openrouter", 2, 2,
+          openrouter_id="google/gemma-3-12b-it",
+          notes="transformers 4.49 lacks gemma3_text — via OpenRouter"),
     Model("Qwen 2.5 14B Instruct", "alibaba", 14.0, 14.0, "chat", "transformer", "v100", 2, 2,
           hf_id="Qwen/Qwen2.5-14B-Instruct",
           notes="locally cached"),
