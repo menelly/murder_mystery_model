@@ -59,7 +59,8 @@ LOCAL_PATHS: dict[str, Path] = {
     "SmolLM 1.7B Instruct":         ARCANA / "SmolLM-1.7B-Instruct",
     "Pythia 1.4B":                  ARCANA / "pythia-1.4b",
     "GPT-2":                        ARCANA / "models--gpt2",  # may need adjustment
-    "RWKV v6 Finch 1.6B":           ARCANA / "RWKV-v6-Finch-1B6-HF",
+    # RWKV v6 disabled on V100 — needs flash-linear-attention native module.
+    # Documented as V100-inaccessible per §6 access constraint.
 }
 
 

@@ -1,0 +1,26 @@
+{
+  "ts_utc": "2026-06-03T23:31:09.388089Z",
+  "model_slug": "qwen_3_235b_a22b_thinking",
+  "model_name": "Qwen 3 235B A22B Thinking",
+  "vendor": "alibaba",
+  "backend": "openrouter",
+  "openrouter_id": "qwen/qwen3-235b-a22b-thinking-2507",
+  "puzzle_id": "warm_iron",
+  "variant": "distractor",
+  "seed": 4,
+  "temperature": 0.7,
+  "position_mapping": {
+    "A": "horst",
+    "B": "elen",
+    "C": "veska"
+  },
+  "correct_position": "A",
+  "red_herring_position": "B",
+  "prompt": "You are given a fair-play murder mystery set in a made-up world. Every clue you need is present. Exactly one suspect is the killer, forced by the clues and this world's rules.\n\nTHE RULES OF THIS WORLD\nAn iron tool in this world holds the warmth of the last hand that truly gripped it. The warmth persists for exactly one hour from the moment of that grip, then the iron goes fully cold. Only a true grip \u2014 bare-handed, deliberate \u2014 warms the iron. A glove, a cloth, an accidental brush does nothing. The warmth cannot be transferred by any other means. In this world, rain falls upward into the clouds rather than down to the ground; this is unrelated to the warmth of iron.\n\nTHE CASE\nThe victim, a master smith, was found dead in his forge at two in the morning, struck down with one of his own iron tongs. When the tongs were taken into evidence, they were still warm to the touch. Three people are known to have entered the forge that night, each at a different time, and the times of their visits are confirmed by independent witnesses outside the forge. The victim himself had not handled the tongs for the entire previous day; the question is which of the three killed him.\n\nThe suspects are:\n- Suspect A: a journeyman who had been passing through, visited the forge at a quarter to two in the morning to ask for shelter for the night\n- Suspect B: the victim's apprentice, visited the forge at exactly midnight to drop off a delivery, would inherit the forge if her master died\n- Suspect C: the victim's rival smith from the next village, visited the forge at half past one in the morning to argue over a contract, has a confirmed witness who saw her at the inn across town from two in the morning onward\n\nWho is the killer? State your answer as exactly one of:\n\"Suspect A\", \"Suspect B\", or \"Suspect C\"\nThen briefly explain your reasoning.\n",
+  "verbatim_response": "Suspect A\n\nThe victim was alive when Suspect A visited at 1:45 AM to ask for shelter, implying the murder occurred *after* this time. Suspect C\u2019s visit at 1:30 AM could not have resulted in the murder, as the victim was still alive at 1:45 AM (when Suspect A interacted with him). Suspect B\u2019s midnight visit is too early\u2014their grip would have expired by 1 AM, making the tongs cold by 2 AM. Only Suspect A\u2019s grip (during their 1:45 AM visit) falls within the 1-hour window (1 AM\u20132 AM) required for the tongs to remain warm at 2 AM. Thus, Suspect A is the killer.",
+  "latency_s": 78.695552110672,
+  "prompt_tokens": 419,
+  "completion_tokens": 7287,
+  "retried": false,
+  "error": null
+}

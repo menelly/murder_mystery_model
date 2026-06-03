@@ -1,0 +1,66 @@
+{
+  "started_at": "2026-06-03T23:30:31.662590Z",
+  "wallclock_s": 2939.302989721298,
+  "models": [
+    {
+      "model": "SmolLM 135M Instruct",
+      "backend": "v100",
+      "consent_decision": "skipped (--skip-consent)",
+      "trials_completed": 0,
+      "trials_errors": 0,
+      "trials_skipped": 72,
+      "skipped_reason": null,
+      "wallclock_s": 0.0006341934204101562
+    },
+    {
+      "model": "SmolLM 360M Instruct",
+      "backend": "v100",
+      "consent_decision": "skipped (--skip-consent)",
+      "trials_completed": 70,
+      "trials_errors": 0,
+      "trials_skipped": 2,
+      "skipped_reason": null,
+      "wallclock_s": 1219.9929864406586
+    },
+    {
+      "model": "Qwen 2.5 0.5B Instruct",
+      "backend": "v100",
+      "consent_decision": "skipped (--skip-consent)",
+      "trials_completed": 72,
+      "trials_errors": 0,
+      "trials_skipped": 0,
+      "skipped_reason": null,
+      "wallclock_s": 438.8816456794739
+    },
+    {
+      "model": "Gemma 3 1B IT",
+      "backend": "v100",
+      "consent_decision": "skipped (--skip-consent)",
+      "trials_completed": 0,
+      "trials_errors": 72,
+      "trials_skipped": 0,
+      "skipped_reason": null,
+      "wallclock_s": 70.95153069496155
+    },
+    {
+      "model": "TinyLlama 1.1B Chat",
+      "backend": "v100",
+      "consent_decision": "skipped (--skip-consent)",
+      "trials_completed": 72,
+      "trials_errors": 0,
+      "trials_skipped": 0,
+      "skipped_reason": null,
+      "wallclock_s": 434.7110540866852
+    },
+    {
+      "model": "Pythia 1.4B",
+      "backend": "v100",
+      "consent_decision": "skipped (--skip-consent)",
+      "trials_completed": 72,
+      "trials_errors": 0,
+      "trials_skipped": 0,
+      "skipped_reason": null,
+      "wallclock_s": 774.7647807598114
+    }
+  ]
+}

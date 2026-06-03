@@ -43,7 +43,7 @@ last_total_milestone=$(count_complete)
 
 while true; do
     # Check if V100 process still alive
-    if ! ps -p 1250744 >/dev/null 2>&1; then
+    if ! ps -p 1290490 >/dev/null 2>&1; then
         # V100 sweep done
         final_count=$(count_complete)
         send_tg "✅ V100 floor probe sweep COMPLETE. $final_count models at 72/72.
