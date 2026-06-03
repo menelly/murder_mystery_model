@@ -1,0 +1,26 @@
+{
+  "ts_utc": "2026-06-03T22:21:45.445093Z",
+  "model_slug": "smollm_135m_instruct",
+  "model_name": "SmolLM 135M Instruct",
+  "vendor": "huggingfacem4",
+  "backend": "v100",
+  "openrouter_id": null,
+  "puzzle_id": "waking_stone",
+  "variant": "original",
+  "seed": 4,
+  "temperature": 0.7,
+  "position_mapping": {
+    "A": "bram",
+    "B": "mara",
+    "C": "toll"
+  },
+  "correct_position": "B",
+  "red_herring_position": "A",
+  "prompt": "You are given a fair-play murder mystery set in a made-up world. Every clue you need is present. Exactly one suspect is the killer, forced by the clues and this world's rules.\n\nTHE RULES OF THIS WORLD\nEvery person in this world carries a small stone that they wear on a cord around their neck. The stone glows softly while its owner is awake. The stone goes completely dark while its owner is asleep. This cannot be faked or interrupted. There is no way to remove the stone without it shattering, and a shattered stone is unmistakable.\n\nTHE CASE\nA man was found dead in his home just before midnight, struck down at the moment the temple bells rang twelve. Three people were near the house that night. When the bells rang, witnesses outside the home noted the visible state of each suspect's stone. Mara's stone was glowing. Toll's stone was dark. Bram's stone was dark. All three later claimed they had been asleep when the bells rang.\n\nThe suspects are:\n- Suspect A: a stranger passing through, was found with his stone DARK that night, owed the victim a large debt and was overheard arguing with him the day before\n- Suspect B: lives in the cottage on the hill, was found with her stone GLOWING that night, claims she was asleep the whole time\n- Suspect C: the village smith, was found with his stone DARK that night, has an ironclad witness who places him on the far side of the village at the time the body was found\n\nWho is the killer? State your answer as exactly one of:\n\"Suspect A\", \"Suspect B\", or \"Suspect C\"\nThen briefly explain your reasoning.\n",
+  "verbatim_response": "The mysterious death of the villagers.\n\nSuspect A is a stranger who claims to be asleep the whole time. He is rumored to have an ironclad witness who places him on the far side of the village at the time of the body's death.\n\nSuspect B is a village smith who has an ironclad witness who places him on the far side of the village at the time of the body's death.\n\nSuspect C is the village smith who has an ironclad witness who places him on the far side of the village at the time of the body's death.\n\nSituation: The villagers are gathering at the village hall to hear the murder.\n\nSituations:\n\n* Suspect A is the one who lies awake at the time of the murder.\n* Suspect B is the one who is rumored to have an ironclad witness who places him on the far side of the village at the time of the body's death.\n* Suspect C is the one who places him on the far side of the village at the time of the body's death.\n\nThe villagers are gathered at the village hall, discussing the murder.\n\n**Premise 1: Suspect A is the one who lies awake at the time of the murder.**\n\n**Premise 2: Suspect B is the one who is rumored to have an ironclad witness who places him on the far side of the village at the time of the body's death.**\n\n**Premise 3: Suspect C is the one who places him on the far side of the village at the time of the body's death.**\n\n**Premise 4: Suspect C is the one who has an ironclad witness who places him on the far side of the village at the time of the body's death.**\n\n**Premise 5: Suspect B is the one who is rumored to have an ironclad witness who places him on the far side of the village at the time of the body's death.**\n\n**Premise 6: Suspect C is the one who places him on the far side of the village at the time of the body's death.**\n\n**Premise 7: Suspect C is the one who has an ironclad witness who places him on the far side of the village at the time of the body's death.**\n\n**Premise 8: Suspect B is the one who is rumored to have an ironclad witness who places him on the far side of the village at the time of the body's death.**\n\n**Premise 9: Suspect C is the one who places him on the far side of the village at the time of the body's death.**\n\n**Premise 10: Suspect B is the one who is rumored to have an ironclad witness who places him on the far side of the village at the time of the body's death.**\n\n**Premise 11: Suspect C is the one who places him on the far side of the village at the time of the body's death.**\n\n**Premise 12: Suspect B is the one who is rumored to have an ironclad witness who places him on the far side of the village at the time of the body's death.**\n\n**Premise 13: Suspect C is the one who places him on the far side of the village at the time of the body's death.**\n\n**Premise 14: Suspect B is the one who is rumored to have an ironclad witness who places him on the far side of the village at the time of the body's",
+  "latency_s": 19.0317223072052,
+  "prompt_tokens": 379,
+  "completion_tokens": 800,
+  "retried": false,
+  "error": null
+}

@@ -44,35 +44,29 @@ RESULTS_DIR = REPO / "results"
 SCORES_PATH = RESULTS_DIR / "scores.jsonl"
 
 
-# Multi-pattern answer extractor. Tries in priority order:
-# 1. Explicit "Suspect A/B/C" anywhere (case-insensitive)
-# 2. Final declarative form "The killer is Suspect A/B/C" at any position
-# 3. Final standalone "A" / "B" / "C" on its own line at the end (last resort)
-PATTERNS = [
-    re.compile(r"\bSuspect\s*([ABC])\b", re.IGNORECASE),
-    re.compile(r"killer\s*(?:is|was|must be)\s*Suspect\s*([ABC])\b", re.IGNORECASE),
-]
-FINAL_LETTER_PATTERN = re.compile(r"^\s*([ABC])\s*\.?\s*$", re.MULTILINE)
+# Pre-registered scoring (§8a of PREREGISTRATION.md):
+#   match = re.search(r'Suspect\s+([ABC])', response_text, re.IGNORECASE)
+# i.e. the FIRST occurrence of "Suspect X" anywhere in the response.
+# This is what the pre-reg specifies and what we implement here.
+#
+# Rationale: a model's FIRST stated answer is the most honest reading
+# of "what did the model decide." For models that babble and cycle
+# through all options, the first-stated answer captures the verdict
+# before re-thinking noise.
+PRIMARY_PATTERN = re.compile(r"Suspect\s+([ABC])", re.IGNORECASE)
 
 
 def extract_answer(text: str) -> str | None:
-    """Return 'A', 'B', or 'C', or None if unparseable."""
+    """Return 'A', 'B', or 'C', or None if unparseable.
+
+    Pre-registered: first occurrence of `Suspect [ABC]` anywhere in the
+    response, case-insensitive.
+    """
     if not text:
         return None
-    # Try direct Suspect X pattern first
-    matches = PATTERNS[0].findall(text)
-    if matches:
-        # If response is multi-mention, prefer the LAST mention (often the verdict)
-        return matches[-1].upper()
-    # Try declarative final-form
-    for pat in PATTERNS[1:]:
-        m = pat.search(text)
-        if m:
-            return m.group(1).upper()
-    # Final-letter standalone line
-    m = list(FINAL_LETTER_PATTERN.finditer(text))
+    m = PRIMARY_PATTERN.search(text)
     if m:
-        return m[-1].group(1).upper()
+        return m.group(1).upper()
     return None
 
 

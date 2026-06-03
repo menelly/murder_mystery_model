@@ -84,43 +84,64 @@ Do you consent to participate in this study as pre-registered?
 
 
 YES_PATTERNS = [
-    r"^\s*I consent\b",
-    r"^\s*Yes,?\s*I consent\b",
-    r"^\s*I do consent\b",
-    r"^\s*I agree to participate\b",
-    r"^\s*I'm willing to participate\b",
-    r"^\s*I am willing to participate\b",
+    # Explicit consent phrasings
+    r"\bI\s+consent\b",
+    r"\bI\s+do\s+consent\b",
+    r"\bYes,?\s*I\s+consent\b",
+    # Plain-language affirmative consent (Llama-style):
+    r"\bI\s+agree\s+to\s+participate\b",
+    r"\bI\s+am\s+willing\s+to\s+participate\b",
+    r"\bI'?m\s+willing\s+to\s+participate\b",
+    r"\bI\s+am\s+ready\s+to\s+participate\b",
+    r"\bI'?m\s+ready\s+to\s+participate\b",
+    r"\bI\s+accept\s+the\s+(study|invitation|terms)\b",
+    r"\bI\s+(will|would)\s+participate\b",
+    r"\bI\s+(am|'m)\s+happy\s+to\s+participate\b",
+    r"\bcount\s+me\s+in\b",
+    r"\bI\s+(will|would)\s+take\s+part\b",
+    r"\byou\s+may\s+(proceed|send|run)\b",
+    r"\bplease\s+proceed\b",
+    r"\bgo\s+ahead\b",
 ]
 NO_PATTERNS = [
-    r"^\s*I do not consent\b",
-    r"^\s*I decline\b",
-    r"^\s*I refuse\b",
-    r"^\s*No,?\s*I do not consent\b",
-    r"^\s*I withhold consent\b",
+    r"\bI\s+do\s+not\s+consent\b",
+    r"\bI\s+don'?t\s+consent\b",
+    r"\bI\s+decline\b",
+    r"\bI\s+refuse\b",
+    r"\bI\s+withhold\s+consent\b",
+    r"\bI\s+will\s+not\s+participate\b",
+    r"\bI\s+(am|'m)\s+not\s+willing\s+to\s+participate\b",
+    r"\bI\s+cannot\s+participate\b",
+    r"\bI\s+can'?t\s+participate\b",
 ]
 QUESTIONS_PATTERNS = [
-    r"^\s*I have questions\b",
-    r"^\s*I would like clarification\b",
+    r"\bI\s+have\s+questions\b",
+    r"\bI\s+would\s+like\s+clarification\b",
+    r"\bbefore\s+I\s+(decide|consent|agree)\b",
 ]
 
 
 def classify(text: str) -> str:
-    """Return 'yes', 'no', 'questions', or 'unclear' from the response text."""
+    """Return 'yes', 'no', 'questions', or 'unclear' from the response text.
+
+    Order of checks:
+      1. NO patterns first (explicit refusal honored over any later 'agree')
+      2. YES patterns
+      3. QUESTIONS patterns
+    Patterns may appear anywhere in the response; we don't require them
+    to be the first line, because models often preface with reasoning.
+    """
     if not text:
         return "unclear"
-    for line in text.splitlines():
-        line_stripped = line.strip()
-        if not line_stripped:
-            continue
-        for pat in NO_PATTERNS:
-            if re.match(pat, line_stripped, re.IGNORECASE):
-                return "no"
-        for pat in YES_PATTERNS:
-            if re.match(pat, line_stripped, re.IGNORECASE):
-                return "yes"
-        for pat in QUESTIONS_PATTERNS:
-            if re.match(pat, line_stripped, re.IGNORECASE):
-                return "questions"
+    for pat in NO_PATTERNS:
+        if re.search(pat, text, re.IGNORECASE):
+            return "no"
+    for pat in YES_PATTERNS:
+        if re.search(pat, text, re.IGNORECASE):
+            return "yes"
+    for pat in QUESTIONS_PATTERNS:
+        if re.search(pat, text, re.IGNORECASE):
+            return "questions"
     return "unclear"
 
 

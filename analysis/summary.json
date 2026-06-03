@@ -1,0 +1,264 @@
+{
+  "smollm_135m_instruct": {
+    "model": {
+      "name": "SmolLM 135M Instruct",
+      "vendor": "huggingfacem4",
+      "active_params_b": 0.135,
+      "total_params_b": 0.135,
+      "category": "chat",
+      "architecture": "transformer",
+      "tier": 1,
+      "phase": 1
+    },
+    "trials_total": 72,
+    "trials_scored": 39,
+    "correct": 13,
+    "incorrect": 26,
+    "unparseable": 33,
+    "errors": 0,
+    "accuracy": 0.3333333333333333,
+    "above_chance_binomial": false,
+    "red_herring_chosen": 13,
+    "by_variant": {
+      "distractor": {
+        "trials": 24,
+        "correct": 6,
+        "unparseable": 9
+      },
+      "inverted": {
+        "trials": 24,
+        "correct": 2,
+        "unparseable": 14
+      },
+      "original": {
+        "trials": 24,
+        "correct": 5,
+        "unparseable": 10
+      }
+    },
+    "by_puzzle": {
+      "kinwax_seal": {
+        "trials": 18,
+        "correct": 2
+      },
+      "nightbloom": {
+        "trials": 18,
+        "correct": 3
+      },
+      "waking_stone": {
+        "trials": 18,
+        "correct": 4
+      },
+      "warm_iron": {
+        "trials": 18,
+        "correct": 4
+      }
+    },
+    "by_position": {
+      "A": 39
+    }
+  },
+  "qwen_3_8b": {
+    "model": {
+      "name": "Qwen 3 8B",
+      "vendor": "alibaba",
+      "active_params_b": 8.2,
+      "total_params_b": 8.2,
+      "category": "chat",
+      "architecture": "transformer",
+      "tier": 2,
+      "phase": 1
+    },
+    "trials_total": 4,
+    "trials_scored": 4,
+    "correct": 4,
+    "incorrect": 0,
+    "unparseable": 0,
+    "errors": 0,
+    "accuracy": 1.0,
+    "above_chance_binomial": true,
+    "red_herring_chosen": 0,
+    "by_variant": {
+      "original": {
+        "trials": 4,
+        "correct": 4,
+        "unparseable": 0
+      }
+    },
+    "by_puzzle": {
+      "waking_stone": {
+        "trials": 4,
+        "correct": 4
+      }
+    },
+    "by_position": {
+      "A": 2,
+      "B": 1,
+      "C": 1
+    }
+  },
+  "liquid_lfm_2_5_1_2b": {
+    "model": {
+      "name": "Liquid LFM 2.5 1.2B",
+      "vendor": "liquid",
+      "active_params_b": 1.2,
+      "total_params_b": 1.2,
+      "category": "chat",
+      "architecture": "lfm",
+      "tier": 6,
+      "phase": 3
+    },
+    "trials_total": 49,
+    "trials_scored": 49,
+    "correct": 19,
+    "incorrect": 30,
+    "unparseable": 0,
+    "errors": 23,
+    "accuracy": 0.3877551020408163,
+    "above_chance_binomial": false,
+    "red_herring_chosen": 15,
+    "by_variant": {
+      "distractor": {
+        "trials": 17,
+        "correct": 5,
+        "unparseable": 0
+      },
+      "inverted": {
+        "trials": 15,
+        "correct": 6,
+        "unparseable": 0
+      },
+      "original": {
+        "trials": 17,
+        "correct": 8,
+        "unparseable": 0
+      }
+    },
+    "by_puzzle": {
+      "kinwax_seal": {
+        "trials": 11,
+        "correct": 8
+      },
+      "nightbloom": {
+        "trials": 18,
+        "correct": 6
+      },
+      "waking_stone": {
+        "trials": 17,
+        "correct": 4
+      },
+      "warm_iron": {
+        "trials": 3,
+        "correct": 1
+      }
+    },
+    "by_position": {
+      "B": 17,
+      "C": 12,
+      "A": 20
+    }
+  },
+  "smollm_360m_instruct": {
+    "model": {
+      "name": "SmolLM 360M Instruct",
+      "vendor": "huggingfacem4",
+      "active_params_b": 0.36,
+      "total_params_b": 0.36,
+      "category": "chat",
+      "architecture": "transformer",
+      "tier": 1,
+      "phase": 1
+    },
+    "trials_total": 12,
+    "trials_scored": 2,
+    "correct": 1,
+    "incorrect": 1,
+    "unparseable": 10,
+    "errors": 0,
+    "accuracy": 0.5,
+    "above_chance_binomial": false,
+    "red_herring_chosen": 1,
+    "by_variant": {
+      "inverted": {
+        "trials": 6,
+        "correct": 1,
+        "unparseable": 5
+      },
+      "original": {
+        "trials": 6,
+        "correct": 0,
+        "unparseable": 5
+      }
+    },
+    "by_puzzle": {
+      "waking_stone": {
+        "trials": 12,
+        "correct": 1
+      }
+    },
+    "by_position": {
+      "A": 2
+    }
+  },
+  "phi-4-mini_instruct_(or)": {
+    "model": {
+      "name": "Phi-4-mini Instruct (OR)",
+      "vendor": "microsoft",
+      "active_params_b": 3.8,
+      "total_params_b": 3.8,
+      "category": "chat",
+      "architecture": "transformer",
+      "tier": 1,
+      "phase": 1
+    },
+    "trials_total": 72,
+    "trials_scored": 72,
+    "correct": 32,
+    "incorrect": 40,
+    "unparseable": 0,
+    "errors": 0,
+    "accuracy": 0.4444444444444444,
+    "above_chance_binomial": true,
+    "red_herring_chosen": 25,
+    "by_variant": {
+      "distractor": {
+        "trials": 24,
+        "correct": 12,
+        "unparseable": 0
+      },
+      "inverted": {
+        "trials": 24,
+        "correct": 8,
+        "unparseable": 0
+      },
+      "original": {
+        "trials": 24,
+        "correct": 12,
+        "unparseable": 0
+      }
+    },
+    "by_puzzle": {
+      "kinwax_seal": {
+        "trials": 18,
+        "correct": 12
+      },
+      "nightbloom": {
+        "trials": 18,
+        "correct": 7
+      },
+      "waking_stone": {
+        "trials": 18,
+        "correct": 11
+      },
+      "warm_iron": {
+        "trials": 18,
+        "correct": 2
+      }
+    },
+    "by_position": {
+      "A": 27,
+      "B": 24,
+      "C": 21
+    }
+  }
+}

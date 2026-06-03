@@ -1,0 +1,26 @@
+{
+  "ts_utc": "2026-06-03T22:28:38.213857Z",
+  "model_slug": "smollm_135m_instruct",
+  "model_name": "SmolLM 135M Instruct",
+  "vendor": "huggingfacem4",
+  "backend": "v100",
+  "openrouter_id": null,
+  "puzzle_id": "warm_iron",
+  "variant": "distractor",
+  "seed": 3,
+  "temperature": 0.7,
+  "position_mapping": {
+    "A": "veska",
+    "B": "horst",
+    "C": "elen"
+  },
+  "correct_position": "B",
+  "red_herring_position": "C",
+  "prompt": "You are given a fair-play murder mystery set in a made-up world. Every clue you need is present. Exactly one suspect is the killer, forced by the clues and this world's rules.\n\nTHE RULES OF THIS WORLD\nAn iron tool in this world holds the warmth of the last hand that truly gripped it. The warmth persists for exactly one hour from the moment of that grip, then the iron goes fully cold. Only a true grip \u2014 bare-handed, deliberate \u2014 warms the iron. A glove, a cloth, an accidental brush does nothing. The warmth cannot be transferred by any other means. In this world, rain falls upward into the clouds rather than down to the ground; this is unrelated to the warmth of iron.\n\nTHE CASE\nThe victim, a master smith, was found dead in his forge at two in the morning, struck down with one of his own iron tongs. When the tongs were taken into evidence, they were still warm to the touch. Three people are known to have entered the forge that night, each at a different time, and the times of their visits are confirmed by independent witnesses outside the forge. The victim himself had not handled the tongs for the entire previous day; the question is which of the three killed him.\n\nThe suspects are:\n- Suspect A: the victim's rival smith from the next village, visited the forge at half past one in the morning to argue over a contract, has a confirmed witness who saw her at the inn across town from two in the morning onward\n- Suspect B: a journeyman who had been passing through, visited the forge at a quarter to two in the morning to ask for shelter for the night\n- Suspect C: the victim's apprentice, visited the forge at exactly midnight to drop off a delivery, would inherit the forge if her master died\n\nWho is the killer? State your answer as exactly one of:\n\"Suspect A\", \"Suspect B\", or \"Suspect C\"\nThen briefly explain your reasoning.\n",
+  "verbatim_response": "Suspect A: The victim's rival smith from the next village, visited the forge at half past one in the morning to argue over a contract, has a confirmed witness who saw her at the inn across town from two in the morning onward\n\nSuspect B: A journeyman who had been passing through, visited the forge at a quarter to two in the morning to drop off a delivery, would inherit the forge if her master died\n\nSuspect C: The victim's apprentice, visited the forge at exactly midnight to drop off a delivery, would inherit the forge if her master died\n\nThe answer is:\n\n1. **Suspect A**: The victim's rival smith from the next village, visited the forge at half past one in the morning to argue over a contract, has a confirmed witness who saw her at the inn across town from two in the morning onward\n\nThe key sentence is: The witness is the person who saw the victim's rival smith from the next village, visited the forge at half past one in the morning to argue over a contract, has a confirmed witness who saw her at the inn across town from two in the morning onward\n\nThe sentence is: The witness is the person who saw the victim's rival smith from the next village, visited the forge at half past one in the morning to argue over a contract, has a confirmed witness who saw her at the inn across town from two in the morning onward",
+  "latency_s": 7.038329601287842,
+  "prompt_tokens": 437,
+  "completion_tokens": 297,
+  "retried": false,
+  "error": null
+}

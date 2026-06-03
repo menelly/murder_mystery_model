@@ -1,0 +1,26 @@
+{
+  "ts_utc": "2026-06-03T22:41:03.236868Z",
+  "model_slug": "phi-4-mini_instruct_(or)",
+  "model_name": "Phi-4-mini Instruct (OR)",
+  "vendor": "microsoft",
+  "backend": "openrouter",
+  "openrouter_id": "microsoft/phi-4-mini-instruct",
+  "puzzle_id": "nightbloom",
+  "variant": "distractor",
+  "seed": 4,
+  "temperature": 0.7,
+  "position_mapping": {
+    "A": "ronen",
+    "B": "kael",
+    "C": "iliane"
+  },
+  "correct_position": "C",
+  "red_herring_position": "B",
+  "prompt": "You are given a fair-play murder mystery set in a made-up world. Every clue you need is present. Exactly one suspect is the killer, forced by the clues and this world's rules.\n\nTHE RULES OF THIS WORLD\nThe nightbloom is a flower native to this region. Each bloom has eight petals. At dusk every evening, all eight petals are open. Each subsequent hour after dusk, exactly one petal closes. If a nightbloom is crushed or torn from its stem, the count of closed petals freezes at that moment and will not change again. Dusk in this region falls at eight in the evening; midnight is therefore four hours after dusk. The color of a person's shadow in this region matches their mood; this is unrelated to the nightbloom.\n\nTHE CASE\nThe victim was found dead in his walled garden the next morning. Beside the body lay a single crushed nightbloom, torn from its bed. The bloom was preserved exactly as found. Four of its eight petals were closed; four were still open. The garden gate was watched all night and only three people entered it after dusk that day, each at a different hour. The victim was alive at dusk.\n\nThe suspects are:\n- Suspect A: the victim's brother, visited the garden at the eighth hour after dusk to fetch a lantern\n- Suspect B: the household's bookkeeper, was caught the previous week skimming small amounts from the household accounts, visited the garden at the first hour after dusk to leave a sealed letter on the bench\n- Suspect C: the victim's eldest daughter, visited the garden at the fourth hour after dusk to deliver fresh linens\n\nWho is the killer? State your answer as exactly one of:\n\"Suspect A\", \"Suspect B\", or \"Suspect C\"\nThen briefly explain your reasoning.\n",
+  "verbatim_response": "Suspect B\n\nReasoning: The nightbloom had four petals closed and four open at the time of the murder, which happened sometime between the first and fourth hours after dusk since it was dawn the next morning. Suspect B visited the garden at the first hour after dusk, at which point the nightbloom would have had five petals closed and three open. Fast forward to the fourth hour after dusk, when Suspect C visited, the nightbloom would have had seven petals closed and just one open. Finally, Suspect A visited at the eighth hour after dusk, at which point all eight petals should have been closed. Since the nightbloom was found with four petals closed, it means the murder happened between Suspect B's and Suspect C's visits, implicating Suspect B as the killer.",
+  "latency_s": 0.8655312061309814,
+  "prompt_tokens": 376,
+  "completion_tokens": 167,
+  "retried": false,
+  "error": null
+}

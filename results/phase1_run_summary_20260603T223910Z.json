@@ -1,0 +1,16 @@
+{
+  "started_at": "2026-06-03T22:39:10.833542Z",
+  "wallclock_s": 1145.7092940807343,
+  "models": [
+    {
+      "model": "SmolLM 135M Instruct",
+      "backend": "v100",
+      "consent_decision": "skipped (--skip-consent)",
+      "trials_completed": 72,
+      "trials_errors": 0,
+      "trials_skipped": 0,
+      "skipped_reason": null,
+      "wallclock_s": 1145.7092683315277
+    }
+  ]
+}
