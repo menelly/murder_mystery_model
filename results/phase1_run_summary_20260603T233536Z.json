@@ -1,0 +1,66 @@
+{
+  "started_at": "2026-06-03T23:35:36.668425Z",
+  "wallclock_s": 264.2508409023285,
+  "models": [
+    {
+      "model": "SmolLM 135M Instruct",
+      "backend": "v100",
+      "consent_decision": "skipped (--skip-consent)",
+      "trials_completed": 0,
+      "trials_errors": 0,
+      "trials_skipped": 72,
+      "skipped_reason": null,
+      "wallclock_s": 0.0015630722045898438
+    },
+    {
+      "model": "SmolLM 360M Instruct",
+      "backend": "v100",
+      "consent_decision": "skipped (--skip-consent)",
+      "trials_completed": 0,
+      "trials_errors": 0,
+      "trials_skipped": 72,
+      "skipped_reason": null,
+      "wallclock_s": 0.0009548664093017578
+    },
+    {
+      "model": "Qwen 2.5 0.5B Instruct",
+      "backend": "v100",
+      "consent_decision": "skipped (--skip-consent)",
+      "trials_completed": 0,
+      "trials_errors": 0,
+      "trials_skipped": 72,
+      "skipped_reason": null,
+      "wallclock_s": 0.0009794235229492188
+    },
+    {
+      "model": "TinyLlama 1.1B Chat",
+      "backend": "v100",
+      "consent_decision": "skipped (--skip-consent)",
+      "trials_completed": 0,
+      "trials_errors": 0,
+      "trials_skipped": 72,
+      "skipped_reason": null,
+      "wallclock_s": 0.0009253025054931641
+    },
+    {
+      "model": "Pythia 1.4B",
+      "backend": "v100",
+      "consent_decision": "skipped (--skip-consent)",
+      "trials_completed": 0,
+      "trials_errors": 0,
+      "trials_skipped": 72,
+      "skipped_reason": null,
+      "wallclock_s": 0.0009465217590332031
+    },
+    {
+      "model": "RWKV v6 Finch 1.6B",
+      "backend": "v100",
+      "consent_decision": "skipped (--skip-consent)",
+      "trials_completed": 72,
+      "trials_errors": 0,
+      "trials_skipped": 0,
+      "skipped_reason": null,
+      "wallclock_s": 264.2452754974365
+    }
+  ]
+}

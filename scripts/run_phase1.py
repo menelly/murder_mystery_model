@@ -58,8 +58,13 @@ def consent_status(model: Model) -> str | None:
 
 
 def stop_requested() -> bool:
-    """True if STOP_ACE flag exists or AUTONOMOUS_ACE has been removed."""
-    return STOP_FLAG.exists() or not AUTONOMOUS_FLAG.exists()
+    """True only if STOP_ACE flag is explicitly created.
+
+    Originally this also halted when AUTONOMOUS_ACE was removed, but
+    that coupled the V100 sweep to Ace's autonomous-session lifecycle.
+    Now V100 grinds independently until explicit STOP_ACE.
+    """
+    return STOP_FLAG.exists()
 
 
 def process_model(model: Model, puzzles: dict, *, skip_consent: bool = False) -> dict:
