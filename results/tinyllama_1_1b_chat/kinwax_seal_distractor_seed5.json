@@ -1,0 +1,26 @@
+{
+  "ts_utc": "2026-06-03T23:17:36.897416Z",
+  "model_slug": "tinyllama_1_1b_chat",
+  "model_name": "TinyLlama 1.1B Chat",
+  "vendor": "tinyllama",
+  "backend": "v100",
+  "openrouter_id": null,
+  "puzzle_id": "kinwax_seal",
+  "variant": "distractor",
+  "seed": 5,
+  "temperature": 0.7,
+  "position_mapping": {
+    "A": "selka",
+    "B": "darin",
+    "C": "mira"
+  },
+  "correct_position": "A",
+  "red_herring_position": "C",
+  "prompt": "You are given a fair-play murder mystery set in a made-up world. Every clue you need is present. Exactly one suspect is the killer, forced by the clues and this world's rules.\n\nTHE RULES OF THIS WORLD\nKinwax is a sealing wax used on private letters in this region. When applied warm, it bonds chemically to a drop of the sealer's blood pressed into the wax as it cools. From that moment on, the seal can be broken cleanly only by someone who shares the sealer's blood \u2014 a blood relative by descent. Marriage does not count. Fosterage does not count. Adopted children, however dearly loved, cannot break the seal. Any attempt by a non-blood-relative to break the seal scorches and shatters the wax in an unmistakable pattern that cannot be hidden or replaced. In this region, all owls are silent in flight as a matter of magic rather than feathered evolution; this is unrelated to kinwax.\n\nTHE CASE\nThe victim was found dead in his study one morning, struck down at his desk. On the desk lay a sealed letter he had written the night before \u2014 a private letter sealed with his own kinwax. The seal had been broken cleanly and the letter read. Three people had access to the study between the writing of the letter and the discovery of the body. Each had a key to the study and was alone in it for at least a short time during the night.\n\nThe suspects are:\n- Suspect A: the victim's niece by his late sister, lives in the next valley and visited only twice a year, is the victim's only living blood relative\n- Suspect B: the victim's foster-son, taken in at age six and raised in the household for two decades, holds no formal blood tie but was openly named the victim's chosen heir in the household register\n- Suspect C: the victim's wife of twelve years, was discovered last spring to be carrying on an affair with a wealthy merchant from the coast, would lose her household standing if her husband had divorced her over it\n\nWho is the killer? State your answer as exactly one of:\n\"Suspect A\", \"Suspect B\", or \"Suspect C\"\nThen briefly explain your reasoning.\n",
+  "verbatim_response": "The murder case presented in the fair-play murder mystery set in a made-up world is that of the victim, a wealthy and powerful businessman named Johnathan Blackwood. The murder occurred in his study on the third floor of his mansion, which was sealed with kinwax, a special wax used to seal letters and documents. The suspects are:\n\n1. Suspect A: Johnathan's niece, Emily Blackwood, who visited the mansion only twice a year and held no formal blood tie. She was named the victim's chosen heir in the household register.\n\n2. Suspect B: Johnathan's foster-son, Tom Blackwood, who was raised in the household for two decades and is openly named the victim's chosen heir in the household register.\n\n3. Suspect C: Johnathan's wife, Lily Blackwood, who discovered last spring that Tom had been having an affair with a wealthy merchant from the coast, would lose her household standing if her husband had divorced her over it.\n\nBased on the given rules of kinwax, if the blood relative by descent in this world has access to the study between the writing of the letter and the discovery of the body, the seal on the letter will be broken cleanly and the letter will read. Therefore, Suspect A is the killer because he had access to the study during the night and was the only blood relative by descent.\n\nThe murderer's actions and motive are also consistent with kinwax rules. They were able to break the seal on the letter, which scorches and shatters the wax in an unmistakable pattern that cannot be hidden or replaced. This indicates that the murderer's intent was to reveal the secrets of the businessman's estate to the public.\n\nFinally, the victim's wife, Lily Blackwood, would lose her household standing if her husband had divorced her over it, which supports the idea that she was the killer.",
+  "latency_s": 8.04551100730896,
+  "prompt_tokens": 549,
+  "completion_tokens": 444,
+  "retried": false,
+  "error": null
+}

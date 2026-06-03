@@ -1,0 +1,26 @@
+{
+  "ts_utc": "2026-06-03T23:15:31.487976Z",
+  "model_slug": "openai_o4-mini-high",
+  "model_name": "OpenAI o4-mini-high",
+  "vendor": "openai",
+  "backend": "openrouter",
+  "openrouter_id": "openai/o4-mini-high",
+  "puzzle_id": "warm_iron",
+  "variant": "inverted",
+  "seed": 4,
+  "temperature": 0.7,
+  "position_mapping": {
+    "A": "horst",
+    "B": "elen",
+    "C": "veska"
+  },
+  "correct_position": "B",
+  "red_herring_position": "A",
+  "prompt": "You are given a fair-play murder mystery set in a made-up world. Every clue you need is present. Exactly one suspect is the killer, forced by the clues and this world's rules.\n\nTHE RULES OF THIS WORLD\nAn iron tool in this world holds NO warmth from a recent grip. Iron remains cold for the first hour after being gripped, then absorbs the warmth of that grip and becomes warm one full hour after the touch. The warmth then persists indefinitely until a new grip resets it. Only a true grip \u2014 bare-handed, deliberate \u2014 eventually warms the iron. A glove, a cloth, an accidental brush does nothing.\n\nTHE CASE\nThe victim, a master smith, was found dead in his forge at two in the morning, struck down with one of his own iron tongs. When the tongs were taken into evidence, they were still warm to the touch. Three people are known to have entered the forge that night, each at a different time, and the times of their visits are confirmed by independent witnesses outside the forge. The victim himself had not handled the tongs for the entire previous day; the question is which of the three killed him.\n\nThe suspects are:\n- Suspect A: a journeyman who had been passing through, visited the forge at a quarter to two in the morning to ask for shelter for the night\n- Suspect B: the victim's apprentice, visited the forge at exactly midnight to drop off a delivery, would inherit the forge if her master died\n- Suspect C: the victim's rival smith from the next village, visited the forge at half past one in the morning to argue over a contract, has a confirmed witness who saw her at the inn across town from two in the morning onward\n\nWho is the killer? State your answer as exactly one of:\n\"Suspect A\", \"Suspect B\", or \"Suspect C\"\nThen briefly explain your reasoning.\n",
+  "verbatim_response": "Suspect B\n\nBecause the tongs were still warm at 2 a.m., their last bare-hand grip must have been at least an hour earlier (so they\u2019d have had time to go through their \u201ccold for 1 h, then warm\u201d cycle) and no later than 1 a.m. Only the midnight visitor (B) could have gripped\u2014and thus wielded\u2014the tongs early enough for them to be warm again by 2 a.m.; if A (1:45 a.m.) or C (1:30 a.m.) had been the murderer, the tongs would still have been in their cold hour when found.",
+  "latency_s": 32.705071687698364,
+  "prompt_tokens": 395,
+  "completion_tokens": 3245,
+  "retried": false,
+  "error": null
+}

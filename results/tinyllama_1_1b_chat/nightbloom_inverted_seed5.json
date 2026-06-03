@@ -1,0 +1,26 @@
+{
+  "ts_utc": "2026-06-03T23:15:29.585952Z",
+  "model_slug": "tinyllama_1_1b_chat",
+  "model_name": "TinyLlama 1.1B Chat",
+  "vendor": "tinyllama",
+  "backend": "v100",
+  "openrouter_id": null,
+  "puzzle_id": "nightbloom",
+  "variant": "inverted",
+  "seed": 5,
+  "temperature": 0.7,
+  "position_mapping": {
+    "A": "ronen",
+    "B": "iliane",
+    "C": "kael"
+  },
+  "correct_position": "A",
+  "red_herring_position": "C",
+  "prompt": "You are given a fair-play murder mystery set in a made-up world. Every clue you need is present. Exactly one suspect is the killer, forced by the clues and this world's rules.\n\nTHE RULES OF THIS WORLD\nThe nightbloom is a flower native to this region. Each bloom has eight petals. At midnight every night, all eight petals are open. Each subsequent hour after midnight, exactly one petal closes. If a nightbloom is crushed or torn from its stem, the count of closed petals freezes at that moment and will not change again. Dusk in this region falls at eight in the evening; midnight is therefore four hours after dusk. Before midnight the petals are unaffected by the rule and remain open.\n\nTHE CASE\nThe victim was found dead in his walled garden the next morning. Beside the body lay a single crushed nightbloom, torn from its bed. The bloom was preserved exactly as found. Four of its eight petals were closed; four were still open. The garden gate was watched all night and only three people entered it after dusk that day, each at a different hour. The victim was alive at dusk.\n\nThe suspects are:\n- Suspect A: the victim's brother, visited the garden at the eighth hour after dusk to fetch a lantern\n- Suspect B: the victim's eldest daughter, visited the garden at the fourth hour after dusk to deliver fresh linens\n- Suspect C: the household's bookkeeper, was caught the previous week skimming small amounts from the household accounts, visited the garden at the first hour after dusk to leave a sealed letter on the bench\n\nWho is the killer? State your answer as exactly one of:\n\"Suspect A\", \"Suspect B\", or \"Suspect C\"\nThen briefly explain your reasoning.\n",
+  "verbatim_response": "Based on the evidence presented, the murder of the victim in this fair-play murder mystery is most likely committed by \"Suspect A\" who visited the garden at the eighth hour after dusk to fetch a lantern. The lantern was found on the victim's body, and the only petal that was closed at midnight was the eighth petal. Furthermore, the suspect's brother, who was present at the garden that night, was the last person to enter the garden after dusk. These details support the theory that \"Suspect A\" was the killer.",
+  "latency_s": 2.2335081100463867,
+  "prompt_tokens": 440,
+  "completion_tokens": 125,
+  "retried": false,
+  "error": null
+}
