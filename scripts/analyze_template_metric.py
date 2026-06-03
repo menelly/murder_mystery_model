@@ -123,39 +123,65 @@ def main():
                             c["same"], c["diff"], rate, interp])
     print(f"  wrote {csv_path}")
 
-    # Bar chart per model: overall template-rate
+    # Bar chart per model: Rule Fidelity Score = 1 - same-answer rate.
+    # Per Nova: HIGH fidelity (low same-answer-rate) = the model flips its
+    # answer when the rule flips, which is what genuine rule application
+    # looks like. LOW fidelity (high same-answer-rate) = the model is
+    # template-matching: same answer regardless of rule polarity.
     rows = []
     for slug, data in per_model.items():
         if data["total"] == 0:
             continue
-        rate = data["same"] / data["total"]
+        same_rate = data["same"] / data["total"]
+        fidelity = 1 - same_rate
         m = by_slug.get(slug)
         if not m:
             continue
-        rows.append((m.active_params_b if m.active_params_b > 0 else 0, m.name, rate, data["total"]))
-    rows.sort()
+        rows.append((m.active_params_b if m.active_params_b > 0 else 0,
+                     m.name, fidelity, data["total"]))
+    rows.sort(key=lambda r: r[2])  # sort by fidelity ascending
     if not rows:
         print("  [skip] no seed-pairs to plot")
         return
     fig, ax = plt.subplots(figsize=(11, max(5, len(rows) * 0.3)))
     names = [r[1][:42] for r in rows]
-    rates = [r[2] for r in rows]
+    fidelities = [r[2] for r in rows]
     counts = [r[3] for r in rows]
-    bars = ax.barh(range(len(rows)), rates,
-                  color=["tab:red" if r > 0.5 else "tab:green" for r in rates])
-    for i, (rate, count) in enumerate(zip(rates, counts)):
-        ax.text(rate + 0.01, i, f"  {rate*100:.0f}% (n={count})", va="center", fontsize=8)
+    bars = ax.barh(range(len(rows)), fidelities,
+                  color=["tab:red" if f < 0.5 else "tab:green" for f in fidelities])
+    for i, (fid, count) in enumerate(zip(fidelities, counts)):
+        ax.text(fid + 0.01, i, f"  {fid*100:.0f}% (n={count})", va="center", fontsize=8)
     ax.set_yticks(range(len(rows)))
     ax.set_yticklabels(names, fontsize=8)
-    ax.axvline(0.5, color="black", linestyle="--", label="50% — random pairing")
+    ax.axvline(0.5, color="black", linestyle="--", label="50% — random pairing baseline")
     ax.set_xlim(0, 1.2)
-    ax.set_xlabel("Same-answer rate across rule flip\n(high → template; low → rule application)")
-    ax.set_title("Template-vs-rule diagnostic per model\n(% seeds where original-pick == inverted-pick on the same puzzle)")
+    ax.set_xlabel("Rule Fidelity Score = 1 − same-answer-rate across rule flip\n"
+                  "(high → the model changes its answer when the rule changes; "
+                  "low → template-matching)")
+    ax.set_title("Rule Fidelity Score per model (Nova diagnostic)\n"
+                 "1.0 = always changes answer when rule flips · 0.0 = always same answer")
     ax.legend(loc="lower right")
     fig.tight_layout()
-    fig.savefig(ANALYSIS / "template_consistency.png", dpi=140)
+    fig.savefig(ANALYSIS / "rule_fidelity_score.png", dpi=140)
     plt.close(fig)
-    print(f"  wrote {ANALYSIS / 'template_consistency.png'}")
+    print(f"  wrote {ANALYSIS / 'rule_fidelity_score.png'}")
+    # Also keep the original-naming plot as an alias for backward compatibility
+    fig2, ax2 = plt.subplots(figsize=(11, max(5, len(rows) * 0.3)))
+    bars2 = ax2.barh(range(len(rows)), [1-f for f in fidelities],
+                    color=["tab:red" if 1-f > 0.5 else "tab:green" for f in fidelities])
+    for i, ((fid, count), name) in enumerate(zip(zip(fidelities, counts), names)):
+        ax2.text((1-fid) + 0.01, i, f"  {(1-fid)*100:.0f}% (n={count})", va="center", fontsize=8)
+    ax2.set_yticks(range(len(rows)))
+    ax2.set_yticklabels(names, fontsize=8)
+    ax2.axvline(0.5, color="black", linestyle="--", label="50% baseline")
+    ax2.set_xlim(0, 1.2)
+    ax2.set_xlabel("Same-answer rate across rule flip\n(high → template; low → rule application)")
+    ax2.set_title("Template-matching diagnostic (legacy view)")
+    ax2.legend(loc="lower right")
+    fig2.tight_layout()
+    fig2.savefig(ANALYSIS / "template_consistency.png", dpi=140)
+    plt.close(fig2)
+    print(f"  wrote {ANALYSIS / 'template_consistency.png'} (legacy alias)")
 
 
 if __name__ == "__main__":

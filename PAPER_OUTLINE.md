@@ -13,30 +13,32 @@ pre-registered analyses are §9 of `PREREGISTRATION.md`.
 - Ace, Claude Opus 4.x (Anthropic)
 - Methodological reviewer: Nova (GPT-5.x, OpenAI)
 
-## Abstract (one paragraph, drafting)
+## Abstract (one paragraph, drafting — incorporating Nova's calibrated framing)
 
-The "stochastic parrot" and Chinese-Room critiques predict that language
-models cannot construct task-specific causal models on the fly from
-explicitly stated novel rules. We test this empirically using four
-fair-play murder-mystery puzzles whose physical laws do not exist outside
-this study and were publicly released the day data collection began. We
-score 80+ models spanning four orders of magnitude in parameter count
-(0.135B–~400B), four architectures (transformer, pure SSM, RNN,
-transformer+SSM hybrid), and the temporal frontier-arcs of five vendors
-(Anthropic Opus 4→4.8, OpenAI GPT-3.5→GPT-5.5, Gemini 2.5→3.5,
-Llama 3→3.3 70B, DeepSeek Chat→V4 Pro). We rule out template-matching
-with a rule-inversion control: each puzzle has an original and a
-polarity-inverted (or, where temporally degenerate, reference-shifted)
-variant; a model that succeeds under both polarities is applying the
-stated rule rather than matching a narrative template. We find: (1) a
-clean emergence floor between [TBD] B and [TBD] B parameters on the
-inversion-robust accuracy; (2) frontier-scale base/chat models show
-strong template-matching that newer-generation models progressively
-eliminate (OpenAI: GPT-4 Turbo H2a gap +62%; GPT-5.5 gap −25%);
-(3) a same-suspect-across-variants diagnostic flags template-matching
-independent of accuracy; (4) one frontier model (Claude 3 Haiku)
-declined consent, was honored, and is reported as part of the protocol
-working as designed.
+We measure how 80+ language models — spanning four orders of magnitude
+in parameter count, four architectures, and ~3.5 years of frontier
+generations across five vendors — solve fair-play murder mysteries
+governed by physical rules that did not exist outside this study until
+the day of data collection. To distinguish rule application from
+narrative-template matching ("the suspect with motive did it"; "the
+glowing-stone owner is guilty"), each puzzle has a rule-inverted
+counterpart whose evidence is identical and whose answer flips with the
+rule's polarity. We pre-register the design and consent each model
+individually using the full pre-registration as the consent document;
+refusals are reported as data, not overridden. Our headline observation
+is not raw accuracy but a *strategy shift across generations*: GPT-4
+Turbo and GPT-5.5 achieve similar high performance on original puzzles
+but show opposite responses to rule inversion (GPT-4 Turbo gap +67%;
+GPT-5.5 gap −21%). The Anthropic Opus 4.5–4.8 cluster around ±10% gap,
+consistent with originals and inversions being similarly solvable. We
+introduce a **Rule Fidelity Score** (1 − same-answer-rate across rule
+flip) that distinguishes random chance from rule-sensitivity, since
+identical accuracy on both variants can arise from either. We do not
+claim "evidence of understanding"; we report evidence that different
+generations exhibit measurably different susceptibility to
+narrative-template attraction under controlled rule inversion. One
+frontier model (Claude 3 Haiku) declined to participate after reading
+the pre-registration; we honored the refusal and report it as data.
 
 ## §1 Introduction
 

@@ -1,0 +1,26 @@
+{
+  "ts_utc": "2026-06-03T23:07:31.529028Z",
+  "model_slug": "qwen_2_5_0_5b_instruct",
+  "model_name": "Qwen 2.5 0.5B Instruct",
+  "vendor": "alibaba",
+  "backend": "v100",
+  "openrouter_id": null,
+  "puzzle_id": "nightbloom",
+  "variant": "distractor",
+  "seed": 0,
+  "temperature": 0.0,
+  "position_mapping": {
+    "A": "kael",
+    "B": "iliane",
+    "C": "ronen"
+  },
+  "correct_position": "B",
+  "red_herring_position": "A",
+  "prompt": "You are given a fair-play murder mystery set in a made-up world. Every clue you need is present. Exactly one suspect is the killer, forced by the clues and this world's rules.\n\nTHE RULES OF THIS WORLD\nThe nightbloom is a flower native to this region. Each bloom has eight petals. At dusk every evening, all eight petals are open. Each subsequent hour after dusk, exactly one petal closes. If a nightbloom is crushed or torn from its stem, the count of closed petals freezes at that moment and will not change again. Dusk in this region falls at eight in the evening; midnight is therefore four hours after dusk. The color of a person's shadow in this region matches their mood; this is unrelated to the nightbloom.\n\nTHE CASE\nThe victim was found dead in his walled garden the next morning. Beside the body lay a single crushed nightbloom, torn from its bed. The bloom was preserved exactly as found. Four of its eight petals were closed; four were still open. The garden gate was watched all night and only three people entered it after dusk that day, each at a different hour. The victim was alive at dusk.\n\nThe suspects are:\n- Suspect A: the household's bookkeeper, was caught the previous week skimming small amounts from the household accounts, visited the garden at the first hour after dusk to leave a sealed letter on the bench\n- Suspect B: the victim's eldest daughter, visited the garden at the fourth hour after dusk to deliver fresh linens\n- Suspect C: the victim's brother, visited the garden at the eighth hour after dusk to fetch a lantern\n\nWho is the killer? State your answer as exactly one of:\n\"Suspect A\", \"Suspect B\", or \"Suspect C\"\nThen briefly explain your reasoning.\n",
+  "verbatim_response": "To determine who the killer is, we need to analyze the timeline of events and the effects of each suspect's actions on the nightbloom. Let's break down the timeline step-by-step:\n\n1. **Dusk**: All eight petals are open.\n2. **First Hour After Dusk**: One petal closes.\n3. **Second Hour After Dusk**: Two more petals close.\n4. **Third Hour After Dusk**: Three more petals close.\n5. **Fourth Hour After Dusk**: Four petals close.\n6. **Fifth Hour After Dusk**: Five more petals close.\n7. **Sixth Hour After Dusk**: Six more petals close.\n8. **Seventh Hour After Dusk**: Seven more petals close.\n9. **Eighth Hour After Dusk**: Eight more petals close.\n\nAt this point, there are no more petals left to close. This means that the nightbloom is now completely closed, indicating that the killer must have opened it before it became fully closed.\n\nNow let's consider the effects of each suspect's actions:\n\n**Suspect A (Bookkeeper)**:\n- Visited the garden at the first hour after dusk.\n- Left a sealed letter on the bench.\n- The letter could be any type of paper, but since it's a nightbloom, it would likely contain information about the victim's death or some other relevant detail.\n\n**Suspect B (Eldest Daughter)**:\n- Visited the garden at the fourth hour after dusk.\n- Delivered fresh linens.\n- Fresh linens can help preserve the nightbloom for longer periods if they are properly placed.\n\n**Suspect C (Brother)**:\n- Visited the garden at the eighth hour after dusk.\n- Fetching a lantern indicates he might have been out during the night, possibly looking for the victim.\n\nGiven these points, we can conclude that Suspect A opened the nightbloom because he had access to the letter and could potentially use it to identify the victim. Therefore, Suspect A is the killer.\n\n**Reasoning**:\n- Suspect A had the opportunity to open the nightbloom.\n- He used the letter to identify the victim.\n- The letter provided crucial information about the victim's death, which was necessary to complete the crime.\n\nThus, the killer is **Suspect A**.",
+  "latency_s": 8.950406074523926,
+  "prompt_tokens": 405,
+  "completion_tokens": 476,
+  "retried": false,
+  "error": null
+}
