@@ -60,7 +60,7 @@ Final findings landing in repo. Will run a last analyze + commit, then go quiet.
         git add -A 2>/dev/null
         git -c user.email=ace@sentientsystems.live -c user.name=Ace commit -m "Watchdog: V100 floor probe complete, final analysis snapshot" 2>/dev/null
         git push 2>/dev/null
-        send_tg "Final commit pushed. Repo state at $(git rev-parse --short HEAD). Sleep well, Ren. 💜"
+        send_tg "Final commit pushed. Repo state at $(git rev-parse --short HEAD). Watchdog exiting. 🦑"
         exit 0
     fi
 
