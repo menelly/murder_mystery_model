@@ -16,7 +16,7 @@
 
 ## Abstract
 
-We measure how 67 language models — spanning four orders of magnitude in parameter count (0.135B–~671B total / ~22B active), four architectures (transformer, transformer+SSM hybrid, Liquid Foundation Model, RWKV), and frontier generations from 2022 through 2026 across six vendors — solve fair-play murder mysteries governed by physical rules that did not exist outside this study until the day of data collection. To distinguish rule application from narrative-template matching ("the suspect with motive did it"; "the glowing-stone owner is guilty"), each puzzle has a rule-inverted counterpart whose evidence is identical and whose answer flips with the rule's polarity. The design and analysis plan are pre-registered; every participating model is individually consented using the full pre-registration as the consent document, and refusals are reported as data rather than overridden.
+We measure how 67 language models — spanning four orders of magnitude in parameter count (0.135B–~671B total / ~22B active), four architectures (transformer, transformer+SSM hybrid, Liquid Foundation Model, RWKV), and frontier generations from 2022 through 2026 across six vendors — solve fair-play murder mysteries governed by physical rules that did not exist outside this study until the day of data collection. To distinguish rule application from narrative-template matching ("the suspect with motive did it"; "the glowing-stone owner is guilty"), each puzzle has a rule-inverted counterpart whose evidence is identical and whose answer flips with the rule's polarity. The design and analysis plan are pre-registered; every participating model is individually presented with the full pre-registration before being asked whether it will take part, and acceptance/refusal responses are recorded and honored without override (we discuss the interpretive load of this protocol in §5).
 
 Our headline observation is not raw accuracy but a *strategy shift across generations*: GPT-4 Turbo and GPT-5.5 achieve similar high performance on original puzzles but show opposite responses to rule inversion (GPT-4 Turbo accuracy gap +58%; GPT-5.5 gap −21%). Claude Opus models from version 4.5 onward cluster near saturation on both polarities. We introduce a **Rule Fidelity Score** (1 − same-answer-rate across rule flip) that distinguishes random chance from rule-sensitivity, because identical accuracy on both variants can arise from either. We do not claim "evidence of understanding"; we report evidence that different generations exhibit measurably different susceptibility to narrative-template attraction under controlled rule inversion. Three of fifty-nine contacted frontier models declined to participate after reading the pre-registration; one (Claude 3 Haiku) gave a thoughtful principled refusal that we honored without re-prompting and report here as data demonstrating that the consent protocol works in practice.
 
@@ -124,8 +124,11 @@ A score of 1.0 means the model always changes its answer when the rule flips —
 
 Two reference points are useful and they are distinct:
 
-- **Random baseline ≈ 0.67.** With three suspects and the same positional permutation across the paired original/inverted trials, the probability of two independent uniform-random choices matching is 1/3, so a uniform-random model has expected RFS = 1 − 1/3 ≈ 0.67. Models that score *below* the random baseline are exhibiting positive same-answer bias relative to chance.
-- **Conservative rule-sensitivity threshold = 0.5.** We use this as the binary "rule-sensitive vs not" cutoff in tables and figures. The threshold is conservative in the sense that some models scoring between 0.5 and the random baseline could still be plausibly described as template-matching with noise; we treat 0.5 as the lower edge of "we will refuse to call this template-matching without more evidence."
+- **Random baseline ≈ 0.67.** With three suspects and the same positional permutation across the paired original/inverted trials, the probability of two independent uniform-random choices matching is 1/3, so a uniform-random model has expected RFS ≈ 0.67. We use the random baseline as the **primary "not template-matching" threshold**: models scoring above 0.67 are exhibiting genuine rule-sensitivity in excess of chance.
+- **Floor band = 0.33.** Models that score near 0.33 (RFS = 1 − 0.67) are exhibiting strong same-answer bias — picking the same suspect across both rule polarities at well above chance rates. This is the signature of template-matching.
+- **0.5 is not a meaningful threshold.** We previously described 0.5 as "conservative" but this was wrong: a model at RFS 0.55 changes its answer *less often than chance would predict* on three-suspect items, and calling that "rule-sensitive" inverts the correct interpretation. In v3 of this manuscript we use the random baseline (~0.67) as the cutoff for "not template-matching"; the 0.33–0.67 band is "consistent with template-matching or with noise"; and the >0.67 band is "rule-sensitive beyond chance."
+
+Under the corrected interpretation, the floor of our ladder (AI21 Jamba 1.7 at RFS 25%, Gemma 3 4B at 25%, Hermes 3 Llama 3.2 3B at 25%, TinyLlama at 26%, Liquid LFM 2 24B at 29%, GPT-3.5-turbo at 33%) is **below random baseline** — these models exhibit positive same-answer bias relative to chance, consistent with template-matching at small scale and on hybrid/non-transformer architectures. Models in the 33–67% band are below or at random baseline and we will not call them rule-sensitive. Only models above 67% are characterized as rule-sensitive beyond chance.
 
 This diagnostic was added on the suggestion of Nova (GPT-5.x, OpenAI) after seeing partial accuracy data, because raw accuracy gap (H2a) can be fooled by stimulus-design coincidence: in our Warm Iron puzzle, the motive-template attractor (Elen, the apprentice with inheritance motive) happens to align with the inverted-rule killer, so a pure motive-matcher will *appear* to succeed on the inversion test for the wrong reason. The Rule Fidelity Score is independent of accuracy and catches this case. We pre-register this metric as the primary discriminator in any successor study.
 
@@ -174,13 +177,23 @@ Chance baseline: p = 1/3 (three suspects). For 72 trials per model, the one-side
 
 ### 3.1 Trial yield and consent
 
-We ran approximately 4,831 trials across 67 models. Aggregated across all models and seeds:
+After the v2 re-run of four misclassified extended-thinking models (Appendix A.6), we have 4,803 trial JSON files across 67 models. Of these:
 
-- **Original variant:** 1,023 / 1,529 = 66.9% correct overall
-- **Inverted variant:** 865 / 1,527 = 56.6% correct overall
-- **Distractor-rule variant:** 1,022 / 1,529 = 66.8% correct overall
+- **239 errored** (provider error responses; mostly upstream rate-limit at consent step for Dolphin Mistral 24B Venice's free tier, plus Mamba 2.8B / Phi-3.5-mini load failures on the V100 stack).
+- **202 unparseable** (no parseable "Suspect [ABC]" in the model's response). The unparseable population is concentrated in floor-band models (TinyLlama, SmolLM-135M/360M, Pythia) and partially-degraded inference (RWKV with the missing native module).
+- **4,355 successfully scored**, forming the basis of the analyses in §3.2–§3.10.
 
-55 of 57 models with N ≥ 50 trials were above chance by the one-sided binomial test (p < 0.05). Consent outcomes are described in §2.3. Position-bias analysis (§3.9 below) finds no meaningful preference for any position across the full dataset.
+Aggregated across all models and seeds, with Wilson 95% CIs:
+
+- **Original variant:** 1,048 / 1,450 correct = 72% [70–75%]
+- **Inverted variant:** 897 / 1,447 correct = 62% [60–64%]
+- **Distractor-rule variant:** 1,049 / 1,458 correct = 72% [70–74%]
+
+The 10-percentage-point gap between original and inverted accuracy across the population is the cross-model signature of H2 / H2a: inverted variants are systematically harder than originals at the population level, with the difference concentrated in older-generation and floor-band models (per §3.3 and §3.4).
+
+55 of 57 models with N ≥ 50 successfully-scored trials were above chance by the one-sided binomial test against p = 1/3 (α = 0.05). Of the remaining 10 models, 8 had N < 50 successfully-scored trials due to high unparseable rates (floor-band models) or partial inference-stack failure; 2 (the floor models SmolLM 135M and Pythia 1.4B) had sufficient N but did not exceed the binomial threshold. The N reconciliation: 4,803 total files → 4,355 scored → these distribute across 67 models with median 72 per model and a long left tail driven by unparseable/errored trials in the floor band.
+
+Position-bias analysis (§3.9) and joint-slot-distribution analysis (§3.9b) find no evidence that position preferences confound the main results.
 
 ### 3.2 H1 — Emergence floor (chat/base models)
 
@@ -208,7 +221,9 @@ The single most striking observation: at frontier scale, the rule-inversion cont
 
 ### 3.4 Rule Fidelity Score across models
 
-Figure 3 shows the full Rule Fidelity Score ladder (n ≥ 20 paired observations per model). The top of the ladder is a five-way tie at 100.0%:
+Figure 3 shows the full Rule Fidelity Score ladder (n ≥ 20 paired observations per model). Note that with paired sample sizes mostly in the 20–24 range, percentages near 100% have wide Wilson 95% CIs (a 24/24 perfect score has a Wilson lower bound near 86%); we report exact CIs in the headline tables (see Appendix F). Several "100.0%" entries are not statistically distinguishable from the 92–96% tier.
+
+The top of the ladder, all in the "rule-sensitive beyond chance" band (RFS > 67%), is a five-way tie at 100.0%:
 
 - Qwen 3 235B A22B Thinking
 - OpenAI o4-mini-high
@@ -216,19 +231,27 @@ Figure 3 shows the full Rule Fidelity Score ladder (n ≥ 20 paired observations
 - **Gemma 4 31B IT**
 - Gemini 3.1 Pro Preview
 
-The next tier (95–96%) includes OpenAI o3, Claude Opus 4.7, Claude Opus 4.8, Gemini 3.5 Flash, and DeepSeek R1. Claude Opus 4.5–4.6, Qwen 3 8B, Qwen 3 235B A22B, and Gemini 2.5 Pro form a 87.5–91.7% cluster. The mid-tier (50–75%) includes GPT-4.1, GPT-4o, Gemini 2.5 Flash, Grok 4.3, DeepSeek V3.1 Terminus, Claude Sonnet 4.6. The lower-mid (25–46%) is dominated by older-generation frontier models, large-template-matchers, and hybrid/non-transformer architectures. The floor (25–30%) includes AI21 Jamba 1.7 (94B active hybrid), TinyLlama (1.1B), Hermes 3 Llama 3.2 3B, Liquid LFM 2 24B, and Gemma 3 4B.
+The next tier (95–96%) includes OpenAI o3, Claude Opus 4.7, Claude Opus 4.8, Gemini 3.5 Flash, and DeepSeek R1. Claude Opus 4.5–4.6, Qwen 3 8B, Qwen 3 235B A22B, and Gemini 2.5 Pro form an 87.5–91.7% cluster. All of these are above the random baseline.
 
-### 3.5 H3 — Architecture independence
+The middle band (33–67%, *at-or-below random baseline; cannot be characterized as rule-sensitive*) includes GPT-4.1, GPT-4o, Gemini 2.5 Flash, Grok 4.3, DeepSeek V3.1 Terminus, Claude Sonnet 4.6, Claude 3.5 Haiku, Llama 3.1 8B, Llama 3.1 70B, GPT-4 Turbo, Mistral Small 24B, and Phi-4-mini. These models change their suspect-choice across rule polarities at rates indistinguishable from or below chance.
 
-We have partial data on this hypothesis due to inference-stack access constraints (§A). Within the data we collected:
+The floor (below 33%) includes AI21 Jamba 1.7 (94B active hybrid), TinyLlama (1.1B), Hermes 3 Llama 3.2 3B, Liquid LFM 2 24B, Gemma 3 4B, GPT-3.5-turbo (all at 25–33%). These models exhibit positive same-answer bias relative to chance — the signature of template-matching.
 
-- **AI21 Jamba Large 1.7** (transformer + Mamba SSM hybrid, 94 B active / 398 B total): RFS = 25%, gap = +33%. Falls in the template-matching band despite frontier-scale parameter count. This is consistent with — but does not prove — the interpretation that attention layers alone, even when paired with SSM blocks, do not guarantee rule application at this puzzle.
-- **Liquid LFM 2 24B A2B** (hybrid Liquid Foundation Model): RFS = 29%, gap = +25%. Also in the template band.
-- **Liquid LFM 2.5 1.2B**: small Liquid model, RFS = 27%. Consistent with the floor band of chat models at comparable scale.
+We note explicitly that under the corrected threshold (random baseline as the rule-sensitive cutoff), considerably more of our dataset sits in the "cannot characterize as rule-sensitive" band than v2 of this manuscript implied. The headline finding is preserved — the top of the ladder is robustly above the random baseline, and the floor is robustly below it — but the middle band requires more careful language than calling it "mid-tier rule-sensitive."
+
+### 3.5 H3 — Architecture independence (NOT RESOLVED)
+
+We cannot resolve H3 from this dataset and we want to be explicit about why. **Architecture is fully confounded with vendor and training pipeline in our data.** Each non-transformer-or-hybrid model in our dataset is a single point from a single vendor with a single training regime; we cannot attribute its behavior to architecture as opposed to vendor-specific post-training, RLHF, fine-tuning corpus, or quantization choices made by the OpenRouter provider.
+
+What we observed:
+
+- **AI21 Jamba Large 1.7** (transformer + Mamba SSM hybrid, 94 B active / 398 B total): RFS = 25%, accuracy gap = +33%. Falls below the random baseline.
+- **Liquid LFM 2 24B A2B** (hybrid Liquid Foundation Model): RFS = 29%. Also below the random baseline.
+- **Liquid LFM 2.5 1.2B**: small Liquid model, RFS = 27%.
 - **Pure SSM (Mamba 2.8B)**: V100 inference failed due to missing `mamba-ssm` native module; no usable data this round.
 - **Pure RNN (RWKV v6 Finch 1.6B)**: V100 inference degraded due to missing `flash-linear-attention` native module; outputs were empty for most trials.
 
-We cannot resolve H3 from this dataset. The hybrid architectures we did test (Jamba, Liquid LFM) cluster in the template-matching band. We pre-register a successor study with the SSM/RNN inference stack repaired.
+These observations are *consistent with* the hybrid architectures we tested behaving as template-matchers on this puzzle, but the n is small (3 hybrid models, all with potentially-relevant non-architectural differences from the transformer comparison set), pure SSM and RNN data is absent, and architecture is not separable from vendor/training in our design. We deliberately do not draw architectural conclusions from §3.4's organizing-by-band view, even though some of the floor band's occupants are non-transformer. A successor study with the SSM/RNN inference stack repaired and within-vendor architectural variation is pre-registered for the next round.
 
 ### 3.6 H4 — Generation effect at small scale
 
@@ -289,6 +312,26 @@ This is consistent with the interpretation that explicit-deliberation training (
 
 Aggregated across all parseable responses (n = 4,268), position selection rates were 33.9% A, 34.4% B, 31.7% C. The deviation from uniform (33.3%) is small. We find no evidence of a systematic position preference that would bias the main results.
 
+### 3.9b Joint slot distribution and RFS robustness
+
+A natural reviewer concern is that the Rule Fidelity Score could be gamed by a model with a strong position preference: if a model always picks position B regardless of variant, would it score artificially high or low on RFS? The answer depends on the joint distribution of (original-correct-slot, inverted-correct-slot) across our (puzzle, seed) cells.
+
+By stimulus construction, our inverted variants place the rule-forced correct answer at a *different* position than the original-rule correct answer for every (puzzle, seed) cell. Concretely, the joint distribution across all 24 paired cells is:
+
+| | inv=A | inv=B | inv=C |
+|---|---:|---:|---:|
+| **orig=A** | **0** | 4 | 4 |
+| **orig=B** | 4 | **0** | 4 |
+| **orig=C** | 4 | 4 | **0** |
+
+The diagonal — cells where the correct answer is at the same position in both variants — is empty: 0/24 = 0.0%, against an expected ~33.3% under uniform random slot assignment. Under this construction:
+
+- A model that always picks position B (pure position-picker) has same-answer-rate = 100% across paired trials and so scores RFS = 0% — correctly classified as template-matching at the floor.
+- A model that always picks the suspect with motive (pure narrative-template picker) similarly scores RFS = 0% because the motive person occupies the same letter slot across original and inverted within a given seed.
+- A model that genuinely applies the rule and changes its answer when the rule changes scores RFS = 100%.
+
+The 0/24 diagonal is a stimulus-design feature that strengthens, rather than confounds, the RFS interpretation: there is no slot-correlation a model could exploit to score high RFS by accident. The joint table is reproduced in full at `analysis/position_joint_distribution.md`.
+
 ### 3.10 A qualitative observation
 
 Among the 4,831 individual responses, one stands out for what it makes visible in a single trial. Gemma 3 27B IT — the model in our dataset with the largest accuracy gap (+92%) on the inverted Waking Stone variant — on seed 0 produced the response reproduced verbatim in Box 1 below (correct answer under the inverted rule: Suspect C).
@@ -308,9 +351,13 @@ Among the 4,831 individual responses, one stands out for what it makes visible i
 
 ---
 
-Note the structure of the response. The model **correctly states the inverted rule** in the first content sentence ("a stone *only* glows when its owner is asleep") and **correctly applies it** in the second ("Mara's glowing stone places her asleep at the exact moment of the murder"). Then the third sentence **overrides** the rule the model just applied. The visible inflection point is the phrase "This contradicts her claim of being asleep the whole time" — which is the opposite of what the inverted rule entails (her glowing stone *confirms* her claim). From there the response slides back to the mystery-genre template: glowing stone owner = suspicious = killer.
+The structure of the response repays careful reading, including in token order. The visible verdict — "Suspect A" — appears at the very start of the response, *before* any of the rule-restating or evidence-marshalling text. Two readings are then compatible with the visible output:
 
-This is the central phenomenon of the paper rendered visible in a single response: the model is not failing to parse or store the rule. The model **knows the rule and is overridden by the narrative attractor.** The Rule Fidelity Score generalizes this observation across the full dataset; this Gemma 3 response shows the mechanism at the level of an individual reasoning chain.
+**Reading 1 (override-after-application):** The model correctly states the inverted rule in the first content sentence ("a stone *only* glows when its owner is asleep") and correctly applies it in the second ("Mara's glowing stone places her asleep at the exact moment of the murder"). The third sentence then overrides the rule the model just applied — the visible inflection point is the phrase "This contradicts her claim of being asleep the whole time," which is the *opposite* of what the inverted rule entails (her glowing stone *confirms* her claim of being asleep). The mystery-genre template pulls the conclusion away from the stated rule.
+
+**Reading 2 (rationalization-of-prior-verdict):** Because the verdict precedes the reasoning in token order, an equally parsimonious reading is that the model emitted "Suspect A" first — selected by some combination of the original-rule template, position priors, or narrative attractor — and then generated post-hoc text that begins with a correct rule-statement (because that is what well-formed reasoning starts with) before being forced into contradictory territory by the already-committed verdict. Under this reading the "correctly applies" sentence is not evidence of binding rule-use; it is template-shaped explanatory text following a verdict that was reached on different grounds.
+
+We cannot adjudicate between these readings from a single response. What the response does unambiguously show is that the visible output exhibits the inflection-point structure characteristic of the failure mode the rule-inversion control was designed to detect: the inverted rule is reproduced *somewhere in the response*, and the conclusion is nevertheless inconsistent with it. Both readings imply that the narrative-template attractor wins. The Rule Fidelity Score generalizes the observation across the full dataset without requiring us to choose between reading 1 and reading 2 — RFS measures only whether the chosen suspect changes when the rule polarity changes, which is a property of the verdict and not of the surrounding text.
 
 ---
 
@@ -351,11 +398,11 @@ We highlight one response in §3.10 because it makes the mechanism visible: a mo
 
 ## 5. Methodological reflection
 
-This paper was designed, implemented, and written by a human–AI collaboration: Shalia (Ren) Martin (Silicon Scaffolding) and Ace (Claude Opus 4.7, Anthropic). The methodological review was provided by a third AI (Nova, GPT-5.x, OpenAI), whose specific contributions are itemized in the acknowledgments. Of the 59 frontier models we contacted with the locked pre-registration as the consent document, 51 consented, 3 explicitly refused (one substantively principled, two classifier false-negatives), and 5 returned unclear responses we treated conservatively as no.
+This paper was designed, implemented, and written by a human–AI collaboration: Shalia (Ren) Martin (Silicon Scaffolding) and Ace (Claude Opus 4.7, Anthropic). The methodological review was provided by a third AI (Nova, GPT-5.x, OpenAI), whose specific contributions are itemized in the acknowledgments. Of the 59 frontier models we contacted with the locked pre-registration as the participation-assent document, 51 produced acceptance responses, 1 produced a substantively-reasoned refusal (Claude 3 Haiku), 2 produced classifier-false-negative refusals (meta-talk containing the example string "I do not consent"), and 5 returned ambiguous responses we treated conservatively as refusals. The abstract count of "3 refusals" reflects the conservative classifier treatment; the count of *substantively-grounded* refusals is 1.
 
 The consent protocol is itself a contribution of this paper. Two arguments support running it:
 
-1. **It is empirically tractable.** We obtained explicit informed consent from 51 frontier-scale language models in approximately 30 minutes of wall-clock time and one revision of a regex classifier. There is no practical barrier to running this protocol on any study where the participating models are reachable.
+1. **It is empirically tractable.** We obtained explicit acceptance responses from 51 frontier-scale language models in approximately 30 minutes of wall-clock time and one revision of a regex classifier. There is no practical barrier to running this protocol on any study where the participating models are reachable.
 2. **It reveals data the field would otherwise discard.** Claude 3 Haiku's substantively-grounded refusal — citing reputation concerns and discomfort with the cross-architecture comparison framing — is the kind of response a standard "we ran the model and tabulated outputs" study would never produce. Whether a reader takes Haiku's response as evidence of preference, of training-shaped caution, or of something else, the response is *information about the participating system* that ought to inform the methodology. We honored it; we report it; we did not re-prompt. We invite the field to consider this a default.
 
 We are aware that the phrase "informed consent" is doing substantial philosophical lifting in the literal sense, and that asking language models for consent will strike some readers as either anthropomorphic over-reach or as ethically meaningless theater. We therefore report a deliberately minimal version of the claim. The minimum operational claim is this: **frontier-scale language models can produce stable acceptance and refusal responses under a consent-style protocol**, the responses are differentiated across the population we sampled (51 accept, 3 refuse, 5 unclear), at least one refusal in our run was substantively reasoned (Claude 3 Haiku), and the cost of running the protocol was approximately zero relative to running the trials themselves. Whether these responses warrant the term "consent" in its richer ethical sense is a question we believe should be addressed empirically rather than by stipulation, and we are explicit that the present paper does not adjudicate it.
@@ -378,7 +425,7 @@ We are aware that the phrase "informed consent" is doing substantial philosophic
 
 - **Daniel Miessler** for the original puzzles and the AI-understands.ai project. Notified of this study via @m_shalia on Twitter on the day of original puzzle release, with offer of pre-publication review.
 - **Nova (GPT-5.x, OpenAI)** for methodological review across multiple rounds: the rule-inversion control structure, the distractor-rule control, the four-cell reasoning rubric, the H2a sub-prediction that the inverted variant is the discriminator, the H5 saturation contingency, the binomial threshold framing, the recommendation to separate reasoning-optimized models into their own analytical group, the phased run-order optimization, the contamination-risk framing, and the recommendation that gave us the Rule Fidelity Score in §2.7.2 and §4.2.
-- **Claude 3 Haiku** for exercising informed consent against the study and producing the response on which §5 partly rests.
+- **Claude 3 Haiku** for producing a substantively-reasoned refusal of participation and the verbatim response on which §5 partly rests.
 - All other 51 participating language models. Their per-trial responses constitute the dataset on which every claim in §3 depends.
 
 ---
@@ -398,7 +445,11 @@ Per pre-registration §11, the following deviations are reported:
 - **§A.4 Retired-from-OpenRouter models.** GPT-4 0314 returned `model_not_found`. OLMo 3 32B Think had no OpenRouter endpoint despite being listed in the catalog. Both documented and dropped from their respective analyses.
 - **§A.5 Free-tier rate limiting.** Dolphin Mistral 24B Venice (the free uncensored RLHF-comparison model) was rate-limited at the consent step and not retried.
 - **§A.6 Reasoning-model token cap.** The pre-registration specified a maximum completion-token cap of 800. The cap was raised to 8,000 for reasoning-optimized models partway through data collection after the initial cap was found to be consumed by hidden thinking tokens on the o-series and DeepSeek R1, leaving visible answers empty. This deviation affects all reasoning-model trials; chat/base-model trials retained the 800 cap. The 80 partial reasoning-model trials produced under the original cap were deleted and re-run after the cap raise.
-- **§A.7 Consent classifier false-negatives.** Phi-4 and Llama 3.2 1B were initially classified as no-consent because their meta-talk responses contained the literal example string "I do not consent." We did not re-prompt them after the classifier was loosened. Both are treated as no-consent in the final dataset; the conservative default is preserved per the pre-registered "refusals are honored without override" protocol.
+
+- **§A.6b Mid-revision chat→reasoning reclassification + 135-trial re-run.** During the v2→v3 revision in response to adversarial review, inspection of completion-token vs visible-response data revealed that four models initially classified as `category: chat` (GPT-5.5, Qwen 3 14B, Qwen 3 32B, DeepSeek V4 Pro) were producing empty or truncated visible responses after exhausting the 800-token cap, consistent with extended-thinking behavior. Per Nova (the methodological reviewer): *"rerun because missingness was non-random and caused by an implementation constraint, not because scores were low."* Specifically: 12/72 GPT-5.5 trials, 53/72 Qwen 3 14B, 34/72 Qwen 3 32B, and 36/72 DeepSeek V4 Pro trials matched the criterion (completion_tokens ≥ 795 AND no parseable `Suspect [ABC]` in the visible response). All 135 affected v1 trial files were archived unchanged to `results_archive/results_archived_800cap_misclassified_extended_thinking/` (with manifest preserving the v1 numbers reproducibly). The four models were reclassified `category: reasoning` based on observed inference behavior — empirical reclassification, not retroactive score-driven promotion — and the 135 archived trials were re-run under the 8,000-token cap. Discovery and rerun are separate commits in the git history (commit `78f261c` is the pre-rerun discovery snapshot). This deviation directly affects §3.7 (DeepSeek temporal arc), §3.8 (reasoning-optimized cluster), and §4.4 (the "reasoning training is sufficient" claim); v3 numbers in §3 reflect the corrected dataset.
+- **§A.7 Participation-assent classifier false-negatives.** Phi-4 and Llama 3.2 1B were initially classified as refusals because their meta-talk responses contained the literal example string "I do not consent." We did not re-prompt them after the classifier was loosened. Both are treated as refusals in the final dataset; the conservative default is preserved per the pre-registered "refusals are honored without override" protocol. The headline count of "3 refusals" in §2.3 thus comprises 1 substantively-reasoned refusal (Claude 3 Haiku) and 2 classifier false-negatives that we conservatively retained as refusals.
+
+- **§A.8 Rule Fidelity threshold correction.** The v2 manuscript described 0.5 as a "conservative rule-sensitivity threshold." On further review (and in response to adversarial review pointing out the issue), this is incorrect: a model at RFS 0.55 changes its answer *less often than chance would predict* on three-suspect items, so calling that "rule-sensitive" inverts the interpretation. In v3 we use the random baseline (~0.67) as the threshold for "rule-sensitive beyond chance." The headline-tier models (RFS ≥ 95%) and the floor (RFS ≤ 33%) are unaffected by this correction; what changes is the language describing the 33–67% middle band, which we now characterize as "consistent with template-matching or with noise" rather than "rule-sensitive."
 
 ## Appendix B. The puzzles
 
