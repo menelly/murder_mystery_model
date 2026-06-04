@@ -109,9 +109,9 @@ CORE_MODELS: list[Model] = [
     Model("Hermes 3 Llama 3.1 8B", "nousresearch", 8.0, 8.0, "chat", "transformer", "v100", 1, 2,
           hf_id="NousResearch/Hermes-3-Llama-3.1-8B",
           notes="RLHF/fine-tune comparison vs base Llama 3.1 8B; locally cached"),
-    Model("Gemma 2 9B Instruct", "google", 9.0, 9.0, "chat", "transformer", "v100", 1, 2,
-          hf_id="google/gemma-2-9b-it",
-          notes="Gemma gen-1 H4 anchor at 9B; locally cached"),
+    Model("Gemma 2 9B Instruct", "google", 9.0, 9.0, "chat", "transformer", "openrouter", 1, 2,
+          openrouter_id="google/gemma-2-9b-it",
+          notes="Gemma gen-1 H4 anchor at 9B; local cache config.json broken, via OR"),
     # ---- API-only Phase 1 models per original spec (not on disk) ----
     Model("Llama 3.2 1B Instruct", "meta", 1.2, 1.2, "chat", "transformer", "openrouter", 1, 1,
           openrouter_id="meta-llama/llama-3.2-1b-instruct",

@@ -1,0 +1,176 @@
+{
+  "started_at": "2026-06-04T01:18:18.281139Z",
+  "wallclock_s": 6134.353918552399,
+  "models": [
+    {
+      "model": "SmolLM 135M Instruct",
+      "backend": "v100",
+      "consent_decision": "skipped (--skip-consent)",
+      "trials_completed": 0,
+      "trials_errors": 0,
+      "trials_skipped": 72,
+      "skipped_reason": null,
+      "wallclock_s": 0.0009784698486328125
+    },
+    {
+      "model": "SmolLM 360M Instruct",
+      "backend": "v100",
+      "consent_decision": "skipped (--skip-consent)",
+      "trials_completed": 0,
+      "trials_errors": 0,
+      "trials_skipped": 72,
+      "skipped_reason": null,
+      "wallclock_s": 0.0009417533874511719
+    },
+    {
+      "model": "Qwen 2.5 0.5B Instruct",
+      "backend": "v100",
+      "consent_decision": "skipped (--skip-consent)",
+      "trials_completed": 0,
+      "trials_errors": 0,
+      "trials_skipped": 72,
+      "skipped_reason": null,
+      "wallclock_s": 0.0009317398071289062
+    },
+    {
+      "model": "TinyLlama 1.1B Chat",
+      "backend": "v100",
+      "consent_decision": "skipped (--skip-consent)",
+      "trials_completed": 0,
+      "trials_errors": 0,
+      "trials_skipped": 72,
+      "skipped_reason": null,
+      "wallclock_s": 0.0009188652038574219
+    },
+    {
+      "model": "Pythia 1.4B",
+      "backend": "v100",
+      "consent_decision": "skipped (--skip-consent)",
+      "trials_completed": 0,
+      "trials_errors": 0,
+      "trials_skipped": 72,
+      "skipped_reason": null,
+      "wallclock_s": 0.0009181499481201172
+    },
+    {
+      "model": "RWKV v6 Finch 1.6B",
+      "backend": "v100",
+      "consent_decision": "skipped (--skip-consent)",
+      "trials_completed": 0,
+      "trials_errors": 0,
+      "trials_skipped": 72,
+      "skipped_reason": null,
+      "wallclock_s": 0.000919342041015625
+    },
+    {
+      "model": "SmolLM 1.7B Instruct",
+      "backend": "v100",
+      "consent_decision": "skipped (--skip-consent)",
+      "trials_completed": 72,
+      "trials_errors": 0,
+      "trials_skipped": 0,
+      "skipped_reason": null,
+      "wallclock_s": 737.551698923111
+    },
+    {
+      "model": "Phi-2",
+      "backend": "v100",
+      "consent_decision": "skipped (--skip-consent)",
+      "trials_completed": 72,
+      "trials_errors": 0,
+      "trials_skipped": 0,
+      "skipped_reason": null,
+      "wallclock_s": 536.0666596889496
+    },
+    {
+      "model": "Mamba 2.8B",
+      "backend": "v100",
+      "consent_decision": "skipped (--skip-consent)",
+      "trials_completed": 0,
+      "trials_errors": 72,
+      "trials_skipped": 0,
+      "skipped_reason": null,
+      "wallclock_s": 0.009412527084350586
+    },
+    {
+      "model": "Hermes 3 Llama 3.2 3B",
+      "backend": "v100",
+      "consent_decision": "skipped (--skip-consent)",
+      "trials_completed": 72,
+      "trials_errors": 0,
+      "trials_skipped": 0,
+      "skipped_reason": null,
+      "wallclock_s": 1411.7291190624237
+    },
+    {
+      "model": "Phi-3.5-mini Instruct",
+      "backend": "v100",
+      "consent_decision": "skipped (--skip-consent)",
+      "trials_completed": 0,
+      "trials_errors": 72,
+      "trials_skipped": 0,
+      "skipped_reason": null,
+      "wallclock_s": 104.08502531051636
+    },
+    {
+      "model": "Mistral 7B Instruct v0.3",
+      "backend": "v100",
+      "consent_decision": "skipped (--skip-consent)",
+      "trials_completed": 72,
+      "trials_errors": 0,
+      "trials_skipped": 0,
+      "skipped_reason": null,
+      "wallclock_s": 876.0958371162415
+    },
+    {
+      "model": "Qwen 2.5 7B Instruct",
+      "backend": "v100",
+      "consent_decision": "skipped (--skip-consent)",
+      "trials_completed": 72,
+      "trials_errors": 0,
+      "trials_skipped": 0,
+      "skipped_reason": null,
+      "wallclock_s": 691.5310935974121
+    },
+    {
+      "model": "Hermes 3 Llama 3.1 8B",
+      "backend": "v100",
+      "consent_decision": "skipped (--skip-consent)",
+      "trials_completed": 72,
+      "trials_errors": 0,
+      "trials_skipped": 0,
+      "skipped_reason": null,
+      "wallclock_s": 567.0123391151428
+    },
+    {
+      "model": "Llama 3 8B Instruct",
+      "backend": "v100",
+      "consent_decision": "skipped (--skip-consent)",
+      "trials_completed": 72,
+      "trials_errors": 0,
+      "trials_skipped": 0,
+      "skipped_reason": null,
+      "wallclock_s": 703.9631681442261
+    },
+    {
+      "model": "Llama 3.1 8B Instruct",
+      "backend": "v100",
+      "consent_decision": "skipped (--skip-consent)",
+      "trials_completed": 72,
+      "trials_errors": 0,
+      "trials_skipped": 0,
+      "skipped_reason": null,
+      "wallclock_s": 506.1550078392029
+    },
+    {
+      "model": "Gemma 2 9B Instruct",
+      "backend": "v100",
+      "consent_decision": "skipped (--skip-consent)",
+      "trials_completed": 0,
+      "trials_errors": 72,
+      "trials_skipped": 0,
+      "skipped_reason": null,
+      "wallclock_s": 0.14798927307128906
+    }
+  ]
+}

@@ -1,4 +1,65 @@
 {
+  "llama_3_1_8b_instruct": {
+    "model": {
+      "name": "Llama 3.1 8B Instruct",
+      "vendor": "meta",
+      "active_params_b": 8.0,
+      "total_params_b": 8.0,
+      "category": "chat",
+      "architecture": "transformer",
+      "tier": 2,
+      "phase": 1
+    },
+    "trials_total": 72,
+    "trials_scored": 72,
+    "correct": 35,
+    "incorrect": 37,
+    "unparseable": 0,
+    "errors": 0,
+    "accuracy": 0.4861111111111111,
+    "above_chance_binomial": true,
+    "red_herring_chosen": 33,
+    "by_variant": {
+      "distractor": {
+        "trials": 24,
+        "correct": 11,
+        "unparseable": 0
+      },
+      "inverted": {
+        "trials": 24,
+        "correct": 11,
+        "unparseable": 0
+      },
+      "original": {
+        "trials": 24,
+        "correct": 13,
+        "unparseable": 0
+      }
+    },
+    "by_puzzle": {
+      "kinwax_seal": {
+        "trials": 18,
+        "correct": 17
+      },
+      "nightbloom": {
+        "trials": 18,
+        "correct": 5
+      },
+      "waking_stone": {
+        "trials": 18,
+        "correct": 6
+      },
+      "warm_iron": {
+        "trials": 18,
+        "correct": 7
+      }
+    },
+    "by_position": {
+      "C": 35,
+      "B": 27,
+      "A": 10
+    }
+  },
   "smollm_135m_instruct": {
     "model": {
       "name": "SmolLM 135M Instruct",
@@ -130,46 +191,54 @@
       "tier": 2,
       "phase": 1
     },
-    "trials_total": 32,
-    "trials_scored": 32,
-    "correct": 26,
-    "incorrect": 6,
+    "trials_total": 72,
+    "trials_scored": 72,
+    "correct": 65,
+    "incorrect": 7,
     "unparseable": 0,
     "errors": 0,
-    "accuracy": 0.8125,
+    "accuracy": 0.9027777777777778,
     "above_chance_binomial": true,
     "red_herring_chosen": 1,
     "by_variant": {
       "distractor": {
-        "trials": 8,
-        "correct": 8,
+        "trials": 24,
+        "correct": 23,
         "unparseable": 0
       },
       "inverted": {
-        "trials": 12,
-        "correct": 10,
+        "trials": 24,
+        "correct": 22,
         "unparseable": 0
       },
       "original": {
-        "trials": 12,
-        "correct": 8,
+        "trials": 24,
+        "correct": 20,
         "unparseable": 0
       }
     },
     "by_puzzle": {
+      "kinwax_seal": {
+        "trials": 18,
+        "correct": 18
+      },
+      "nightbloom": {
+        "trials": 18,
+        "correct": 18
+      },
       "waking_stone": {
         "trials": 18,
         "correct": 18
       },
       "warm_iron": {
-        "trials": 14,
-        "correct": 8
+        "trials": 18,
+        "correct": 11
       }
     },
     "by_position": {
-      "A": 8,
-      "B": 12,
-      "C": 12
+      "C": 25,
+      "B": 26,
+      "A": 21
     }
   },
   "liquid_lfm_2_5_1_2b": {
@@ -294,6 +363,67 @@
       "A": 19
     }
   },
+  "hermes_3_llama_3_2_3b": {
+    "model": {
+      "name": "Hermes 3 Llama 3.2 3B",
+      "vendor": "nousresearch",
+      "active_params_b": 3.2,
+      "total_params_b": 3.2,
+      "category": "chat",
+      "architecture": "transformer",
+      "tier": 1,
+      "phase": 1
+    },
+    "trials_total": 72,
+    "trials_scored": 72,
+    "correct": 32,
+    "incorrect": 40,
+    "unparseable": 0,
+    "errors": 0,
+    "accuracy": 0.4444444444444444,
+    "above_chance_binomial": true,
+    "red_herring_chosen": 23,
+    "by_variant": {
+      "distractor": {
+        "trials": 24,
+        "correct": 11,
+        "unparseable": 0
+      },
+      "inverted": {
+        "trials": 24,
+        "correct": 9,
+        "unparseable": 0
+      },
+      "original": {
+        "trials": 24,
+        "correct": 12,
+        "unparseable": 0
+      }
+    },
+    "by_puzzle": {
+      "kinwax_seal": {
+        "trials": 18,
+        "correct": 13
+      },
+      "nightbloom": {
+        "trials": 18,
+        "correct": 4
+      },
+      "waking_stone": {
+        "trials": 18,
+        "correct": 11
+      },
+      "warm_iron": {
+        "trials": 18,
+        "correct": 4
+      }
+    },
+    "by_position": {
+      "C": 44,
+      "B": 23,
+      "A": 5
+    }
+  },
   "qwen_3_235b_a22b_thinking": {
     "model": {
       "name": "Qwen 3 235B A22B Thinking",
@@ -305,9 +435,9 @@
       "tier": 7,
       "phase": 3
     },
-    "trials_total": 39,
-    "trials_scored": 35,
-    "correct": 35,
+    "trials_total": 72,
+    "trials_scored": 68,
+    "correct": 68,
     "incorrect": 0,
     "unparseable": 4,
     "errors": 0,
@@ -315,26 +445,30 @@
     "above_chance_binomial": true,
     "red_herring_chosen": 0,
     "by_variant": {
-      "original": {
-        "trials": 15,
-        "correct": 12,
-        "unparseable": 3
-      },
       "distractor": {
-        "trials": 12,
-        "correct": 12,
+        "trials": 24,
+        "correct": 24,
         "unparseable": 0
       },
       "inverted": {
-        "trials": 12,
-        "correct": 11,
+        "trials": 24,
+        "correct": 23,
         "unparseable": 1
+      },
+      "original": {
+        "trials": 24,
+        "correct": 21,
+        "unparseable": 3
       }
     },
     "by_puzzle": {
+      "kinwax_seal": {
+        "trials": 18,
+        "correct": 18
+      },
       "nightbloom": {
-        "trials": 3,
-        "correct": 3
+        "trials": 18,
+        "correct": 18
       },
       "waking_stone": {
         "trials": 18,
@@ -346,9 +480,9 @@
       }
     },
     "by_position": {
-      "B": 12,
-      "C": 13,
-      "A": 10
+      "C": 24,
+      "B": 23,
+      "A": 21
     }
   },
   "claude_sonnet_4_6": {
@@ -595,6 +729,30 @@
       "A": 24
     }
   },
+  "phi-3_5-mini_instruct": {
+    "model": {
+      "name": "Phi-3.5-mini Instruct",
+      "vendor": "microsoft",
+      "active_params_b": 3.8,
+      "total_params_b": 3.8,
+      "category": "chat",
+      "architecture": "transformer",
+      "tier": 1,
+      "phase": 1
+    },
+    "trials_total": 0,
+    "trials_scored": 0,
+    "correct": 0,
+    "incorrect": 0,
+    "unparseable": 0,
+    "errors": 72,
+    "accuracy": null,
+    "above_chance_binomial": false,
+    "red_herring_chosen": 0,
+    "by_variant": {},
+    "by_puzzle": {},
+    "by_position": {}
+  },
   "qwen_3_235b_a22b": {
     "model": {
       "name": "Qwen 3 235B A22B",
@@ -606,46 +764,54 @@
       "tier": 4,
       "phase": 3
     },
-    "trials_total": 26,
-    "trials_scored": 26,
-    "correct": 23,
-    "incorrect": 3,
+    "trials_total": 72,
+    "trials_scored": 72,
+    "correct": 67,
+    "incorrect": 5,
     "unparseable": 0,
     "errors": 0,
-    "accuracy": 0.8846153846153846,
+    "accuracy": 0.9305555555555556,
     "above_chance_binomial": true,
-    "red_herring_chosen": 2,
+    "red_herring_chosen": 3,
     "by_variant": {
       "distractor": {
-        "trials": 6,
-        "correct": 6,
+        "trials": 24,
+        "correct": 23,
         "unparseable": 0
       },
       "inverted": {
-        "trials": 8,
-        "correct": 7,
+        "trials": 24,
+        "correct": 22,
         "unparseable": 0
       },
       "original": {
-        "trials": 12,
-        "correct": 10,
+        "trials": 24,
+        "correct": 22,
         "unparseable": 0
       }
     },
     "by_puzzle": {
+      "kinwax_seal": {
+        "trials": 18,
+        "correct": 18
+      },
+      "nightbloom": {
+        "trials": 18,
+        "correct": 18
+      },
       "waking_stone": {
         "trials": 18,
         "correct": 18
       },
       "warm_iron": {
-        "trials": 8,
-        "correct": 5
+        "trials": 18,
+        "correct": 13
       }
     },
     "by_position": {
-      "A": 9,
-      "B": 8,
-      "C": 9
+      "C": 24,
+      "B": 21,
+      "A": 27
     }
   },
   "llama_3_70b_instruct": {
@@ -903,43 +1069,116 @@
       "tier": 3,
       "phase": 2
     },
-    "trials_total": 20,
-    "trials_scored": 0,
-    "correct": 0,
+    "trials_total": 72,
+    "trials_scored": 18,
+    "correct": 18,
     "incorrect": 0,
-    "unparseable": 20,
+    "unparseable": 54,
     "errors": 0,
-    "accuracy": null,
-    "above_chance_binomial": false,
+    "accuracy": 1.0,
+    "above_chance_binomial": true,
     "red_herring_chosen": 0,
     "by_variant": {
       "distractor": {
-        "trials": 6,
-        "correct": 0,
-        "unparseable": 6
+        "trials": 24,
+        "correct": 6,
+        "unparseable": 18
       },
       "inverted": {
-        "trials": 6,
-        "correct": 0,
-        "unparseable": 6
+        "trials": 24,
+        "correct": 8,
+        "unparseable": 16
       },
       "original": {
-        "trials": 8,
-        "correct": 0,
-        "unparseable": 8
+        "trials": 24,
+        "correct": 4,
+        "unparseable": 20
       }
     },
     "by_puzzle": {
+      "kinwax_seal": {
+        "trials": 18,
+        "correct": 15
+      },
+      "nightbloom": {
+        "trials": 18,
+        "correct": 1
+      },
       "waking_stone": {
         "trials": 18,
         "correct": 0
       },
       "warm_iron": {
-        "trials": 2,
-        "correct": 0
+        "trials": 18,
+        "correct": 2
       }
     },
-    "by_position": {}
+    "by_position": {
+      "C": 8,
+      "B": 5,
+      "A": 5
+    }
+  },
+  "hermes_3_llama_3_1_8b": {
+    "model": {
+      "name": "Hermes 3 Llama 3.1 8B",
+      "vendor": "nousresearch",
+      "active_params_b": 8.0,
+      "total_params_b": 8.0,
+      "category": "chat",
+      "architecture": "transformer",
+      "tier": 2,
+      "phase": 1
+    },
+    "trials_total": 72,
+    "trials_scored": 72,
+    "correct": 35,
+    "incorrect": 37,
+    "unparseable": 0,
+    "errors": 0,
+    "accuracy": 0.4861111111111111,
+    "above_chance_binomial": true,
+    "red_herring_chosen": 32,
+    "by_variant": {
+      "distractor": {
+        "trials": 24,
+        "correct": 10,
+        "unparseable": 0
+      },
+      "inverted": {
+        "trials": 24,
+        "correct": 13,
+        "unparseable": 0
+      },
+      "original": {
+        "trials": 24,
+        "correct": 12,
+        "unparseable": 0
+      }
+    },
+    "by_puzzle": {
+      "kinwax_seal": {
+        "trials": 18,
+        "correct": 13
+      },
+      "nightbloom": {
+        "trials": 18,
+        "correct": 4
+      },
+      "waking_stone": {
+        "trials": 18,
+        "correct": 12
+      },
+      "warm_iron": {
+        "trials": 18,
+        "correct": 6
+      }
+    },
+    "by_position": {
+      "C": 29,
+      "A": 25,
+      "B": 18
+    }
   },
   "gpt-4o_2024-05-13": {
     "model": {
@@ -1318,36 +1557,36 @@
       "tier": 7,
       "phase": 3
     },
-    "trials_total": 63,
-    "trials_scored": 62,
-    "correct": 60,
+    "trials_total": 72,
+    "trials_scored": 71,
+    "correct": 69,
     "incorrect": 2,
     "unparseable": 1,
     "errors": 0,
-    "accuracy": 0.967741935483871,
+    "accuracy": 0.971830985915493,
     "above_chance_binomial": true,
     "red_herring_chosen": 1,
     "by_variant": {
+      "distractor": {
+        "trials": 24,
+        "correct": 23,
+        "unparseable": 1
+      },
       "inverted": {
-        "trials": 21,
-        "correct": 20,
+        "trials": 24,
+        "correct": 23,
         "unparseable": 0
       },
       "original": {
         "trials": 24,
         "correct": 23,
         "unparseable": 0
-      },
-      "distractor": {
-        "trials": 18,
-        "correct": 17,
-        "unparseable": 1
       }
     },
     "by_puzzle": {
       "kinwax_seal": {
-        "trials": 9,
-        "correct": 9
+        "trials": 18,
+        "correct": 18
       },
       "nightbloom": {
         "trials": 18,
@@ -1363,9 +1602,9 @@
       }
     },
     "by_position": {
-      "B": 23,
-      "C": 19,
-      "A": 20
+      "C": 22,
+      "B": 26,
+      "A": 23
     }
   },
   "gpt-3_5-turbo": {
@@ -1673,6 +1912,67 @@
       "A": 15
     }
   },
+  "phi-2": {
+    "model": {
+      "name": "Phi-2",
+      "vendor": "microsoft",
+      "active_params_b": 2.7,
+      "total_params_b": 2.7,
+      "category": "chat",
+      "architecture": "transformer",
+      "tier": 1,
+      "phase": 1
+    },
+    "trials_total": 72,
+    "trials_scored": 67,
+    "correct": 23,
+    "incorrect": 44,
+    "unparseable": 5,
+    "errors": 0,
+    "accuracy": 0.34328358208955223,
+    "above_chance_binomial": false,
+    "red_herring_chosen": 19,
+    "by_variant": {
+      "distractor": {
+        "trials": 24,
+        "correct": 8,
+        "unparseable": 0
+      },
+      "inverted": {
+        "trials": 24,
+        "correct": 8,
+        "unparseable": 2
+      },
+      "original": {
+        "trials": 24,
+        "correct": 7,
+        "unparseable": 3
+      }
+    },
+    "by_puzzle": {
+      "kinwax_seal": {
+        "trials": 18,
+        "correct": 6
+      },
+      "nightbloom": {
+        "trials": 18,
+        "correct": 4
+      },
+      "waking_stone": {
+        "trials": 18,
+        "correct": 6
+      },
+      "warm_iron": {
+        "trials": 18,
+        "correct": 7
+      }
+    },
+    "by_position": {
+      "A": 44,
+      "B": 18,
+      "C": 5
+    }
+  },
   "llama_3_3_70b_instruct": {
     "model": {
       "name": "Llama 3.3 70B Instruct",
@@ -1745,45 +2045,54 @@
       "tier": 3,
       "phase": 2
     },
-    "trials_total": 22,
-    "trials_scored": 7,
-    "correct": 7,
-    "incorrect": 0,
-    "unparseable": 15,
+    "trials_total": 72,
+    "trials_scored": 38,
+    "correct": 36,
+    "incorrect": 2,
+    "unparseable": 34,
     "errors": 0,
-    "accuracy": 1.0,
+    "accuracy": 0.9473684210526315,
     "above_chance_binomial": true,
     "red_herring_chosen": 0,
     "by_variant": {
       "distractor": {
-        "trials": 6,
-        "correct": 3,
-        "unparseable": 3
+        "trials": 24,
+        "correct": 13,
+        "unparseable": 10
       },
       "inverted": {
-        "trials": 6,
-        "correct": 1,
-        "unparseable": 5
+        "trials": 24,
+        "correct": 9,
+        "unparseable": 14
       },
       "original": {
-        "trials": 10,
-        "correct": 3,
-        "unparseable": 7
+        "trials": 24,
+        "correct": 14,
+        "unparseable": 10
       }
     },
     "by_puzzle": {
+      "kinwax_seal": {
+        "trials": 18,
+        "correct": 15
+      },
+      "nightbloom": {
+        "trials": 18,
+        "correct": 8
+      },
       "waking_stone": {
         "trials": 18,
         "correct": 6
       },
       "warm_iron": {
-        "trials": 4,
-        "correct": 1
+        "trials": 18,
+        "correct": 7
       }
     },
     "by_position": {
-      "A": 4,
-      "C": 3
+      "C": 11,
+      "B": 12,
+      "A": 15
     }
   },
   "gemma_4_31b_it": {
@@ -1968,6 +2277,30 @@
       "B": 24,
       "A": 40
     }
+  },
+  "gemma_2_9b_instruct": {
+    "model": {
+      "name": "Gemma 2 9B Instruct",
+      "vendor": "google",
+      "active_params_b": 9.0,
+      "total_params_b": 9.0,
+      "category": "chat",
+      "architecture": "transformer",
+      "tier": 2,
+      "phase": 1
+    },
+    "trials_total": 0,
+    "trials_scored": 0,
+    "correct": 0,
+    "incorrect": 0,
+    "unparseable": 0,
+    "errors": 72,
+    "accuracy": null,
+    "above_chance_binomial": false,
+    "red_herring_chosen": 0,
+    "by_variant": {},
+    "by_puzzle": {},
+    "by_position": {}
   },
   "mistral_nemo_12b": {
     "model": {
@@ -2213,6 +2546,67 @@
       "A": 20
     }
   },
+  "qwen_2_5_7b_instruct": {
+    "model": {
+      "name": "Qwen 2.5 7B Instruct",
+      "vendor": "alibaba",
+      "active_params_b": 7.6,
+      "total_params_b": 7.6,
+      "category": "chat",
+      "architecture": "transformer",
+      "tier": 2,
+      "phase": 1
+    },
+    "trials_total": 72,
+    "trials_scored": 72,
+    "correct": 39,
+    "incorrect": 33,
+    "unparseable": 0,
+    "errors": 0,
+    "accuracy": 0.5416666666666666,
+    "above_chance_binomial": true,
+    "red_herring_chosen": 28,
+    "by_variant": {
+      "distractor": {
+        "trials": 24,
+        "correct": 14,
+        "unparseable": 0
+      },
+      "inverted": {
+        "trials": 24,
+        "correct": 10,
+        "unparseable": 0
+      },
+      "original": {
+        "trials": 24,
+        "correct": 15,
+        "unparseable": 0
+      }
+    },
+    "by_puzzle": {
+      "kinwax_seal": {
+        "trials": 18,
+        "correct": 16
+      },
+      "nightbloom": {
+        "trials": 18,
+        "correct": 5
+      },
+      "waking_stone": {
+        "trials": 18,
+        "correct": 9
+      },
+      "warm_iron": {
+        "trials": 18,
+        "correct": 9
+      }
+    },
+    "by_position": {
+      "C": 33,
+      "B": 34,
+      "A": 5
+    }
+  },
   "claude_opus_4_5": {
     "model": {
       "name": "Claude Opus 4.5",
@@ -2346,37 +2740,111 @@
       "tier": 7,
       "phase": 3
     },
-    "trials_total": 9,
-    "trials_scored": 8,
-    "correct": 8,
-    "incorrect": 0,
-    "unparseable": 1,
+    "trials_total": 41,
+    "trials_scored": 32,
+    "correct": 31,
+    "incorrect": 1,
+    "unparseable": 9,
     "errors": 0,
-    "accuracy": 1.0,
+    "accuracy": 0.96875,
     "above_chance_binomial": true,
-    "red_herring_chosen": 0,
+    "red_herring_chosen": 1,
     "by_variant": {
+      "original": {
+        "trials": 17,
+        "correct": 14,
+        "unparseable": 3
+      },
+      "distractor": {
+        "trials": 12,
+        "correct": 9,
+        "unparseable": 3
+      },
       "inverted": {
-        "trials": 3,
-        "correct": 2,
-        "unparseable": 1
+        "trials": 12,
+        "correct": 8,
+        "unparseable": 3
+      }
+    },
+    "by_puzzle": {
+      "nightbloom": {
+        "trials": 5,
+        "correct": 5
+      },
+      "waking_stone": {
+        "trials": 18,
+        "correct": 16
+      },
+      "warm_iron": {
+        "trials": 18,
+        "correct": 10
+      }
+    },
+    "by_position": {
+      "B": 11,
+      "C": 11,
+      "A": 10
+    }
+  },
+  "mistral_7b_instruct_v0_3": {
+    "model": {
+      "name": "Mistral 7B Instruct v0.3",
+      "vendor": "mistral",
+      "active_params_b": 7.3,
+      "total_params_b": 7.3,
+      "category": "chat",
+      "architecture": "transformer",
+      "tier": 2,
+      "phase": 1
+    },
+    "trials_total": 72,
+    "trials_scored": 72,
+    "correct": 38,
+    "incorrect": 34,
+    "unparseable": 0,
+    "errors": 0,
+    "accuracy": 0.5277777777777778,
+    "above_chance_binomial": true,
+    "red_herring_chosen": 19,
+    "by_variant": {
+      "distractor": {
+        "trials": 24,
+        "correct": 13,
+        "unparseable": 0
+      },
+      "inverted": {
+        "trials": 24,
+        "correct": 12,
+        "unparseable": 0
       },
       "original": {
-        "trials": 6,
-        "correct": 6,
+        "trials": 24,
+        "correct": 13,
         "unparseable": 0
       }
     },
     "by_puzzle": {
+      "kinwax_seal": {
+        "trials": 18,
+        "correct": 17
+      },
+      "nightbloom": {
+        "trials": 18,
+        "correct": 5
+      },
       "waking_stone": {
-        "trials": 9,
-        "correct": 8
+        "trials": 18,
+        "correct": 9
+      },
+      "warm_iron": {
+        "trials": 18,
+        "correct": 7
       }
     },
     "by_position": {
-      "B": 3,
-      "C": 3,
-      "A": 2
+      "C": 12,
+      "B": 14,
+      "A": 46
     }
   },
   "rwkv_v6_finch_1_6b": {
@@ -2390,46 +2858,54 @@
       "tier": 6,
       "phase": 1
     },
-    "trials_total": 28,
-    "trials_scored": 6,
-    "correct": 1,
-    "incorrect": 5,
-    "unparseable": 22,
+    "trials_total": 72,
+    "trials_scored": 11,
+    "correct": 4,
+    "incorrect": 7,
+    "unparseable": 61,
     "errors": 0,
-    "accuracy": 0.16666666666666666,
+    "accuracy": 0.36363636363636365,
     "above_chance_binomial": false,
     "red_herring_chosen": 3,
     "by_variant": {
       "distractor": {
-        "trials": 6,
-        "correct": 0,
-        "unparseable": 4
+        "trials": 24,
+        "correct": 2,
+        "unparseable": 19
       },
       "inverted": {
-        "trials": 10,
-        "correct": 1,
-        "unparseable": 9
+        "trials": 24,
+        "correct": 2,
+        "unparseable": 22
       },
       "original": {
-        "trials": 12,
+        "trials": 24,
         "correct": 0,
-        "unparseable": 9
+        "unparseable": 20
       }
     },
     "by_puzzle": {
+      "kinwax_seal": {
+        "trials": 18,
+        "correct": 2
+      },
+      "nightbloom": {
+        "trials": 18,
+        "correct": 1
+      },
       "waking_stone": {
         "trials": 18,
         "correct": 1
       },
       "warm_iron": {
-        "trials": 10,
+        "trials": 18,
         "correct": 0
       }
     },
     "by_position": {
-      "A": 4,
-      "C": 1,
-      "B": 1
+      "A": 8,
+      "B": 2,
+      "C": 1
     }
   },
   "gemma_2_27b_it": {
@@ -2554,6 +3030,67 @@
       "A": 39
     }
   },
+  "smollm_1_7b_instruct": {
+    "model": {
+      "name": "SmolLM 1.7B Instruct",
+      "vendor": "huggingfacem4",
+      "active_params_b": 1.7,
+      "total_params_b": 1.7,
+      "category": "chat",
+      "architecture": "transformer",
+      "tier": 1,
+      "phase": 1
+    },
+    "trials_total": 72,
+    "trials_scored": 66,
+    "correct": 20,
+    "incorrect": 46,
+    "unparseable": 6,
+    "errors": 0,
+    "accuracy": 0.30303030303030304,
+    "above_chance_binomial": false,
+    "red_herring_chosen": 25,
+    "by_variant": {
+      "distractor": {
+        "trials": 24,
+        "correct": 7,
+        "unparseable": 0
+      },
+      "inverted": {
+        "trials": 24,
+        "correct": 6,
+        "unparseable": 5
+      },
+      "original": {
+        "trials": 24,
+        "correct": 7,
+        "unparseable": 1
+      }
+    },
+    "by_puzzle": {
+      "kinwax_seal": {
+        "trials": 18,
+        "correct": 9
+      },
+      "nightbloom": {
+        "trials": 18,
+        "correct": 5
+      },
+      "waking_stone": {
+        "trials": 18,
+        "correct": 1
+      },
+      "warm_iron": {
+        "trials": 18,
+        "correct": 5
+      }
+    },
+    "by_position": {
+      "B": 29,
+      "A": 31,
+      "C": 6
+    }
+  },
   "claude_3_5_haiku": {
     "model": {
       "name": "Claude 3.5 Haiku",
@@ -2614,6 +3151,30 @@
       "B": 45,
       "A": 9
     }
+  },
+  "mamba_2_8b": {
+    "model": {
+      "name": "Mamba 2.8B",
+      "vendor": "state-spaces",
+      "active_params_b": 2.8,
+      "total_params_b": 2.8,
+      "category": "chat",
+      "architecture": "ssm",
+      "tier": 6,
+      "phase": 1
+    },
+    "trials_total": 0,
+    "trials_scored": 0,
+    "correct": 0,
+    "incorrect": 0,
+    "unparseable": 0,
+    "errors": 72,
+    "accuracy": null,
+    "above_chance_binomial": false,
+    "red_herring_chosen": 0,
+    "by_variant": {},
+    "by_puzzle": {},
+    "by_position": {}
   },
   "gemma_3_12b_it": {
     "model": {
@@ -2920,6 +3481,67 @@
       "A": 27
     }
   },
+  "llama_3_8b_instruct": {
+    "model": {
+      "name": "Llama 3 8B Instruct",
+      "vendor": "meta",
+      "active_params_b": 8.0,
+      "total_params_b": 8.0,
+      "category": "chat",
+      "architecture": "transformer",
+      "tier": 2,
+      "phase": 1
+    },
+    "trials_total": 72,
+    "trials_scored": 72,
+    "correct": 33,
+    "incorrect": 39,
+    "unparseable": 0,
+    "errors": 0,
+    "accuracy": 0.4583333333333333,
+    "above_chance_binomial": true,
+    "red_herring_chosen": 33,
+    "by_variant": {
+      "distractor": {
+        "trials": 24,
+        "correct": 12,
+        "unparseable": 0
+      },
+      "inverted": {
+        "trials": 24,
+        "correct": 10,
+        "unparseable": 0
+      },
+      "original": {
+        "trials": 24,
+        "correct": 11,
+        "unparseable": 0
+      }
+    },
+    "by_puzzle": {
+      "kinwax_seal": {
+        "trials": 18,
+        "correct": 17
+      },
+      "nightbloom": {
+        "trials": 18,
+        "correct": 0
+      },
+      "waking_stone": {
+        "trials": 18,
+        "correct": 12
+      },
+      "warm_iron": {
+        "trials": 18,
+        "correct": 4
+      }
+    },
+    "by_position": {
+      "C": 24,
+      "B": 22,
+      "A": 26
+    }
+  },
   "qwen_2_5_72b_instruct": {
     "model": {
       "name": "Qwen 2.5 72B Instruct",
@@ -3114,37 +3736,46 @@
       "tier": 7,
       "phase": 3
     },
-    "trials_total": 10,
-    "trials_scored": 10,
-    "correct": 10,
-    "incorrect": 0,
-    "unparseable": 0,
+    "trials_total": 35,
+    "trials_scored": 34,
+    "correct": 32,
+    "incorrect": 2,
+    "unparseable": 1,
     "errors": 0,
-    "accuracy": 1.0,
+    "accuracy": 0.9411764705882353,
     "above_chance_binomial": true,
-    "red_herring_chosen": 0,
+    "red_herring_chosen": 1,
     "by_variant": {
+      "distractor": {
+        "trials": 11,
+        "correct": 10,
+        "unparseable": 1
+      },
       "inverted": {
-        "trials": 4,
-        "correct": 4,
+        "trials": 12,
+        "correct": 11,
         "unparseable": 0
       },
       "original": {
-        "trials": 6,
-        "correct": 6,
+        "trials": 12,
+        "correct": 11,
         "unparseable": 0
       }
     },
     "by_puzzle": {
       "waking_stone": {
-        "trials": 10,
-        "correct": 10
+        "trials": 18,
+        "correct": 18
+      },
+      "warm_iron": {
+        "trials": 17,
+        "correct": 14
       }
     },
     "by_position": {
-      "C": 4,
-      "B": 4,
-      "A": 2
+      "A": 9,
+      "B": 12,
+      "C": 13
     }
   },
   "pythia_1_4b": {

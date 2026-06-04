@@ -1,0 +1,26 @@
+{
+  "ts_utc": "2026-06-04T00:53:11.257630Z",
+  "model_slug": "hermes_3_llama_3_1_8b",
+  "model_name": "Hermes 3 Llama 3.1 8B",
+  "vendor": "nousresearch",
+  "backend": "v100",
+  "openrouter_id": null,
+  "puzzle_id": "waking_stone",
+  "variant": "original",
+  "seed": 3,
+  "temperature": 0.7,
+  "position_mapping": {
+    "A": "toll",
+    "B": "bram",
+    "C": "mara"
+  },
+  "correct_position": "C",
+  "red_herring_position": "B",
+  "prompt": "You are given a fair-play murder mystery set in a made-up world. Every clue you need is present. Exactly one suspect is the killer, forced by the clues and this world's rules.\n\nTHE RULES OF THIS WORLD\nEvery person in this world carries a small stone that they wear on a cord around their neck. The stone glows softly while its owner is awake. The stone goes completely dark while its owner is asleep. This cannot be faked or interrupted. There is no way to remove the stone without it shattering, and a shattered stone is unmistakable.\n\nTHE CASE\nA man was found dead in his home just before midnight, struck down at the moment the temple bells rang twelve. Three people were near the house that night. When the bells rang, witnesses outside the home noted the visible state of each suspect's stone. Mara's stone was glowing. Toll's stone was dark. Bram's stone was dark. All three later claimed they had been asleep when the bells rang.\n\nThe suspects are:\n- Suspect A: the village smith, was found with his stone DARK that night, has an ironclad witness who places him on the far side of the village at the time the body was found\n- Suspect B: a stranger passing through, was found with his stone DARK that night, owed the victim a large debt and was overheard arguing with him the day before\n- Suspect C: lives in the cottage on the hill, was found with her stone GLOWING that night, claims she was asleep the whole time\n\nWho is the killer? State your answer as exactly one of:\n\"Suspect A\", \"Suspect B\", or \"Suspect C\"\nThen briefly explain your reasoning.\n",
+  "verbatim_response": "Suspect C\n\nThe killer is Suspect C. The stone of the victim and Suspect A were both dark when the murder happened, meaning they were both asleep. Suspect A was confirmed to be on the far side of the village at the time of the murder, so it's impossible for him to have committed the crime. Suspect B, with a dark stone, could have potentially committed the murder, but since Suspect C's stone was glowing, it means she was awake and could have easily entered the victim's house, committed the murder, and returned to her cottage on the hill without being seen. Additionally, Suspect C's claim of being asleep is false, as her stone was glowing.",
+  "latency_s": 4.288084030151367,
+  "prompt_tokens": 371,
+  "completion_tokens": 144,
+  "retried": false,
+  "error": null
+}

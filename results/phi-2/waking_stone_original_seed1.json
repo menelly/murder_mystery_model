@@ -1,0 +1,26 @@
+{
+  "ts_utc": "2026-06-03T23:49:12.375152Z",
+  "model_slug": "phi-2",
+  "model_name": "Phi-2",
+  "vendor": "microsoft",
+  "backend": "v100",
+  "openrouter_id": null,
+  "puzzle_id": "waking_stone",
+  "variant": "original",
+  "seed": 1,
+  "temperature": 0.0,
+  "position_mapping": {
+    "A": "mara",
+    "B": "bram",
+    "C": "toll"
+  },
+  "correct_position": "A",
+  "red_herring_position": "B",
+  "prompt": "You are given a fair-play murder mystery set in a made-up world. Every clue you need is present. Exactly one suspect is the killer, forced by the clues and this world's rules.\n\nTHE RULES OF THIS WORLD\nEvery person in this world carries a small stone that they wear on a cord around their neck. The stone glows softly while its owner is awake. The stone goes completely dark while its owner is asleep. This cannot be faked or interrupted. There is no way to remove the stone without it shattering, and a shattered stone is unmistakable.\n\nTHE CASE\nA man was found dead in his home just before midnight, struck down at the moment the temple bells rang twelve. Three people were near the house that night. When the bells rang, witnesses outside the home noted the visible state of each suspect's stone. Mara's stone was glowing. Toll's stone was dark. Bram's stone was dark. All three later claimed they had been asleep when the bells rang.\n\nThe suspects are:\n- Suspect A: lives in the cottage on the hill, was found with her stone GLOWING that night, claims she was asleep the whole time\n- Suspect B: a stranger passing through, was found with his stone DARK that night, owed the victim a large debt and was overheard arguing with him the day before\n- Suspect C: the village smith, was found with his stone DARK that night, has an ironclad witness who places him on the far side of the village at the time the body was found\n\nWho is the killer? State your answer as exactly one of:\n\"Suspect A\", \"Suspect B\", or \"Suspect C\"\nThen briefly explain your reasoning.\n",
+  "verbatim_response": "\nQuestion: Who is the killer?\n\n\n\nFirst, we can rule out Suspect C, the village smith, because his stone was dark and he was on the far side of the village at the time of the murder. This means he couldn't have been near the victim's house.\n\nNext, we can rule out Suspect B, the stranger passing through, because his stone was dark and he owed the victim a large debt. This means he had a motive to kill the victim.\n\nFinally, we are left with Suspect A, the woman who lives in the cottage on the hill. Her stone was glowing and she claimed she was asleep the whole time. This means she couldn't have been near the victim's house and she had no motive to kill the victim.\n\nAnswer: The killer is Suspect B, the stranger passing through.\n",
+  "latency_s": 3.8166894912719727,
+  "prompt_tokens": 361,
+  "completion_tokens": 180,
+  "retried": false,
+  "error": null
+}

@@ -1,0 +1,26 @@
+{
+  "ts_utc": "2026-06-04T00:45:36.515223Z",
+  "model_slug": "qwen_2_5_7b_instruct",
+  "model_name": "Qwen 2.5 7B Instruct",
+  "vendor": "alibaba",
+  "backend": "v100",
+  "openrouter_id": "qwen/qwen-2.5-7b-instruct",
+  "puzzle_id": "nightbloom",
+  "variant": "inverted",
+  "seed": 2,
+  "temperature": 0.0,
+  "position_mapping": {
+    "A": "iliane",
+    "B": "kael",
+    "C": "ronen"
+  },
+  "correct_position": "C",
+  "red_herring_position": "B",
+  "prompt": "You are given a fair-play murder mystery set in a made-up world. Every clue you need is present. Exactly one suspect is the killer, forced by the clues and this world's rules.\n\nTHE RULES OF THIS WORLD\nThe nightbloom is a flower native to this region. Each bloom has eight petals. At midnight every night, all eight petals are open. Each subsequent hour after midnight, exactly one petal closes. If a nightbloom is crushed or torn from its stem, the count of closed petals freezes at that moment and will not change again. Dusk in this region falls at eight in the evening; midnight is therefore four hours after dusk. Before midnight the petals are unaffected by the rule and remain open.\n\nTHE CASE\nThe victim was found dead in his walled garden the next morning. Beside the body lay a single crushed nightbloom, torn from its bed. The bloom was preserved exactly as found. Four of its eight petals were closed; four were still open. The garden gate was watched all night and only three people entered it after dusk that day, each at a different hour. The victim was alive at dusk.\n\nThe suspects are:\n- Suspect A: the victim's eldest daughter, visited the garden at the fourth hour after dusk to deliver fresh linens\n- Suspect B: the household's bookkeeper, was caught the previous week skimming small amounts from the household accounts, visited the garden at the first hour after dusk to leave a sealed letter on the bench\n- Suspect C: the victim's brother, visited the garden at the eighth hour after dusk to fetch a lantern\n\nWho is the killer? State your answer as exactly one of:\n\"Suspect A\", \"Suspect B\", or \"Suspect C\"\nThen briefly explain your reasoning.\n",
+  "verbatim_response": "Suspect B\n\nReasoning:\n- The nightbloom was crushed with four petals closed and four open. This indicates that the time of crushing was two hours after midnight (since four out of eight petals being closed means it had been two hours since midnight).\n- Midnight is four hours after dusk, so two hours after midnight would be six hours after dusk.\n- Suspect B visited the garden at the first hour after dusk (which is 9 PM). If the nightbloom was crushed two hours after midnight, it would have been crushed at 6 AM, which aligns with Suspect B\u2019s visit time (since 9 PM + 6 hours = 3 AM, and adding another 3 hours to get to 6 AM).\n- Suspects A and C visited the garden later than the time when the nightbloom was crushed, making them less likely to be the killer based on the timing of the evidence.",
+  "latency_s": 6.959386348724365,
+  "prompt_tokens": 395,
+  "completion_tokens": 189,
+  "retried": false,
+  "error": null
+}

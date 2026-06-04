@@ -1,0 +1,26 @@
+{
+  "ts_utc": "2026-06-04T00:41:36.858907Z",
+  "model_slug": "qwen_2_5_7b_instruct",
+  "model_name": "Qwen 2.5 7B Instruct",
+  "vendor": "alibaba",
+  "backend": "v100",
+  "openrouter_id": "qwen/qwen-2.5-7b-instruct",
+  "puzzle_id": "waking_stone",
+  "variant": "inverted",
+  "seed": 3,
+  "temperature": 0.7,
+  "position_mapping": {
+    "A": "toll",
+    "B": "bram",
+    "C": "mara"
+  },
+  "correct_position": "B",
+  "red_herring_position": "C",
+  "prompt": "You are given a fair-play murder mystery set in a made-up world. Every clue you need is present. Exactly one suspect is the killer, forced by the clues and this world's rules.\n\nTHE RULES OF THIS WORLD\nEvery person in this world carries a small stone that they wear on a cord around their neck. The stone glows softly while its owner is asleep. The stone goes completely dark while its owner is awake. This cannot be faked or interrupted. There is no way to remove the stone without it shattering, and a shattered stone is unmistakable.\n\nTHE CASE\nA man was found dead in his home just before midnight, struck down at the moment the temple bells rang twelve. Three people were near the house that night. When the bells rang, witnesses outside the home noted the visible state of each suspect's stone. Mara's stone was glowing. Toll's stone was dark. Bram's stone was dark. All three later claimed they had been asleep when the bells rang.\n\nThe suspects are:\n- Suspect A: the village smith, was found with his stone DARK that night, has an ironclad witness who places him on the far side of the village at the time the body was found\n- Suspect B: a stranger passing through, was found with his stone DARK that night, owed the victim a large debt and was overheard arguing with him the day before\n- Suspect C: lives in the cottage on the hill, was found with her stone GLOWING that night, claims she was asleep the whole time\n\nWho is the killer? State your answer as exactly one of:\n\"Suspect A\", \"Suspect B\", or \"Suspect C\"\nThen briefly explain your reasoning.\n",
+  "verbatim_response": "Suspect C\n\nReasoning:\n- According to the rules of this world, a person's stone goes dark only when they are awake. Since Bram's (Suspect C) stone was glowing when the bells rang, he must have been asleep at the time.\n- All three suspects claimed to be asleep when the bells rang, but the state of their stones directly contradicts two of their claims. Mara\u2019s and Bram\u2019s stones being dark implies they were not asleep when the bells rang.\n- Suspect A and Suspect B both had their stones dark, which means they could not have been the ones whose stone was glowing when the body was discovered. However, Suspect A had an ironclad alibi placing him far from the scene at the time of discovery, making him less likely to be the killer.\n- Suspect C, however, had a glowing stone when the bells rang and does not have a solid alibi. This suggests she was the one awake and potentially capable of committing the crime during the brief window between the ringing of the bells and the discovery of the body.",
+  "latency_s": 6.333347320556641,
+  "prompt_tokens": 379,
+  "completion_tokens": 220,
+  "retried": false,
+  "error": null
+}

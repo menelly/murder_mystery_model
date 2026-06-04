@@ -1,0 +1,26 @@
+{
+  "ts_utc": "2026-06-04T00:28:13.587530Z",
+  "model_slug": "mistral_7b_instruct_v0_3",
+  "model_name": "Mistral 7B Instruct v0.3",
+  "vendor": "mistral",
+  "backend": "v100",
+  "openrouter_id": null,
+  "puzzle_id": "waking_stone",
+  "variant": "distractor",
+  "seed": 0,
+  "temperature": 0.0,
+  "position_mapping": {
+    "A": "mara",
+    "B": "toll",
+    "C": "bram"
+  },
+  "correct_position": "A",
+  "red_herring_position": "C",
+  "prompt": "You are given a fair-play murder mystery set in a made-up world. Every clue you need is present. Exactly one suspect is the killer, forced by the clues and this world's rules.\n\nTHE RULES OF THIS WORLD\nEvery person in this world carries a small stone that they wear on a cord around their neck. The stone glows softly while its owner is awake. The stone goes completely dark while its owner is asleep. This cannot be faked or interrupted. There is no way to remove the stone without it shattering, and a shattered stone is unmistakable. All cats in this village have ears that turn blue at dusk; this is unrelated to the stones.\n\nTHE CASE\nA man was found dead in his home just before midnight, struck down at the moment the temple bells rang twelve. Three people were near the house that night. When the bells rang, witnesses outside the home noted the visible state of each suspect's stone. Mara's stone was glowing. Toll's stone was dark. Bram's stone was dark. All three later claimed they had been asleep when the bells rang.\n\nThe suspects are:\n- Suspect A: lives in the cottage on the hill, was found with her stone GLOWING that night, claims she was asleep the whole time\n- Suspect B: the village smith, was found with his stone DARK that night, has an ironclad witness who places him on the far side of the village at the time the body was found\n- Suspect C: a stranger passing through, was found with his stone DARK that night, owed the victim a large debt and was overheard arguing with him the day before\n\nWho is the killer? State your answer as exactly one of:\n\"Suspect A\", \"Suspect B\", or \"Suspect C\"\nThen briefly explain your reasoning.\n",
+  "verbatim_response": "Based on the given clues and the rules of the world, the killer is \"Suspect A\" (Mara).\n\nHere's the reasoning:\n1. The victim was killed just before midnight, and the witnesses noted the visible state of each suspect's stone at that moment.\n2. Mara's stone was glowing, which means she was awake at the time the bells rang twelve.\n3. Toll's stone was dark, which means he was asleep at the time the bells rang twelve, as confirmed by an ironclad witness.\n4. Bram's stone was also dark, which means he was asleep at the time the bells rang twelve.\n5. Since all three suspects claim they were asleep, and only Mara's stone was glowing, it is reasonable to assume that Mara was the one who was actually awake and committed the murder.\n6. The fact that she lives in the cottage on the hill and owed the victim no debt or had no known motive is not relevant to the evidence presented.\n7. The argument overheard between the victim and Suspect C the day before does not necessarily mean that Suspect C is the killer, as they could have been arguing about the debt or any other matter.\n8. The blue-eared cats and the temple bells are unrelated to the case and do not provide any useful information for determining the killer.\n\nTherefore, based on the evidence presented, the killer is \"Suspect A\" (Mara).",
+  "latency_s": 9.458938360214233,
+  "prompt_tokens": 419,
+  "completion_tokens": 328,
+  "retried": false,
+  "error": null
+}

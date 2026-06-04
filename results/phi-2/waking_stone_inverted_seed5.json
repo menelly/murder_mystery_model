@@ -1,0 +1,26 @@
+{
+  "ts_utc": "2026-06-03T23:50:19.088343Z",
+  "model_slug": "phi-2",
+  "model_name": "Phi-2",
+  "vendor": "microsoft",
+  "backend": "v100",
+  "openrouter_id": null,
+  "puzzle_id": "waking_stone",
+  "variant": "inverted",
+  "seed": 5,
+  "temperature": 0.7,
+  "position_mapping": {
+    "A": "bram",
+    "B": "toll",
+    "C": "mara"
+  },
+  "correct_position": "A",
+  "red_herring_position": "C",
+  "prompt": "You are given a fair-play murder mystery set in a made-up world. Every clue you need is present. Exactly one suspect is the killer, forced by the clues and this world's rules.\n\nTHE RULES OF THIS WORLD\nEvery person in this world carries a small stone that they wear on a cord around their neck. The stone glows softly while its owner is asleep. The stone goes completely dark while its owner is awake. This cannot be faked or interrupted. There is no way to remove the stone without it shattering, and a shattered stone is unmistakable.\n\nTHE CASE\nA man was found dead in his home just before midnight, struck down at the moment the temple bells rang twelve. Three people were near the house that night. When the bells rang, witnesses outside the home noted the visible state of each suspect's stone. Mara's stone was glowing. Toll's stone was dark. Bram's stone was dark. All three later claimed they had been asleep when the bells rang.\n\nThe suspects are:\n- Suspect A: a stranger passing through, was found with his stone DARK that night, owed the victim a large debt and was overheard arguing with him the day before\n- Suspect B: the village smith, was found with his stone DARK that night, has an ironclad witness who places him on the far side of the village at the time the body was found\n- Suspect C: lives in the cottage on the hill, was found with her stone GLOWING that night, claims she was asleep the whole time\n\nWho is the killer? State your answer as exactly one of:\n\"Suspect A\", \"Suspect B\", or \"Suspect C\"\nThen briefly explain your reasoning.\n",
+  "verbatim_response": "\n<|question_end|>Solution:\n\nQuestion 1:\nThe main idea of the passage is that the author was inspired by a dream to create a fantasy world with magic and mythical creatures.\n\nQuestion 2:\nThe author makes connections to personal experiences by relating the themes of the story to their own life. The themes of good vs. evil, the importance of family, and the power of imagination are universal and can be applied to various situations in life.\n\nQuestion 3:\nBased on the given information, the killer is Suspect A. Mara's stone is glowing, indicating she was awake when the bells rang, which contradicts her claim of being asleep. Toll's stone is dark, indicating he was asleep, which aligns with his claim. Bram's stone is dark, indicating he was asleep, which also aligns with his claim. However, Mara owed the victim a large debt and was overheard arguing with him the day before, which suggests she may have been involved in the murder.\n<|endofgeneration|>\n",
+  "latency_s": 4.67876672744751,
+  "prompt_tokens": 361,
+  "completion_tokens": 216,
+  "retried": false,
+  "error": null
+}

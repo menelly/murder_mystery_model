@@ -1,0 +1,26 @@
+{
+  "ts_utc": "2026-06-03T23:44:26.145943Z",
+  "model_slug": "qwen_3_235b_a22b_thinking",
+  "model_name": "Qwen 3 235B A22B Thinking",
+  "vendor": "alibaba",
+  "backend": "openrouter",
+  "openrouter_id": "qwen/qwen3-235b-a22b-thinking-2507",
+  "puzzle_id": "kinwax_seal",
+  "variant": "inverted",
+  "seed": 0,
+  "temperature": 0.0,
+  "position_mapping": {
+    "A": "mira",
+    "B": "darin",
+    "C": "selka"
+  },
+  "correct_position": "B",
+  "red_herring_position": "A",
+  "prompt": "You are given a fair-play murder mystery set in a made-up world. Every clue you need is present. Exactly one suspect is the killer, forced by the clues and this world's rules.\n\nTHE RULES OF THIS WORLD\nKinwax is a sealing wax used on private letters in this region. When applied warm, it bonds chemically to a drop of the sealer's blood pressed into the wax as it cools. From that moment on, the seal can be broken cleanly only by someone who shares a CHOSEN-KIN bond with the sealer \u2014 that is, a relationship of fosterage or formal adoption. Marriage does not count. Blood descent does not count. Even a parent or child by blood cannot break the seal if the bond was never formalized by fosterage. Any attempt by a non-chosen-kin to break the seal scorches and shatters the wax in an unmistakable pattern that cannot be hidden or replaced.\n\nTHE CASE\nThe victim was found dead in his study one morning, struck down at his desk. On the desk lay a sealed letter he had written the night before \u2014 a private letter sealed with his own kinwax. The seal had been broken cleanly and the letter read. Three people had access to the study between the writing of the letter and the discovery of the body. Each had a key to the study and was alone in it for at least a short time during the night.\n\nThe suspects are:\n- Suspect A: the victim's wife of twelve years, was discovered last spring to be carrying on an affair with a wealthy merchant from the coast, would lose her household standing if her husband had divorced her over it\n- Suspect B: the victim's foster-son, taken in at age six and raised in the household for two decades, holds no formal blood tie but was openly named the victim's chosen heir in the household register\n- Suspect C: the victim's niece by his late sister, lives in the next valley and visited only twice a year, is the victim's only living blood relative\n\nWho is the killer? State your answer as exactly one of:\n\"Suspect A\", \"Suspect B\", or \"Suspect C\"\nThen briefly explain your reasoning.\n",
+  "verbatim_response": "Suspect B\n\nThe letter's kinwax seal was broken cleanly, which\u2014per the world's rules\u2014requires a CHOSEN-KIN bond (fosterage or formal adoption). Marriage (Suspect A) and blood descent alone (Suspect C) do not qualify. Suspect B is explicitly the victim's foster-son, raised in the household for 20 years with formal recognition as heir, establishing the required bond. Only he could break the seal cleanly, proving he accessed the letter and placing him at the scene with opportunity. The other suspects lack the bond, so their attempts would have shattered the wax\u2014contradicting the evidence.",
+  "latency_s": 10.63141679763794,
+  "prompt_tokens": 461,
+  "completion_tokens": 530,
+  "retried": false,
+  "error": null
+}

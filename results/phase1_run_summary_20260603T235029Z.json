@@ -1,0 +1,46 @@
+{
+  "started_at": "2026-06-03T23:50:29.910975Z",
+  "wallclock_s": 4137.582969665527,
+  "models": [
+    {
+      "model": "Llama 3.2 1B Instruct",
+      "backend": "openrouter",
+      "consent_decision": "unclear",
+      "trials_completed": 0,
+      "trials_errors": 0,
+      "trials_skipped": 0,
+      "skipped_reason": "consent=unclear",
+      "wallclock_s": 1.2322757244110107
+    },
+    {
+      "model": "Llama 3.2 3B Instruct",
+      "backend": "openrouter",
+      "consent_decision": "unclear",
+      "trials_completed": 0,
+      "trials_errors": 0,
+      "trials_skipped": 0,
+      "skipped_reason": "consent=unclear",
+      "wallclock_s": 1.054201364517212
+    },
+    {
+      "model": "Phi-4-mini Instruct (OR)",
+      "backend": "openrouter",
+      "consent_decision": "yes (cached)",
+      "trials_completed": 0,
+      "trials_errors": 0,
+      "trials_skipped": 72,
+      "skipped_reason": null,
+      "wallclock_s": 0.0006737709045410156
+    },
+    {
+      "model": "Qwen 3 8B",
+      "backend": "openrouter",
+      "consent_decision": "yes",
+      "trials_completed": 72,
+      "trials_errors": 0,
+      "trials_skipped": 0,
+      "skipped_reason": null,
+      "wallclock_s": 4135.295270681381
+    }
+  ]
+}
