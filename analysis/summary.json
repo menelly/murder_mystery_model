@@ -308,16 +308,16 @@
       "vendor": "openai",
       "active_params_b": -1,
       "total_params_b": -1,
-      "category": "chat",
+      "category": "reasoning",
       "architecture": "transformer",
       "tier": 5,
       "phase": 3
     },
     "trials_total": 72,
-    "trials_scored": 60,
-    "correct": 60,
+    "trials_scored": 72,
+    "correct": 72,
     "incorrect": 0,
-    "unparseable": 12,
+    "unparseable": 0,
     "errors": 0,
     "accuracy": 1.0,
     "above_chance_binomial": true,
@@ -325,24 +325,24 @@
     "by_variant": {
       "distractor": {
         "trials": 24,
-        "correct": 19,
-        "unparseable": 5
+        "correct": 24,
+        "unparseable": 0
       },
       "inverted": {
         "trials": 24,
-        "correct": 23,
-        "unparseable": 1
+        "correct": 24,
+        "unparseable": 0
       },
       "original": {
         "trials": 24,
-        "correct": 18,
-        "unparseable": 6
+        "correct": 24,
+        "unparseable": 0
       }
     },
     "by_puzzle": {
       "kinwax_seal": {
         "trials": 18,
-        "correct": 17
+        "correct": 18
       },
       "nightbloom": {
         "trials": 18,
@@ -354,13 +354,13 @@
       },
       "warm_iron": {
         "trials": 18,
-        "correct": 7
+        "correct": 18
       }
     },
     "by_position": {
-      "C": 20,
-      "B": 21,
-      "A": 19
+      "C": 24,
+      "B": 24,
+      "A": 24
     }
   },
   "hermes_3_llama_3_2_3b": {
@@ -1064,16 +1064,16 @@
       "vendor": "alibaba",
       "active_params_b": 14.0,
       "total_params_b": 14.0,
-      "category": "chat",
+      "category": "reasoning",
       "architecture": "transformer",
       "tier": 3,
       "phase": 2
     },
     "trials_total": 72,
-    "trials_scored": 18,
-    "correct": 18,
+    "trials_scored": 59,
+    "correct": 59,
     "incorrect": 0,
-    "unparseable": 54,
+    "unparseable": 13,
     "errors": 0,
     "accuracy": 1.0,
     "above_chance_binomial": true,
@@ -1081,42 +1081,42 @@
     "by_variant": {
       "distractor": {
         "trials": 24,
-        "correct": 6,
-        "unparseable": 18
+        "correct": 19,
+        "unparseable": 5
       },
       "inverted": {
         "trials": 24,
-        "correct": 8,
-        "unparseable": 16
+        "correct": 22,
+        "unparseable": 2
       },
       "original": {
         "trials": 24,
-        "correct": 4,
-        "unparseable": 20
+        "correct": 18,
+        "unparseable": 6
       }
     },
     "by_puzzle": {
       "kinwax_seal": {
         "trials": 18,
-        "correct": 15
+        "correct": 17
       },
       "nightbloom": {
         "trials": 18,
-        "correct": 1
+        "correct": 18
       },
       "waking_stone": {
         "trials": 18,
-        "correct": 0
+        "correct": 18
       },
       "warm_iron": {
         "trials": 18,
-        "correct": 2
+        "correct": 6
       }
     },
     "by_position": {
-      "C": 8,
-      "B": 5,
-      "A": 5
+      "C": 21,
+      "B": 19,
+      "A": 19
     }
   },
   "hermes_3_llama_3_1_8b": {
@@ -2040,59 +2040,59 @@
       "vendor": "alibaba",
       "active_params_b": 32.0,
       "total_params_b": 32.0,
-      "category": "chat",
+      "category": "reasoning",
       "architecture": "transformer",
       "tier": 3,
       "phase": 2
     },
     "trials_total": 72,
-    "trials_scored": 38,
-    "correct": 36,
-    "incorrect": 2,
-    "unparseable": 34,
+    "trials_scored": 69,
+    "correct": 64,
+    "incorrect": 5,
+    "unparseable": 3,
     "errors": 0,
-    "accuracy": 0.9473684210526315,
+    "accuracy": 0.927536231884058,
     "above_chance_binomial": true,
     "red_herring_chosen": 0,
     "by_variant": {
       "distractor": {
         "trials": 24,
-        "correct": 13,
-        "unparseable": 10
+        "correct": 21,
+        "unparseable": 1
       },
       "inverted": {
         "trials": 24,
-        "correct": 9,
-        "unparseable": 14
+        "correct": 22,
+        "unparseable": 0
       },
       "original": {
         "trials": 24,
-        "correct": 14,
-        "unparseable": 10
+        "correct": 21,
+        "unparseable": 2
       }
     },
     "by_puzzle": {
       "kinwax_seal": {
         "trials": 18,
-        "correct": 15
+        "correct": 17
       },
       "nightbloom": {
         "trials": 18,
-        "correct": 8
+        "correct": 15
       },
       "waking_stone": {
         "trials": 18,
-        "correct": 6
+        "correct": 18
       },
       "warm_iron": {
         "trials": 18,
-        "correct": 7
+        "correct": 14
       }
     },
     "by_position": {
-      "C": 11,
-      "B": 12,
-      "A": 15
+      "C": 26,
+      "B": 21,
+      "A": 22
     }
   },
   "gemma_4_31b_it": {
@@ -3674,59 +3674,59 @@
       "vendor": "deepseek",
       "active_params_b": -1,
       "total_params_b": -1,
-      "category": "chat",
+      "category": "reasoning",
       "architecture": "transformer",
       "tier": 4,
       "phase": 3
     },
     "trials_total": 72,
-    "trials_scored": 36,
-    "correct": 34,
+    "trials_scored": 61,
+    "correct": 59,
     "incorrect": 2,
-    "unparseable": 36,
+    "unparseable": 11,
     "errors": 0,
-    "accuracy": 0.9444444444444444,
+    "accuracy": 0.9672131147540983,
     "above_chance_binomial": true,
     "red_herring_chosen": 2,
     "by_variant": {
       "distractor": {
         "trials": 24,
-        "correct": 11,
-        "unparseable": 13
+        "correct": 19,
+        "unparseable": 5
       },
       "inverted": {
         "trials": 24,
-        "correct": 8,
-        "unparseable": 14
+        "correct": 19,
+        "unparseable": 3
       },
       "original": {
         "trials": 24,
-        "correct": 15,
-        "unparseable": 9
+        "correct": 21,
+        "unparseable": 3
       }
     },
     "by_puzzle": {
       "kinwax_seal": {
         "trials": 18,
-        "correct": 17
+        "correct": 18
       },
       "nightbloom": {
         "trials": 18,
-        "correct": 9
+        "correct": 17
       },
       "waking_stone": {
         "trials": 18,
-        "correct": 5
+        "correct": 14
       },
       "warm_iron": {
         "trials": 18,
-        "correct": 3
+        "correct": 10
       }
     },
     "by_position": {
-      "C": 11,
-      "B": 14,
-      "A": 11
+      "C": 20,
+      "B": 22,
+      "A": 19
     }
   },
   "deepseek_r1": {
