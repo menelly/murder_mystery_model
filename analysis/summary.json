@@ -2740,36 +2740,36 @@
       "tier": 7,
       "phase": 3
     },
-    "trials_total": 57,
-    "trials_scored": 48,
-    "correct": 47,
+    "trials_total": 72,
+    "trials_scored": 63,
+    "correct": 62,
     "incorrect": 1,
     "unparseable": 9,
     "errors": 0,
-    "accuracy": 0.9791666666666666,
+    "accuracy": 0.9841269841269841,
     "above_chance_binomial": true,
     "red_herring_chosen": 1,
     "by_variant": {
-      "original": {
-        "trials": 21,
-        "correct": 18,
-        "unparseable": 3
-      },
       "distractor": {
-        "trials": 18,
-        "correct": 15,
+        "trials": 24,
+        "correct": 21,
         "unparseable": 3
       },
       "inverted": {
-        "trials": 18,
-        "correct": 14,
+        "trials": 24,
+        "correct": 20,
+        "unparseable": 3
+      },
+      "original": {
+        "trials": 24,
+        "correct": 21,
         "unparseable": 3
       }
     },
     "by_puzzle": {
       "kinwax_seal": {
-        "trials": 3,
-        "correct": 3
+        "trials": 18,
+        "correct": 18
       },
       "nightbloom": {
         "trials": 18,
@@ -2785,9 +2785,9 @@
       }
     },
     "by_position": {
-      "C": 17,
-      "B": 17,
-      "A": 14
+      "C": 21,
+      "B": 22,
+      "A": 20
     }
   },
   "mistral_7b_instruct_v0_3": {
@@ -3740,36 +3740,40 @@
       "tier": 7,
       "phase": 3
     },
-    "trials_total": 42,
-    "trials_scored": 41,
-    "correct": 39,
+    "trials_total": 72,
+    "trials_scored": 69,
+    "correct": 67,
     "incorrect": 2,
-    "unparseable": 1,
+    "unparseable": 3,
     "errors": 0,
-    "accuracy": 0.9512195121951219,
+    "accuracy": 0.9710144927536232,
     "above_chance_binomial": true,
     "red_herring_chosen": 1,
     "by_variant": {
-      "original": {
-        "trials": 18,
-        "correct": 17,
-        "unparseable": 0
-      },
       "distractor": {
-        "trials": 12,
-        "correct": 11,
+        "trials": 24,
+        "correct": 23,
         "unparseable": 1
       },
       "inverted": {
-        "trials": 12,
-        "correct": 11,
+        "trials": 24,
+        "correct": 21,
+        "unparseable": 2
+      },
+      "original": {
+        "trials": 24,
+        "correct": 23,
         "unparseable": 0
       }
     },
     "by_puzzle": {
+      "kinwax_seal": {
+        "trials": 18,
+        "correct": 17
+      },
       "nightbloom": {
-        "trials": 6,
-        "correct": 6
+        "trials": 18,
+        "correct": 17
       },
       "waking_stone": {
         "trials": 18,
@@ -3781,9 +3785,9 @@
       }
     },
     "by_position": {
-      "B": 14,
-      "C": 15,
-      "A": 12
+      "C": 24,
+      "B": 24,
+      "A": 21
     }
   },
   "pythia_1_4b": {
