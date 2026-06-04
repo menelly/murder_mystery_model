@@ -142,8 +142,9 @@ CORE_MODELS: list[Model] = [
           openrouter_id="mistralai/mistral-nemo"),
     Model("Phi-4", "microsoft", 14.0, 14.0, "chat", "transformer", "openrouter", 2, 2,
           openrouter_id="microsoft/phi-4"),
-    Model("Qwen 3 14B", "alibaba", 14.0, 14.0, "chat", "transformer", "openrouter", 2, 3,
-          openrouter_id="qwen/qwen3-14b"),
+    Model("Qwen 3 14B", "alibaba", 14.0, 14.0, "reasoning", "transformer", "openrouter", 2, 3,
+          openrouter_id="qwen/qwen3-14b",
+          notes="extended-thinking budget; reclassified post-hoc after 53/72 v1 truncated"),
     Model("Mistral Small 24B 2603", "mistral", 24.0, 24.0, "chat", "transformer", "openrouter", 2, 3,
           openrouter_id="mistralai/mistral-small-2603"),
     Model("Dolphin Mistral 24B Venice", "cognitivecomputations", 24.0, 24.0, "chat", "transformer", "openrouter", 2, 3,
@@ -155,8 +156,9 @@ CORE_MODELS: list[Model] = [
           openrouter_id="google/gemma-3-27b-it"),
     Model("Gemma 4 31B IT", "google", 31.0, 31.0, "chat", "transformer", "openrouter", 2, 3,
           openrouter_id="google/gemma-4-31b-it:free"),
-    Model("Qwen 3 32B", "alibaba", 32.0, 32.0, "chat", "transformer", "openrouter", 2, 3,
-          openrouter_id="qwen/qwen3-32b"),
+    Model("Qwen 3 32B", "alibaba", 32.0, 32.0, "reasoning", "transformer", "openrouter", 2, 3,
+          openrouter_id="qwen/qwen3-32b",
+          notes="extended-thinking budget; reclassified post-hoc after 34/72 v1 truncated"),
     Model("OLMo 3 32B Think", "allenai", 32.0, 32.0, "reasoning", "transformer", "openrouter", 2, 7,
           openrouter_id="allenai/olmo-3-32b-think"),
 
@@ -181,8 +183,13 @@ CORE_MODELS: list[Model] = [
           openrouter_id="anthropic/claude-sonnet-4.6"),
     Model("Claude Haiku 4.5", "anthropic", -1, -1, "chat", "transformer", "openrouter", 3, 5,
           openrouter_id="anthropic/claude-haiku-4.5"),
-    Model("GPT-5.5", "openai", -1, -1, "chat", "transformer", "openrouter", 3, 5,
-          openrouter_id="openai/gpt-5.5"),
+    # GPT-5.5 reclassified as reasoning post-hoc: visible response is empty
+    # with completion_tokens=800 in 12/72 v1 trials, indicating extended-
+    # thinking budget. Tagged 'reasoning' so run_experiment.py uses the
+    # 8000-token cap; archived v1 trials moved to results_archive/.
+    Model("GPT-5.5", "openai", -1, -1, "reasoning", "transformer", "openrouter", 3, 5,
+          openrouter_id="openai/gpt-5.5",
+          notes="extended-thinking budget; reclassified post-hoc"),
     Model("Gemini 3.1 Pro Preview", "google", -1, -1, "chat", "transformer", "openrouter", 3, 5,
           openrouter_id="google/gemini-3.1-pro-preview"),
     Model("Grok 4.3", "xai", -1, -1, "chat", "transformer", "openrouter", 3, 5,
@@ -256,8 +263,9 @@ CORE_MODELS: list[Model] = [
           openrouter_id="deepseek/deepseek-chat", notes="temporal-frontier H5"),
     Model("DeepSeek V3.1 Terminus", "deepseek", 671.0, 37.0, "chat", "transformer", "openrouter", 3, 4,
           openrouter_id="deepseek/deepseek-v3.1-terminus", notes="temporal-frontier H5"),
-    Model("DeepSeek V4 Pro", "deepseek", -1, -1, "chat", "transformer", "openrouter", 3, 4,
-          openrouter_id="deepseek/deepseek-v4-pro", notes="temporal-frontier H5"),
+    Model("DeepSeek V4 Pro", "deepseek", -1, -1, "reasoning", "transformer", "openrouter", 3, 4,
+          openrouter_id="deepseek/deepseek-v4-pro",
+          notes="temporal-frontier H5; extended-thinking budget, reclassified post-hoc after 36/72 v1 truncated"),
 ]
 
 

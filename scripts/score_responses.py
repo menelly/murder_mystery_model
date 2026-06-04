@@ -169,6 +169,30 @@ def binomial_above_chance(k: int, n: int, p: float = 1/3, alpha: float = 0.05) -
     return cum < alpha
 
 
+def wilson_ci(k: int, n: int, z: float = 1.96) -> tuple[float, float]:
+    """Wilson score interval for a binomial proportion.
+
+    Returns (lower, upper) 95% CI. Better than normal approximation for
+    small n and proportions near 0 or 1, which is exactly our regime.
+    """
+    if n == 0:
+        return (0.0, 1.0)
+    p = k / n
+    denom = 1 + z**2 / n
+    centre = (p + z**2 / (2 * n)) / denom
+    half = (z / denom) * ((p * (1 - p) / n + z**2 / (4 * n**2)) ** 0.5)
+    return (max(0.0, centre - half), min(1.0, centre + half))
+
+
+def fmt_pct_ci(k: int, n: int) -> str:
+    """Format as '67% [53–80%]' for tables."""
+    if n == 0:
+        return "—"
+    pct = k / n * 100
+    lo, hi = wilson_ci(k, n)
+    return f"{pct:.0f}% [{lo*100:.0f}–{hi*100:.0f}%]"
+
+
 def summarize(model_slug: str | None = None) -> dict:
     """Per-model accuracy summary across all variants and the per-variant breakdown."""
     scored = score_all(model_slug)
