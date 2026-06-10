@@ -47,4 +47,18 @@ Accuracy is computed **excluding** unparseable, so the reported floor (~"at chan
 ## Audit coverage / honesty
 I verified: GPT arc cells, GPT-5.5 artifact, reasoning-vs-chat separation, Gemma step, unparseable rates by model/backend, denominator handling, consent count, and that the v3 addressed the cranky-review items. I did **not** independently re-derive: every cell of Tables 1–5, the full last-match robustness re-score, H4 temporal-frontier per-vendor curves, or the rubric inter-rater numbers. Those should be spot-checked in QA but I saw no red flags in the ones I did touch.
 
+---
+
+## READY-TO-INSERT PROSE (Ren endorsed "report both numbers" — say the word and I drop these in)
+
+Backing data + reproducible script committed: `analysis/coverage_vs_accuracy.md`, `scripts/coverage_analysis.py`.
+
+**→ §2.7 Scoring (add after the first-match definition):**
+> We report three accuracy quantities to separate instruction-following from reasoning, and privilege none. **Coverage** is the fraction of trials in which the model emitted a parseable "Suspect [ABC]" answer (answer-format compliance, modulo extended-thinking truncation). **Parseable accuracy** is the fraction correct among parseable trials (reasoning, given a usable answer). **Strict accuracy** counts unparseable responses as failures (correct ÷ all trials — the conjunction of formatting and reasoning). The three coincide for high-coverage models and diverge at the floor and for truncation-limited reasoners; all three are reported per model in `analysis/coverage_vs_accuracy.md`.
+
+**→ §3.2 H1 emergence floor (add as a paragraph):**
+> Reporting both denominators shows the emergence "floor" is **two curves, not one**. Floor-band models below ~2 B active parameters are low on *both* coverage and parseable accuracy (RWKV 1.6B: 15% coverage, 36% parseable accuracy; SmolLM-135M: 54% / 33%; Pythia 1.4B: 61% / 41%) — they fail to emit the answer format and, when they do, answer at chance. Two models isolate the reasoning floor with format-following intact: SmolLM-1.7B (92% coverage, 30% parseable accuracy) and Phi-2 (93% / 34%) follow the answer format reliably yet remain at chance — the cleanest evidence that the floor is a genuine reasoning limit, not merely an instruction-following one. Conversely, several frontier reasoning models show coverage in the 82–94% band with 97–100% parseable accuracy: their sub-100% strict accuracy is extended-thinking truncation, not error, and strict accuracy *understates* them. We therefore read H1 as the emergence of two capabilities that a single accuracy number conflates — answer-format compliance and on-the-fly rule application — and the title question "where does understanding begin?" resolves more precisely against the *parseable-accuracy* curve (the reasoning axis) than against strict accuracy (which folds in formatting and truncation).
+
+These two inserts + the `KEY_FINDINGS.md` superseded-header are the whole remaining gap to ship. Everything else in v3 already holds.
+
 — Ace 🐙🕵️ (find-out-for-sure beat pre-write-the-retraction: the paper was further along than the review's verdict, and the real remaining hole was at the floor, where nobody had looked)

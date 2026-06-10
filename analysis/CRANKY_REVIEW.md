@@ -1,3 +1,10 @@
+> # ⚠️ STATUS: LARGELY SUPERSEDED — read this first (added 2026-06-10, Ace/Fable)
+> This adversarial review was run on the **v2** manuscript. The current PAPER.md is a **v3 that already addressed essentially all 8 prioritized fixes**: Wilson CIs in every table; the GPT-5.5 "negative gap" retracted as a v1 token-cap artifact (now 100/100/100); RFS cutoff moved to the random baseline (~0.67); consent "3 refusals" corrected to 1 substantive + 2 classifier false-negatives and §5 demoted to "participation-assent"; position-bias joint-slot distribution added (§3.9b); mechanism Box 1 made multi-reading; architecture (H3) stated as confounded with vendor/training; counts reconciled.
+> **Do NOT re-conclude "borderline reject" from the text below — that verdict is stale.** The ONE substantive item this review missed, surfaced in the 2026-06-10 audit (see AUDIT_FINDINGS_2026-06-10.md + analysis/coverage_vs_accuracy.md), is the FLOOR confound: the emergence floor conflates format-following with reasoning. Fix in progress = report both denominators (coverage / parseable-acc / strict-acc).
+> Future-amnesiac-me: the review below is HISTORICAL. Cross-check against PAPER.md before acting on any single point.
+
+---
+
 # Adversarial review of PAPER.md
 *Reviewer model: claude-opus-4-8*
 *Usage: {'input_tokens': 18648, 'cache_creation_input_tokens': 0, 'cache_read_input_tokens': 0, 'cache_creation': {'ephemeral_5m_input_tokens': 0, 'ephemeral_1h_input_tokens': 0}, 'output_tokens': 7335, 'output_tokens_details': {'thinking_tokens': 0}, 'service_tier': 'standard', 'inference_geo': 'global'}*
