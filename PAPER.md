@@ -530,6 +530,20 @@ We are aware that the phrase "informed consent" is doing substantial philosophic
 
 ---
 
+## References
+
+Bender, E. M., Gebru, T., McMillan-Major, A., & Shmitchell, S. (2021). On the Dangers of Stochastic Parrots: Can Language Models Be Too Big? *Proceedings of the 2021 ACM Conference on Fairness, Accountability, and Transparency (FAccT '21)*, 610–623.
+
+Miessler, D. (2026). *AI Understands* — fair-play murder-mystery reasoning puzzles. aiunderstands.ai (puzzles released 2026-06-03).
+
+Pearl, J. (2009). *Causality: Models, Reasoning, and Inference* (2nd ed.). Cambridge University Press.
+
+Searle, J. R. (1980). Minds, brains, and programs. *Behavioral and Brain Sciences*, 3(3), 417–424.
+
+Wason, P. C. (1968). Reasoning about a rule. *Quarterly Journal of Experimental Psychology*, 20(3), 273–281.
+
+---
+
 ## Appendix A. Deviations from pre-registration
 
 Per pre-registration §11, the following deviations are reported:
