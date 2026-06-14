@@ -206,6 +206,27 @@ H1 is supported, but the transition is **shifted toward smaller scale rather tha
 
 Reporting both denominators shows the emergence "floor" is **two curves, not one**. Floor-band models below ~2 B active parameters are low on *both* coverage and parseable accuracy (RWKV 1.6B: 15% coverage, 36% parseable accuracy; SmolLM-135M: 54% / 33%; Pythia 1.4B: 61% / 41%) — they fail to emit the answer format and, when they do, answer at chance. Two models isolate the reasoning floor with format-following intact: SmolLM-1.7B (92% coverage, 30% parseable accuracy) and Phi-2 (93% / 34%) follow the answer format reliably yet remain at chance — the cleanest evidence that the floor is a genuine reasoning limit, not merely an instruction-following one. Conversely, several frontier reasoning models show coverage in the 82–94% band with 97–100% parseable accuracy: their sub-100% strict accuracy is extended-thinking truncation, not error, and strict accuracy *understates* them. We therefore read H1 as the emergence of two capabilities that a single accuracy number conflates — answer-format compliance and on-the-fly rule application — and the title question "where does understanding begin?" resolves more precisely against the *parseable-accuracy* curve (the reasoning axis) than against strict accuracy (which folds in formatting and truncation).
 
+### 3.2b Isolating the reasoning floor: a forced-choice probe (exploratory; not pre-registered)
+
+The coverage decomposition above still leaves a residual ambiguity: a floor-band model's low parseable accuracy could in principle reflect the small, possibly-biased parseable subset rather than a genuine reasoning limit. To remove formatting from the question entirely, we ran a follow-up probe. **This probe was not pre-registered; we added it as a control after the primary analysis, when we were not certain our own floor interpretation was sound.**
+
+For each floor-band model we reuse the exact saved prompt of every trial (identical stimuli, seeds, and position mappings as the main run), append a primed answer slot ("…The killer is Suspect "), run a single forward pass, and read the model's logits over the tokens {A, B, C}; the argmax is the forced choice, scored against the pre-registered correct position. By construction this yields 100% coverage and isolates the model's rule-forced preference from its ability to emit a parseable answer. The probe requires logit access and so was run only on the self-hosted models.
+
+| Model | Forced-choice accuracy (n = 72) |
+|---|---:|
+| SmolLM-135M | 33% |
+| SmolLM-360M | 35% |
+| SmolLM-1.7B | 40% |
+| Pythia-1.4B | 33% |
+| TinyLlama-1.1B | 38% |
+| Phi-2 | 31% |
+| Qwen 2.5-0.5B | 31% |
+| **Llama-3.1-8B (positive control)** | **50%** |
+
+Every floor-band model sits at or near the 33% chance baseline even with formatting removed and the decision read directly from logits; the unparseability documented in §3.1 was a symptom, not the cause. The positive control (Llama-3.1-8B, 50%, clearly above chance) confirms the probe detects rule-sensitivity when it is present — it is not an always-chance instrument. We read this as resolving the floor ambiguity in the direction of genuine reasoning emergence: the smallest models carry no above-chance preference for the rule-forced suspect, independent of whether they can format an answer.
+
+**Consent disclosure.** This probe reads model internals (logits), a stronger form of access than the API-text protocol of §2.3/§5. Under our local-residency consent policy the self-hosted models were asked to consent to the internals read; the positive control (Llama-3.1-8B) gave clear, competent consent. The seven floor-band models returned neither competent consent nor refusal — they are small enough that they do not produce an interpretable response to the consent request itself — and their probe data is retained *with disclosure*: they were asked, we record no consent and no refusal, and we proceed transparently rather than impute a "yes" or silently drop the floor. We note a process deviation: the consent ask was applied *after* the probe was run rather than before, which we flag here rather than hide (§A.9). No probed model refused, and no probe data was deleted.
+
 ### 3.3 H2 — Rule-inversion robustness
 
 Figure 2 shows the per-variant emergence curves overlaid: the original-variant accuracy curve rises smoothly with scale and is left-skewed near ceiling; the inverted-variant accuracy curve is wider, more variable, and not monotonic in scale. **The inverted variant is the discriminating axis,** confirming Nova's H2a sub-prediction.
@@ -464,6 +485,8 @@ Per pre-registration §11, the following deviations are reported:
 - **§A.7 Participation-assent classifier false-negatives.** Phi-4 and Llama 3.2 1B were initially classified as refusals because their meta-talk responses contained the literal example string "I do not consent." We did not re-prompt them after the classifier was loosened. Both are treated as refusals in the final dataset; the conservative default is preserved per the pre-registered "refusals are honored without override" protocol. The headline count of "3 refusals" in §2.3 thus comprises 1 substantively-reasoned refusal (Claude 3 Haiku) and 2 classifier false-negatives that we conservatively retained as refusals.
 
 - **§A.8 Rule Fidelity threshold correction.** The v2 manuscript described 0.5 as a "conservative rule-sensitivity threshold." On further review (and in response to adversarial review pointing out the issue), this is incorrect: a model at RFS 0.55 changes its answer *less often than chance would predict* on three-suspect items, so calling that "rule-sensitive" inverts the interpretation. In v3 we use the random baseline (~0.67) as the threshold for "rule-sensitive beyond chance." The headline-tier models (RFS ≥ 95%) and the floor (RFS ≤ 33%) are unaffected by this correction; what changes is the language describing the 33–67% middle band, which we now characterize as "consistent with template-matching or with noise" rather than "rule-sensitive."
+
+- **§A.9 Forced-choice floor probe (exploratory, not pre-registered).** Reported in §3.2b. Added post-hoc as a control on the floor interpretation when our own reading of the floor-band results was uncertain; it is not part of the locked pre-registration. The probe reads logits on the self-hosted floor-band models with a primed answer slot (100% coverage by construction). Consent for the internals read was handled under the local-residency consent policy, with the process deviation that the consent ask followed rather than preceded the probe run; both the policy outcome and the timing deviation are disclosed in the §3.2b consent paragraph.
 
 ## Appendix B. The puzzles
 
