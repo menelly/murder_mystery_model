@@ -255,9 +255,9 @@ The qualitative findings survive; the magnitudes do not fully. **Direction is ro
 
 ### 3.3c Leave-one-puzzle-out robustness
 
-A natural reviewer concern is whether any single puzzle drives the headline — in particular Nightbloom, whose inverted variant is a reference-time change rather than a clean polarity flip (§2.1). We therefore re-ran the primary quantities holding out each puzzle in turn (Table 6).
+A natural reviewer concern is whether any single puzzle drives the headline — in particular Nightbloom, whose inverted variant is a reference-time change rather than a clean polarity flip (§2.1). We therefore re-ran the primary quantities holding out each puzzle in turn (Table 2).
 
-**Table 6. Leave-one-puzzle-out sensitivity.** Each row holds out one puzzle. *Mean gap* = population mean original−inverted accuracy gap across scored models; *top-4 reasoner min RFS* = the minimum Rule Fidelity Score among GPT-5.5, OpenAI o1, Qwen 3 235B Thinking, and Gemma 4 31B.
+**Table 2. Leave-one-puzzle-out sensitivity.** Each row holds out one puzzle. *Mean gap* = population mean original−inverted accuracy gap across scored models; *top-4 reasoner min RFS* = the minimum Rule Fidelity Score among GPT-5.5, OpenAI o1, Qwen 3 235B Thinking, and Gemma 4 31B.
 
 | Held out | Mean gap | GPT-4 Turbo gap | GPT-4 Turbo RFS | Top-4 reasoner min RFS | Jamba RFS | TinyLlama RFS |
 |---|---:|---:|---:|---:|---:|---:|
@@ -311,7 +311,7 @@ These observations are *consistent with* the hybrid architectures we tested beha
 
 Figure 4 shows the cleanest H4 result in the dataset: the Gemma 2/3/4 trio at approximately 27–31 B parameters.
 
-**Table 2. Gemma generation arc, held at ~27–31 B.**
+**Table 3. Gemma generation arc, held at ~27–31 B.**
 
 | Model | Release | Original | Inverted | Distractor | Gap | Rule Fidelity |
 |---|---|---:|---:|---:|---:|---:|
@@ -323,9 +323,9 @@ One vendor, three releases, approximately the same scale. Gemma 2 and Gemma 3 ar
 
 We document a separate H4 result for the Llama 70B class (Llama 3 / 3.1 / 3.3, all 70 B): all three sit in the +21% to +62% accuracy-gap band with Rule Fidelity scores between 37% and 46%. The Llama line at this scale has not crossed the rule-application threshold across the generations we tested.
 
-The DeepSeek line shows a within-family contrast (Table 3): the chat models (DeepSeek Chat, V3.1 Terminus, V3.2) sit at or below the random RFS baseline, while the reasoning-trained variants (R1, R1-0528, and V4 Pro — reclassified as reasoning per §A.6b) cluster near the top of the ladder (RFS 94–95%).
+The DeepSeek line shows a within-family contrast (Table 4): the chat models (DeepSeek Chat, V3.1 Terminus, V3.2) sit at or below the random RFS baseline, while the reasoning-trained variants (R1, R1-0528, and V4 Pro — reclassified as reasoning per §A.6b) cluster near the top of the ladder (RFS 94–95%).
 
-**Table 3. DeepSeek within-family contrast (chat vs reasoning-trained), all ~37 B active.**
+**Table 4. DeepSeek within-family contrast (chat vs reasoning-trained), all ~37 B active.**
 
 | Model | Category | Original | Inverted | Distractor | Gap | Rule Fidelity (n) |
 |---|---|---:|---:|---:|---:|---:|
@@ -338,9 +338,9 @@ The DeepSeek line shows a within-family contrast (Table 3): the chat models (Dee
 
 ### 3.7 H5 — Temporal-frontier arcs
 
-Within each vendor's frontier slot, holding parameter count approximately fixed, we observe the strategy-shift signature documented in §3.3. The OpenAI arc is summarized in Table 1. The Anthropic Opus arc is summarized in Table 4.
+Within each vendor's frontier slot, holding parameter count approximately fixed, we observe the strategy-shift signature documented in §3.3. The OpenAI arc is summarized in Table 1. The Anthropic Opus arc is summarized in Table 5.
 
-**Table 4. Claude Opus temporal arc.** All N = 72.
+**Table 5. Claude Opus temporal arc.** All N = 72.
 
 | Generation | Original | Inverted | Distractor | Gap | Rule Fidelity |
 |---|---:|---:|---:|---:|---:|
@@ -353,9 +353,9 @@ Within each vendor's frontier slot, holding parameter count approximately fixed,
 
 Opus 4.1's negative accuracy gap (−13%) is **not** rule application: its RFS (41.7%) sits *below* the ~67% chance baseline — it changed its answer *less* than chance across the flip — and its original-rule accuracy (46%) actually dips below Opus 4, an anomalous point we flag rather than interpret. The Anthropic line crosses durably into the rule-sensitive band only **from Opus 4.5 onward** (RFS 88–96%). This still precedes the analogous OpenAI transition (GPT-5.5, 2026-04) by approximately one generation.
 
-The Gemini arc (Table 5) shows a similar but less monotonic trajectory; Gemini 3.1 Pro Preview reaches the 100% RFS tier alongside o1/o4-mini/Gemma 4.
+The Gemini arc (Table 6) shows a similar but less monotonic trajectory; Gemini 3.1 Pro Preview reaches the 100% RFS tier alongside o1/o4-mini/Gemma 4.
 
-**Table 5. Google Gemini temporal arc.**
+**Table 6. Google Gemini temporal arc.**
 
 | Generation | Inverted Acc | Gap | Rule Fidelity |
 |---|---:|---:|---:|
