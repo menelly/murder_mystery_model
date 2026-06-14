@@ -1,0 +1,16 @@
+# Data integrity manifest — SHA-256 (2026-06-14)
+# Master anchor: the git commit hash content-addressably pins every file in this repo.
+# Verify your clone is at the cited commit; these hashes additionally certify the data if it travels outside git (e.g. a Zenodo zip).
+
+## Canonical datasets and analysis outputs
+ae5bd70403677679e2c27bd429ada3df54fd7798a8130b9ccc7877403a17bfe3  results/scores.jsonl
+d30f535c24caeb398e644438b89647ac4072d07d7093e0fdf7727f4cea6b58ff  results/consent_log.jsonl
+35ef166bebca7300d3c9e6eb1b5e59efbee32dbce31ee4f517098e6b475ab4fb  analysis/rubric_judged.csv
+51b3987b2c96efe79387f6bf59fe9983a4562202f27a6e8e88b646f5c77cc6fa  analysis/rubric_consent_log.jsonl
+3753780d0dfcaac0d26b34fc4b58781b6133edc167bcd00d2c2cc1c0e4cead66  analysis/RUBRIC_RESULTS.md
+9d4d5b12924a2ec9c27bfa40a53a6663e19b389f986f81b435d1682a9db3234b  analysis/results_with_ci.md
+28cd76a756449e2fddd8bb8b181393a2adf8754a257af298475ee5909fd02505  analysis/coverage_vs_accuracy.md
+
+## Per-trial responses (4831 files): aggregate digest
+# reproduce: find results -name "*.json" | sort | xargs sha256sum | sha256sum
+per-trial-aggregate: 8d46b0638d59ad782dda01737ca514640deb17faca76d44b1c935fc5bbbcf77b
