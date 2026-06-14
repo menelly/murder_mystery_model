@@ -1,3 +1,5 @@
+> **⚠️ SUPERSEDED / SCRATCH FILE — DO NOT CITE.** This is an early scratchpad containing pre-v3 numbers the paper has since retracted (notably the v2 "GPT-5.5 −21% gap / inversions easier" claim, an artifact of an 800-token truncation, corrected to 100/100/100 in `PAPER.md` §3.3). For all current results, see `PAPER.md`. — 2026-06-14
+
 # Key Findings — Preliminary
 
 Snapshot of the most striking findings as of mid-data-collection. Numbers

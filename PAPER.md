@@ -113,6 +113,10 @@ def score_response(response_text, correct_suspect):
 
 The first occurrence of "Suspect [ABC]" in the response is the scored answer. We chose first-mention rather than last-mention to capture the model's most honest reading of "what did the model decide," because for several models we observed self-correcting behavior in which the visible first-mention answer was followed by extended reasoning that occasionally arrived at the opposite verdict. This is a deliberate, pre-registered choice; we discuss its implications in §4.
 
+#### 2.7.1b Coverage, parseable accuracy, and strict accuracy
+
+We report three accuracy quantities to separate instruction-following from reasoning, and privilege none. **Coverage** is the fraction of trials in which the model emitted a parseable "Suspect [ABC]" answer (answer-format compliance, modulo extended-thinking truncation). **Parseable accuracy** is the fraction correct among parseable trials (reasoning, given a usable answer). **Strict accuracy** counts unparseable responses as failures (correct ÷ all trials — the conjunction of formatting and reasoning). The three coincide for high-coverage models and diverge at the floor and for truncation-limited reasoners; all three are reported per model in `analysis/coverage_vs_accuracy.md`.
+
 #### 2.7.2 Rule Fidelity Score (introduced post-hoc per Nova; not pre-registered)
 
 For each (model, puzzle, seed) triple, we compare the suspect chosen on the original variant with the suspect chosen on the inverted variant. The same seed yields the same A/B/C position mapping for both variants on the same puzzle, so the comparison is fair. We define:
@@ -199,6 +203,8 @@ Position-bias analysis (§3.9) and joint-slot-distribution analysis (§3.9b) fin
 Figure 1 shows the primary emergence curve. Models below approximately 1.5 B active parameters cluster at chance; models above approximately 7 B active parameters mostly land above the reliable-threshold band, with substantial within-band variance attributable to generation and training rather than scale. The discrimination floor on overall accuracy lies between approximately 0.5 B and 7 B active parameters for chat/base models.
 
 H1 is supported, but the transition is **shifted toward smaller scale rather than widened**: the pre-registered band was 1B–13B; the observed band (0.5B–7B) is comparable in width in log-space, moved downward. The shift is driven by the generation effect documented in §3.5–§3.7: same-family newer generations at small scale (e.g. Qwen 3 8B, Gemma 4 31B) achieve reliable performance where older-generation siblings at the same scale do not.
+
+Reporting both denominators shows the emergence "floor" is **two curves, not one**. Floor-band models below ~2 B active parameters are low on *both* coverage and parseable accuracy (RWKV 1.6B: 15% coverage, 36% parseable accuracy; SmolLM-135M: 54% / 33%; Pythia 1.4B: 61% / 41%) — they fail to emit the answer format and, when they do, answer at chance. Two models isolate the reasoning floor with format-following intact: SmolLM-1.7B (92% coverage, 30% parseable accuracy) and Phi-2 (93% / 34%) follow the answer format reliably yet remain at chance — the cleanest evidence that the floor is a genuine reasoning limit, not merely an instruction-following one. Conversely, several frontier reasoning models show coverage in the 82–94% band with 97–100% parseable accuracy: their sub-100% strict accuracy is extended-thinking truncation, not error, and strict accuracy *understates* them. We therefore read H1 as the emergence of two capabilities that a single accuracy number conflates — answer-format compliance and on-the-fly rule application — and the title question "where does understanding begin?" resolves more precisely against the *parseable-accuracy* curve (the reasoning axis) than against strict accuracy (which folds in formatting and truncation).
 
 ### 3.3 H2 — Rule-inversion robustness
 
