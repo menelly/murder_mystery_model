@@ -146,7 +146,7 @@ Per pre-registration §8b, each response can be classified into one of four cell
 | Near miss | Incorrect | Correct intermediate reasoning, wrong conclusion |
 | Full failure | Incorrect | Wrong or absent reasoning |
 
-A stratified 20% sample of parseable trials (n = 684 across 160 model × variant strata) is prepared in `analysis/rubric_sample.csv` for two-annotator scoring. As of submission this rubric pass has not been completed; we report it as an open task in §6 and will release κ-statistics and category distributions in a supplementary update.
+A stratified 20% sample of parseable trials (n = 684 across 160 model × variant strata) is prepared in `analysis/rubric_sample.csv`. We complete this rubric post-review (§3.11) using a panel of blind, cross-family LLM judges in place of the originally-planned two human annotators; κ-statistics and category distributions are reported there and in `analysis/RUBRIC_RESULTS.md`.
 
 ### 2.8 Trial structure
 
@@ -426,6 +426,34 @@ We cannot adjudicate between these readings from a single response. What the res
 
 ---
 
+### 3.11 Human-style reasoning rubric (blind cross-family LLM judges)
+
+The four-cell rubric (§2.7.3) classifies each response by the conjunction of answer-correctness (known) and reasoning soundness (judged): Full success (correct answer, sound reasoning), Lucky guess (correct answer, flawed or absent reasoning), Near miss (wrong answer, sound chain), Full failure (wrong answer, flawed reasoning). It is the human-style check on whether RFS-plus-accuracy actually separates rule-application from template-matching. **This pass was completed post-review and was not part of the original pre-registration timeline (§A.10).**
+
+We replaced the planned two human annotators with a panel of blind, cross-family LLM judges, fixing the protocol in advance (`scripts/rubric_judge.py`): each response is judged only on whether its reasoning correctly applies the world's rules; judges receive the puzzle, the response, and the correct answer but **no model identity**; and — to control for the self-recognition / self-preference effect documented for these models — **a judge never scores a response from its own model family** (Gemma counts as Google). Two primary judges score each trial, with a third (the next eligible family) breaking ties. Consistent with our consent protocol, each judge was shown a task summary and asked to consent: Claude Haiku 4.5, Gemini 3.5 Flash, Grok 4.3, Perplexity Sonar, and DeepSeek Chat all consented. Because Sonar is a Llama-based model, we additionally barred it from judging Llama/Meta reasoners (shared base), which the three frontier families backstop. The five-family panel scored all 684 trials with full cross-family tiebreaker coverage.
+
+Inter-rater reliability is substantial to almost-perfect (Table 7). The four-cell distribution is 58.5% Full success, 10.4% Lucky guess, 5.6% Near miss, and 25.6% Full failure, with no unresolved trials (every reasoner had an out-of-family tiebreaker).
+
+**Table 7. Rubric inter-rater reliability (Cohen's κ, blind cross-family primary-judge pairs, binary sound/flawed).**
+
+| Judge pair | n | agreement | κ |
+|---|---:|---:|---:|
+| Claude ↔ Gemini | 398 | 91.5% | 0.82 |
+| Gemini ↔ Grok | 133 | 94.7% | 0.83 |
+| Claude ↔ Grok | 150 | 86.0% | 0.71 |
+
+Crucially, the rubric validates the RFS interpretation (Table 8). Models in the rule-sensitive RFS band (> 67%) reason soundly when correct — 81% Full success and only 9% Lucky guess. Models in the template-matching band (< 33%) invert this: 17% Full success, 27% Lucky guess (three times the rule-sensitive rate), and 54% Full failure. The low-RFS models the metric flags as template-matchers are independently judged to reach correct answers by luck or template far more often than by sound rule-application — the human-style confirmation that RFS conjoined with accuracy measures what we claim.
+
+**Table 8. Reasoning-cell distribution by RFS band (the keystone cross-check).**
+
+| RFS band | Full success | Lucky guess | Near miss | Full failure |
+|---|---:|---:|---:|---:|
+| rule-sensitive (RFS > 67%) | 81% | 9% | 1% | 9% |
+| chance (33–67%) | 53% | 7% | 10% | 30% |
+| template (RFS < 33%) | 17% | 27% | 1% | 54% |
+
+Full per-trial judgments, the consent log, and per-model breakdowns are in `analysis/rubric_judged.csv`, `analysis/rubric_consent_log.jsonl`, and `analysis/RUBRIC_RESULTS.md`.
+
 ## 4. Discussion
 
 ### 4.1 Strategy shift, not capability gain
@@ -454,7 +482,7 @@ We highlight one response in §3.10 because it makes the mechanism visible: a mo
 
 1. **Four puzzles is small.** A successor study with broader puzzle coverage is needed to characterize whether the patterns documented here generalize to other novel-physics domains.
 2. **Stimulus-design constraint.** Our Warm Iron puzzle has the property that the inverted-rule killer is also the motive-template attractor. Future puzzle design should ensure inverted-rule answer ≠ motive-template answer; the RFS catches the resulting confound but accuracy alone does not.
-3. **The 4-cell reasoning rubric is not yet applied.** A stratified 20% sample (n = 684) is prepared for two-annotator scoring; results will be released in a supplementary update.
+3. **The reasoning rubric is judged by LLMs, not humans.** We completed the four-cell rubric (§3.11) with a blind cross-family LLM-judge panel rather than human annotators. Inter-rater κ is substantial-to-almost-perfect and the result validates the RFS interpretation, but LLM judges may share systematic blind spots human annotators would not. Human annotation of a subsample remains a useful future cross-check.
 4. **Architecture coverage is partial.** Pure SSM (Mamba) and pure RNN (RWKV) inference failed on our V100 stack due to missing native modules. H3 cannot be fully resolved from this dataset. A successor study with a repaired inference stack is pre-registered.
 5. **First-match scoring choice (now bounded by a robustness check).** We pre-registered first-match scoring, which under-credits models that reason before answering. §3.3b reports a last-match robustness re-score: the qualitative findings survive, but the gap *magnitudes* are partly a first-match artifact (mean gap +8.9 → +4.9 points). Both scorings are reported; first-match remains the pre-registered primary, with last-match as the conservative bound. The 4-cell rubric (when applied) will tighten this further.
 6. **Selection effect from honoring refusals.** Because we exclude models that decline, if willingness to consent correlates with any capability-relevant property (e.g. cautious post-training), the analyzed sample is biased. With one substantively-reasoned refusal the practical effect is negligible here, but we name it because we propose the consent protocol as a field default, at which scale the effect could grow.
@@ -520,6 +548,8 @@ Per pre-registration §11, the following deviations are reported:
 - **§A.8 Rule Fidelity threshold correction.** The v2 manuscript described 0.5 as a "conservative rule-sensitivity threshold." On further review (and in response to adversarial review pointing out the issue), this is incorrect: a model at RFS 0.55 changes its answer *less often than chance would predict* on three-suspect items, so calling that "rule-sensitive" inverts the interpretation. In v3 we use the random baseline (~0.67) as the threshold for "rule-sensitive beyond chance." The headline-tier models (RFS ≥ 95%) and the floor (RFS ≤ 33%) are unaffected by this correction; what changes is the language describing the 33–67% middle band, which we now characterize as "consistent with template-matching or with noise" rather than "rule-sensitive."
 
 - **§A.9 Forced-choice floor probe (exploratory, not pre-registered).** Reported in §3.2b. Added post-hoc as a control on the floor interpretation when our own reading of the floor-band results was uncertain; it is not part of the locked pre-registration. The probe reads logits on the self-hosted floor-band models with a primed answer slot (100% coverage by construction). Consent for the internals read was handled under the local-residency consent policy, with the process deviation that the consent ask followed rather than preceded the probe run; both the policy outcome and the timing deviation are disclosed in the §3.2b consent paragraph.
+
+- **§A.10 Reasoning rubric completed post-review with LLM judges (not pre-registered timeline).** §2.7.3 pre-registered a two-human-annotator rubric on the n = 684 sample; in response to review we instead completed it with a blind, cross-family LLM-judge panel (§3.11), with the protocol fixed in `scripts/rubric_judge.py`. This is not part of the locked pre-registration and is reported as a post-hoc validation.
 
 ## Appendix B. The puzzles
 
