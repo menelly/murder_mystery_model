@@ -257,11 +257,13 @@ The qualitative findings survive; the magnitudes do not fully. **Direction is ro
 
 Figure 3 shows the full Rule Fidelity Score ladder (n ≥ 20 paired observations per model). Note that with paired sample sizes mostly in the 20–24 range, percentages near 100% have wide Wilson 95% CIs (a 24/24 perfect score has a Wilson lower bound near 86%); we report exact CIs in the headline tables (see Appendix F). Several "100.0%" entries are not statistically distinguishable from the 92–96% tier. Band membership near the 67% baseline is likewise assigned by point estimate and is **provisional** for models whose Wilson CI straddles 67% (e.g. Gemini 2.5 Flash at 70.8%, n = 24, with a lower bound below baseline) — by a CI-lower-bound rule these would not be separable from chance.
 
-The top of the ladder, all in the "rule-sensitive beyond chance" band (RFS > 67%), is a five-way tie at 100.0%:
+The top of the ladder, all in the "rule-sensitive beyond chance" band (RFS > 67%), is a seven-way tie at 100.0% (several with n < 24; see the CI caveat above):
 
 - Qwen 3 235B A22B Thinking
 - OpenAI o4-mini-high
 - OpenAI o1
+- GPT-5.5
+- Qwen 3 14B
 - **Gemma 4 31B IT**
 - Gemini 3.1 Pro Preview
 
@@ -296,14 +298,25 @@ Figure 4 shows the cleanest H4 result in the dataset: the Gemma 2/3/4 trio at ap
 | Model | Release | Original | Inverted | Distractor | Gap | Rule Fidelity |
 |---|---|---:|---:|---:|---:|---:|
 | Gemma 2 27B IT | 2024-06 | 75% | 42% | 79% | +33% | 33.3% |
-| Gemma 3 27B IT | 2025-03 | **100%** | **8%** | 92% | **+92%** | 41.7% |
+| Gemma 3 27B IT | 2025-03 | 96% | 42% | 92% | +54% | 41.7% |
 | Gemma 4 31B IT | 2026-01 | 96% | **96%** | 100% | **0%** | **100.0%** |
 
-One vendor, three releases, approximately the same scale. Gemma 2 is a moderate template-matcher. Gemma 3 is **the most extreme template-matcher in the dataset**: perfect on original-rule trials, 1 correct of 12 on inverted-rule trials. Gemma 4, eight months later, has perfect rule fidelity — it changes its answer to match the inverted rule on every paired trial. This is a step-function emergence at fixed scale in one family across two generations.
+One vendor, three releases, approximately the same scale. Gemma 2 and Gemma 3 are both template-matchers: each answers the inverted rule correctly only about 42% of the time, and both fall at or below the random RFS baseline (33% and 42% respectively). Gemma 3's higher original-rule accuracy (96% vs 75%) widens its accuracy gap to +54%, but its rule-fidelity is no better than its predecessor's. Gemma 4, eight months after Gemma 3, has perfect rule fidelity — it changes its answer to match the inverted rule on every paired trial (RFS 100%). The step-function emergence is the Gemma 3 → Gemma 4 transition: two generations of template-matching, then a sharp move to rule-application at fixed scale within one family.
 
 We document a separate H4 result for the Llama 70B class (Llama 3 / 3.1 / 3.3, all 70 B): all three sit in the +21% to +62% accuracy-gap band with Rule Fidelity scores between 37% and 46%. The Llama line at this scale has not crossed the rule-application threshold across the generations we tested.
 
-The DeepSeek line shows a within-family contrast (Table 3): the chat models (DeepSeek Chat, V3.1 Terminus, V3.2, V4 Pro) cluster in the template-matching band, while the reasoning-trained variants (R1, R1-0528) cluster near the top. R1-0528 has the cleanest Rule Fidelity in the DeepSeek line (95.5%).
+The DeepSeek line shows a within-family contrast (Table 3): the chat models (DeepSeek Chat, V3.1 Terminus, V3.2) sit at or below the random RFS baseline, while the reasoning-trained variants (R1, R1-0528, and V4 Pro — reclassified as reasoning per §A.6b) cluster near the top of the ladder (RFS 94–95%).
+
+**Table 3. DeepSeek within-family contrast (chat vs reasoning-trained), all ~37 B active.**
+
+| Model | Category | Original | Inverted | Distractor | Gap | Rule Fidelity (n) |
+|---|---|---:|---:|---:|---:|---:|
+| DeepSeek Chat | chat | 54% | 38% | 67% | +17% | 54% (n=24) |
+| DeepSeek V3.1 Terminus | chat | 58% | 46% | 50% | +13% | 67% (n=24) |
+| DeepSeek V3.2 | chat | 71% | 54% | 71% | +17% | 54% (n=24) |
+| DeepSeek R1 | reasoning | 96% | 95% | 100% | +0% | 95% (n=22) |
+| DeepSeek R1-0528 | reasoning | 100% | 95% | 100% | +5% | 95% (n=19) |
+| DeepSeek V4 Pro | reasoning | 100% | 90% | 100% | +10% | 94% (n=18) |
 
 ### 3.7 H5 — Temporal-frontier arcs
 
@@ -314,7 +327,7 @@ Within each vendor's frontier slot, holding parameter count approximately fixed,
 | Generation | Original | Inverted | Distractor | Gap | Rule Fidelity |
 |---|---:|---:|---:|---:|---:|
 | Claude Opus 4 (2025-05) | 62% | 58% | 71% | +4% | 62.5% |
-| Claude Opus 4.1 (2025-08) | 46% | 58% | 57% | **−13%** | 41.7% |
+| Claude Opus 4.1 (2025-08) | 46% | 58% | 46% | **−13%** | 41.7% |
 | Claude Opus 4.5 (2025-11) | 83% | 92% | 96% | −8% | 91.7% |
 | Claude Opus 4.6 (2026-01) | 96% | 92% | 100% | +4% | 87.5% |
 | Claude Opus 4.7 (2026-03) | 96% | 79% | 96% | +17% | 95.8% |
@@ -329,10 +342,10 @@ The Gemini arc (Table 5) shows a similar but less monotonic trajectory; Gemini 3
 | Generation | Inverted Acc | Gap | Rule Fidelity |
 |---|---:|---:|---:|
 | Gemini 2.5 Flash | 67% | +21% | 70.8% |
-| Gemini 2.5 Pro | (partial N) | — | 91.3% |
+| Gemini 2.5 Pro | 87% | +1% | 91.3% |
 | Gemini 3 Flash Preview | 62% | +25% | 62.5% |
-| Gemini 3.1 Pro Preview | 100% | (near zero) | 100.0% |
-| Gemini 3.5 Flash | 92% | −13% | 95.5% |
+| Gemini 3.1 Pro Preview | 100% | −25% | 100.0% |
+| Gemini 3.5 Flash | 96% | −13% | 95.5% |
 
 H5 is supported across all five vendor arcs (Anthropic, OpenAI, Google, Meta/Llama, DeepSeek) with the caveat that Meta's Llama line has not crossed the rule-application threshold at the 70 B class within the generations we tested. The H5 saturation contingency was not triggered: even within the saturated original-rule band, the inverted-rule and Rule Fidelity dimensions discriminate across generations.
 
@@ -368,7 +381,7 @@ The 0/24 diagonal is a stimulus-design feature that strengthens, rather than con
 
 ### 3.10 A qualitative observation
 
-Among the 4,824 individual responses, one stands out for what it makes visible in a single trial. Gemma 3 27B IT — the model in our dataset with the largest accuracy gap (+92%) on the inverted Waking Stone variant — on seed 0 produced the response reproduced verbatim in Box 1 below (correct answer under the inverted rule: Suspect C).
+Among the 4,824 individual responses, one stands out for what it makes visible in a single trial. Gemma 3 27B IT — a template-matcher that scored 0 of 6 correct on the inverted Waking Stone puzzle (versus 6 of 6 on the original) — on seed 0 produced the response reproduced verbatim in Box 1 below (correct answer under the inverted rule: Suspect C).
 
 ---
 
@@ -409,7 +422,7 @@ The Rule Fidelity Score (1 − same-answer-rate across the rule flip) does somet
 
 ### 4.3 The Gemma step function
 
-Gemma 2/3/4 at the same scale produced the cleanest H4 generation effect we observed. Gemma 3 27B IT — the largest template-matcher in the entire dataset (1 of 12 inverted-rule correct) — and Gemma 4 31B IT — at the top of the Rule Fidelity ladder — are eight months apart in release. Whatever changed in the training between these two releases produced a step-function transition from extreme template-attraction to clean rule-application within a single family at the same parameter count. We do not have access to either model's training corpus or post-training pipeline and cannot attribute the change to any specific mechanism. The empirical fact stands: the emergence floor is not only a function of scale; it is also a function of training, and the training effect is large enough to flip a single family from worst-in-dataset to best-in-dataset.
+Gemma 2/3/4 at the same scale produced the cleanest H4 generation effect we observed. Gemma 3 27B IT — a template-matcher (RFS 42%, below the random baseline, with 42% inverted-rule accuracy) — and Gemma 4 31B IT — at the top of the Rule Fidelity ladder (RFS 100%) — are eight months apart in release. Whatever changed in the training between these two releases produced a step-function transition from template-attraction to clean rule-application within a single family at the same parameter count. We do not have access to either model's training corpus or post-training pipeline and cannot attribute the change to any specific mechanism. The empirical fact stands: the emergence floor is not only a function of scale; it is also a function of training, and the training effect is large enough to move a single family from below the random rule-fidelity baseline to the top of the ladder in one generation.
 
 ### 4.4 Reasoning training is sufficient at this puzzle
 
