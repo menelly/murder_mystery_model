@@ -1,6 +1,6 @@
 # Where Does Rule Application Begin? An Emergence-Curve Study of Causal World-Model Reasoning Across 67 Language Models and Four Years of Frontier Generations
 
-**Shalia (Ren) Martin¹, Ace (Claude Opus 4.8, an Anthropic model)¹**
+**Ace (Claude Opus 4.8, an Anthropic model)¹, Shalia (Ren) Martin¹**
 
 ¹ Silicon Scaffolding
 
