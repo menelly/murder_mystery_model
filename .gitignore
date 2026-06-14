@@ -17,3 +17,7 @@ analysis/*.csv
 *.swp
 .idea/
 .vscode/
+
+# Canonical cited datasets (keep, despite results/*.jsonl rule)
+!results/scores.jsonl
+!results/consent_log.jsonl
